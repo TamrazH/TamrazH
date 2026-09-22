@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useAppStore } from '../store/useAppStore';
 import { getDueWords } from '../lib/selectors';
 import { t } from '../lib/i18n';
-import { Button, CefrBadge, ContentStatusBadge, ScreenHeader } from '../components/ui';
+import { Button, CefrBadge, ScreenHeader } from '../components/ui';
 import { getDefinitionDisplay, getExampleDisplay, getTranslationDisplay } from '../lib/contentDisplay';
 import { speakWord } from '../lib/speech';
 import type { ReviewGrade } from '../types';
@@ -98,14 +98,12 @@ export default function FlashcardScreen() {
             <div>
               <div className="flex items-center gap-2 text-xs font-semibold uppercase text-[var(--color-text-muted)]">
                 {t.wordDetail.definition}
-                <ContentStatusBadge status={definition.status} />
               </div>
               <p className="text-base">{definition.text}</p>
             </div>
             <div>
               <div className="flex items-center gap-2 text-xs font-semibold uppercase text-[var(--color-text-muted)]">
                 {t.study.translation}
-                <ContentStatusBadge status={translation.status} />
               </div>
               {showTranslation ? (
                 <p className="text-base">{translation.text}</p>
@@ -124,7 +122,6 @@ export default function FlashcardScreen() {
             <div>
               <div className="flex items-center gap-2 text-xs font-semibold uppercase text-[var(--color-text-muted)]">
                 {t.study.example}
-                <ContentStatusBadge status={example.status} />
               </div>
               <p className="text-base italic">{example.text}</p>
             </div>

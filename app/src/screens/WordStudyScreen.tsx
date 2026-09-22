@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { useAppStore } from '../store/useAppStore';
 import { t } from '../lib/i18n';
-import { Button, Card, CefrBadge, ContentStatusBadge, ScreenHeader } from '../components/ui';
+import { Button, Card, CefrBadge, ScreenHeader } from '../components/ui';
 import { getDefinitionDisplay, getExampleDisplay, getTranslationDisplay } from '../lib/contentDisplay';
 import { speakWord } from '../lib/speech';
 import type { Oxford5000Scope } from '../types';
@@ -141,7 +141,6 @@ export default function WordStudyScreen() {
         <div>
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--color-text-muted)]">
             {t.wordDetail.definition}
-            <ContentStatusBadge status={definition.status} />
           </div>
           <p className={`mt-1 text-base ${definition.isMissing ? 'italic text-[var(--color-text-muted)]' : 'text-[var(--color-text)]'}`}>
             {definition.text}
@@ -151,7 +150,6 @@ export default function WordStudyScreen() {
         <div>
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--color-text-muted)]">
             {t.study.translation}
-            <ContentStatusBadge status={translation.status} />
           </div>
           {showTranslation ? (
             <p className={`mt-1 text-base ${translation.isMissing ? 'italic text-[var(--color-text-muted)]' : 'text-[var(--color-text)]'}`}>
@@ -170,7 +168,6 @@ export default function WordStudyScreen() {
         <div>
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--color-text-muted)]">
             {t.study.example}
-            <ContentStatusBadge status={example.status} />
           </div>
           <p className={`mt-1 text-base italic ${example.isMissing ? 'text-[var(--color-text-muted)]' : 'text-[var(--color-text)]'}`}>
             {example.text}

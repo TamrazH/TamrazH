@@ -2,11 +2,10 @@ import { useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useAppStore } from '../store/useAppStore';
 import { t } from '../lib/i18n';
-import { Button, Card, CefrBadge, ContentStatusBadge, StatusBadge } from '../components/ui';
+import { Button, Card, CefrBadge, StatusBadge } from '../components/ui';
 import { getDefinitionDisplay, getExampleDisplay, getTranslationDisplay } from '../lib/contentDisplay';
 import { formatDateTime } from '../lib/date';
 import { speakWord } from '../lib/speech';
-import type { ContentStatus } from '../types';
 
 export default function WordDetailScreen() {
   const { id } = useParams<{ id: string }>();
@@ -66,11 +65,10 @@ export default function WordDetailScreen() {
         <DetailField
           label={t.wordDetail.pronunciationLabel}
           value={word.pronunciation ?? t.missingContent}
-          status={word.pronunciation ? word.contentStatus : 'MISSING'}
           isMissing={!word.pronunciation}
         />
         {showTranslation ? (
-          <DetailField label={t.study.translation} value={translation.text} status={translation.status} isMissing={translation.isMissing} />
+          <DetailField label={t.study.translation} value={translation.text} isMissing={translation.isMissing} />
         ) : (
           <div>
             <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--color-text-muted)]">
@@ -84,11 +82,10 @@ export default function WordDetailScreen() {
             </button>
           </div>
         )}
-        <DetailField label={t.wordDetail.definition} value={definition.text} status={definition.status} isMissing={definition.isMissing} />
+        <DetailField label={t.wordDetail.definition} value={definition.text} isMissing={definition.isMissing} />
         <DetailField
           label={t.study.example}
           value={example.text}
-          status={example.status}
           isMissing={example.isMissing}
           italic
         />
@@ -110,20 +107,6 @@ export default function WordDetailScreen() {
             </div>
           </div>
         )}
-      </Card>
-
-      <Card className="p-4">
-        <div className="flex items-center justify-between">
-          <p className="text-xs font-semibold uppercase tracking-wide text-[var(--color-text-muted)]">
-            {t.contentStatus.label}
-          </p>
-          {word.contentStatus === 'MISSING' ? (
-            <span className="text-xs text-[var(--color-text-muted)]">{t.contentStatus.MISSING}</span>
-          ) : (
-            <ContentStatusBadge status={word.contentStatus} />
-          )}
-        </div>
-        {word.contentSource && <p className="mt-1 text-xs text-[var(--color-text-muted)]">{word.contentSource}</p>}
       </Card>
 
       <Card className="p-6">
@@ -163,13 +146,11 @@ export default function WordDetailScreen() {
 function DetailField({
   label,
   value,
-  status,
   isMissing,
   italic,
 }: {
   label: string;
   value: string;
-  status: ContentStatus;
   isMissing: boolean;
   italic?: boolean;
 }) {
@@ -177,7 +158,6 @@ function DetailField({
     <div>
       <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--color-text-muted)]">
         {label}
-        <ContentStatusBadge status={status} />
       </div>
       <p
         className={`mt-1 text-base ${italic ? 'italic' : ''} ${

@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useAppStore } from '../store/useAppStore';
 import { t } from '../lib/i18n';
-import { Button, Card, ContentStatusBadge, ScreenHeader } from '../components/ui';
+import { Button, Card, ScreenHeader } from '../components/ui';
 import { buildQuestions, type PracticeMode } from '../lib/practice';
 
 const QUESTIONS_PER_SESSION = 10;
@@ -107,9 +107,6 @@ export default function PracticeSessionScreen() {
       </div>
 
       <Card className="p-6">
-        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--color-text-muted)]">
-          <ContentStatusBadge status={q.promptContentStatus} />
-        </div>
         <p className="mt-2 text-xl font-semibold text-[var(--color-text)]">{q.promptText}</p>
       </Card>
 

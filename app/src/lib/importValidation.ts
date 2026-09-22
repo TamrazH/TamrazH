@@ -10,7 +10,7 @@ function definitionSourceForContentStatus(status: ContentStatus): DefinitionSour
     case 'OWN_CONTENT':
       return 'OWN_CONTENT';
     case 'AI_DRAFT':
-      return 'AI_GENERATED';
+      return 'AI';
     default:
       return 'MISSING';
   }

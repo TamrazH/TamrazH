@@ -30,13 +30,13 @@ export const CONTENT_STATUSES: ContentStatus[] = ['VERIFIED', 'LICENSED', 'OWN_C
  * but they are kept as distinct fields so a future review workflow can promote a
  * definition's status without needing to fabricate a new "source".
  */
-export type DefinitionSource = 'OXFORD_LICENSED' | 'APPROVED_DICTIONARY' | 'OWN_CONTENT' | 'AI_GENERATED' | 'MISSING';
+export type DefinitionSource = 'OXFORD_LICENSED' | 'APPROVED_DICTIONARY' | 'OWN_CONTENT' | 'AI' | 'MISSING';
 
 export const DEFINITION_SOURCES: DefinitionSource[] = [
   'OXFORD_LICENSED',
   'APPROVED_DICTIONARY',
   'OWN_CONTENT',
-  'AI_GENERATED',
+  'AI',
   'MISSING',
 ];
 

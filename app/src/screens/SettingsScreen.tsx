@@ -4,22 +4,30 @@ import { useAppStore } from '../store/useAppStore';
 import { t } from '../lib/i18n';
 import { Button, Card, Modal, ScreenHeader } from '../components/ui';
 import { exportAsCsv, exportAsJson, parseImportedJson } from '../lib/exportImport';
-import type { PersistedState } from '../types';
+import type { PersistedState, ReviewStrategy } from '../types';
+import { REVIEW_STRATEGIES, SESSION_SIZES } from '../types';
 
 export default function SettingsScreen() {
   const settings = useAppStore((s) => s.settings);
   const words = useAppStore((s) => s.words);
   const progress = useAppStore((s) => s.progress);
+  const studySession = useAppStore((s) => s.studySession);
   const updateSettings = useAppStore((s) => s.updateSettings);
   const resetProgress = useAppStore((s) => s.resetProgress);
   const importState = useAppStore((s) => s.importState);
+  const clearStudySession = useAppStore((s) => s.clearStudySession);
 
   const [resetOpen, setResetOpen] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   function currentSnapshot(): PersistedState {
-    return { version: 2, words, settings, progress };
+    return { version: 2, words, settings, progress, studySession };
+  }
+
+  function showToast(message: string) {
+    setToast(message);
+    setTimeout(() => setToast(null), 3000);
   }
 
   function handleImportFile(file: File) {
@@ -68,6 +76,49 @@ export default function SettingsScreen() {
 
       <Section title={t.settings.reviewLimit}>
         <NumberField value={settings.reviewLimit} min={1} max={200} onChange={(v) => updateSettings({ reviewLimit: v })} />
+      </Section>
+
+      <Section title={t.settings.lessonOrder}>
+        <div className="flex flex-col gap-3">
+          <div className="grid grid-cols-1 gap-2">
+            {REVIEW_STRATEGIES.map((strategy: ReviewStrategy) => (
+              <button
+                key={strategy}
+                onClick={() => updateSettings({ reviewStrategy: strategy })}
+                aria-pressed={settings.reviewStrategy === strategy}
+                className={`min-h-11 rounded-xl border px-4 text-left text-sm font-medium ${
+                  settings.reviewStrategy === strategy
+                    ? 'border-[var(--color-accent)] bg-[var(--color-accent-soft)] text-[var(--color-accent)]'
+                    : 'border-[var(--color-border)] text-[var(--color-text-muted)]'
+                }`}
+              >
+                {t.reviewStrategyLabel[strategy]}
+              </button>
+            ))}
+          </div>
+          <p className="text-xs text-[var(--color-text-muted)]">{t.settings.orderExplanation}</p>
+
+          <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-[var(--color-text-muted)]">
+            {t.settings.sessionSize}
+          </p>
+          <div className="flex gap-2">
+            {SESSION_SIZES.map((size) => (
+              <ToggleButton key={size} active={settings.sessionSize === size} onClick={() => updateSettings({ sessionSize: size })}>
+                {size}
+              </ToggleButton>
+            ))}
+          </div>
+
+          <Button
+            variant="secondary"
+            onClick={() => {
+              clearStudySession();
+              showToast(t.settings.shuffleNowSuccess);
+            }}
+          >
+            {t.settings.shuffleNow}
+          </Button>
+        </div>
       </Section>
 
       <Section title={t.settings.pronunciationAccent}>

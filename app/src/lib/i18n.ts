@@ -25,6 +25,14 @@ export const t = {
     chooseLessonScope: 'Dərs üçün söz mənbəyini seçin',
   },
 
+  reviewStrategyLabel: {
+    MIXED: 'Qarışıq sıra',
+    REVIEW_FIRST: 'Əvvəlcə təkrar',
+    NEW_FIRST: 'Əvvəlcə yeni sözlər',
+    DIFFICULT_FIRST: 'Əvvəlcə çətin sözlər',
+    ALPHABETICAL: 'Əlifba sırası',
+  },
+
   contentStatus: {
     label: 'Məzmun statusu',
     VERIFIED: 'Təsdiqlənmiş',
@@ -77,6 +85,8 @@ export const t = {
       `Bilinən: ${known} · Çətin: ${difficult} · Təkrar üçün: ${later}`,
     backToHome: 'Əsas səhifəyə qayıt',
     noWords: 'Bu meyarlara uyğun söz tapılmadı',
+    startNewSession: 'Yeni sessiya başlat',
+    continuingSession: 'Yarımçıq dərs davam etdirilir',
   },
 
   flashcard: {
@@ -204,6 +214,17 @@ export const t = {
     importError: 'Fayl oxuna bilmədi. Zəhmət olmasa düzgün JSON faylı seçin.',
     algorithmNote:
       'Təkrar araları sadə tətbiq qaydasıdır (Yenidən → bu gün, Çətin → sabah, Yaxşı → 3 gün, Asan → 7 gün) — elmi/tibbi baxımdan optimallaşdırılmış alqoritm olduğu iddia edilmir.',
+    lessonOrder: 'Dərs sırası',
+    orderMixed: 'Qarışıq sıra (defolt)',
+    orderReviewFirst: 'Əvvəlcə təkrar',
+    orderNewFirst: 'Əvvəlcə yeni sözlər',
+    orderDifficultFirst: 'Əvvəlcə çətin sözlər',
+    orderAlphabetical: 'Əlifba sırası',
+    orderExplanation:
+      'Qarışıq sıra sözləri müxtəlif mövzu, səviyyə və nitq hissələri üzrə təqdim edir. Təkrar tələb edən sözlərə üstünlük verilir.',
+    sessionSize: 'Sessiya ölçüsü',
+    shuffleNow: 'İndi qarışdır',
+    shuffleNowSuccess: 'Növbəti dərs yeni sırayla yaradılacaq.',
   },
 
   admin: {

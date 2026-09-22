@@ -1,9 +1,10 @@
 import { create } from 'zustand';
 import { loadState, saveState, clearState } from '../lib/storage';
 import { todayKey, daysBetween } from '../lib/date';
-import type { AppSettings, PersistedState, ProgressState, ReviewGrade, VocabWord } from '../types';
+import type { AppMode, AppSettings, Oxford5000Scope, PersistedState, ProgressState, ReviewGrade, StudySession, VocabWord } from '../types';
 import { applyReview, markDifficult as srsMarkDifficult, markKnown as srsMarkKnown, markReviewLater as srsMarkReviewLater } from '../lib/srs';
 import { applyImportRows, type ValidatedRow } from '../lib/importValidation';
+import { getStudyQueue } from '../lib/studyQueue';
 
 const STATE_VERSION = 2;
 
@@ -15,6 +16,8 @@ export const DEFAULT_SETTINGS: AppSettings = {
   interfaceLanguage: 'az',
   theme: 'system',
   activeMode: 'OXFORD_3000',
+  reviewStrategy: 'MIXED',
+  sessionSize: 10,
 };
 
 const DEFAULT_PROGRESS: ProgressState = {
@@ -89,6 +92,7 @@ interface AppState {
   words: Record<string, VocabWord>;
   settings: AppSettings;
   progress: ProgressState;
+  studySession: StudySession | null;
 
   hydrate: () => Promise<void>;
   applyGrade: (id: string, grade: ReviewGrade) => void;
@@ -100,6 +104,13 @@ interface AppState {
   resetProgress: () => Promise<void>;
   importState: (imported: PersistedState) => void;
   applyContentImport: (validatedRows: ValidatedRow[]) => void;
+  /** Resumes today's unfinished session for this mode/scope if one matches, else starts a fresh one. */
+  ensureStudySession: (mode: AppMode, oxford5000Scope: Oxford5000Scope) => void;
+  /** Always generates a fresh session, discarding any unfinished one — "Start new session". */
+  startNewStudySession: (mode: AppMode, oxford5000Scope: Oxford5000Scope) => void;
+  advanceStudySession: () => void;
+  /** "Random shuffle now" from Settings: clears the saved session so the next lesson regenerates. */
+  clearStudySession: () => void;
 }
 
 function persistedSnapshot(state: AppState): PersistedState {
@@ -108,6 +119,34 @@ function persistedSnapshot(state: AppState): PersistedState {
     words: state.words,
     settings: state.settings,
     progress: state.progress,
+    studySession: state.studySession,
+  };
+}
+
+function buildStudySession(
+  words: Record<string, VocabWord>,
+  settings: AppSettings,
+  mode: AppMode,
+  oxford5000Scope: Oxford5000Scope,
+): StudySession {
+  const today = todayKey();
+  const wordIds = getStudyQueue({
+    mode,
+    oxford5000Scope,
+    sessionSize: settings.sessionSize,
+    reviewStrategy: settings.reviewStrategy,
+    date: new Date(),
+    words,
+  });
+  return {
+    sessionId: `${today}-${mode}-${oxford5000Scope}-${Math.random().toString(36).slice(2, 8)}`,
+    mode,
+    oxford5000Scope,
+    reviewStrategy: settings.reviewStrategy,
+    sessionSize: settings.sessionSize,
+    wordIds,
+    currentIndex: 0,
+    createdDateKey: today,
   };
 }
 
@@ -153,6 +192,7 @@ export const useAppStore = create<AppState>((set) => ({
   words: {},
   settings: DEFAULT_SETTINGS,
   progress: DEFAULT_PROGRESS,
+  studySession: null,
 
   hydrate: async () => {
     const vocabulary = await fetchVocabulary();
@@ -170,6 +210,7 @@ export const useAppStore = create<AppState>((set) => ({
         words: merged,
         settings: { ...DEFAULT_SETTINGS, ...persisted.settings },
         progress: { ...DEFAULT_PROGRESS, ...persisted.progress },
+        studySession: persisted.studySession ?? null,
         hydrated: true,
       });
     } else {
@@ -248,10 +289,11 @@ export const useAppStore = create<AppState>((set) => ({
 
   resetProgress: async () => {
     await clearState();
-    const next: Pick<AppState, 'words' | 'settings' | 'progress'> = {
+    const next: Pick<AppState, 'words' | 'settings' | 'progress' | 'studySession'> = {
       words: buildDefaultWords(),
       settings: DEFAULT_SETTINGS,
       progress: DEFAULT_PROGRESS,
+      studySession: null,
     };
     set(next);
     await saveState({ version: STATE_VERSION, ...next });
@@ -267,6 +309,7 @@ export const useAppStore = create<AppState>((set) => ({
       words: merged,
       settings: { ...DEFAULT_SETTINGS, ...imported.settings },
       progress: { ...DEFAULT_PROGRESS, ...imported.progress },
+      studySession: imported.studySession ?? null,
     };
     set(next);
     schedulePersist({ version: STATE_VERSION, ...next });
@@ -276,6 +319,53 @@ export const useAppStore = create<AppState>((set) => ({
     set((state) => {
       const words = applyImportRows(state.words, validatedRows);
       const next = { ...state, words };
+      schedulePersist(persistedSnapshot(next));
+      return next;
+    });
+  },
+
+  ensureStudySession: (mode, oxford5000Scope) => {
+    set((state) => {
+      const today = todayKey();
+      const s = state.studySession;
+      const matches =
+        s &&
+        s.mode === mode &&
+        s.oxford5000Scope === oxford5000Scope &&
+        s.reviewStrategy === state.settings.reviewStrategy &&
+        s.sessionSize === state.settings.sessionSize &&
+        s.createdDateKey === today;
+      if (matches) return state;
+
+      const studySession = buildStudySession(state.words, state.settings, mode, oxford5000Scope);
+      const next = { ...state, studySession };
+      schedulePersist(persistedSnapshot(next));
+      return next;
+    });
+  },
+
+  startNewStudySession: (mode, oxford5000Scope) => {
+    set((state) => {
+      const studySession = buildStudySession(state.words, state.settings, mode, oxford5000Scope);
+      const next = { ...state, studySession };
+      schedulePersist(persistedSnapshot(next));
+      return next;
+    });
+  },
+
+  advanceStudySession: () => {
+    set((state) => {
+      if (!state.studySession) return state;
+      const studySession = { ...state.studySession, currentIndex: state.studySession.currentIndex + 1 };
+      const next = { ...state, studySession };
+      schedulePersist(persistedSnapshot(next));
+      return next;
+    });
+  },
+
+  clearStudySession: () => {
+    set((state) => {
+      const next = { ...state, studySession: null };
       schedulePersist(persistedSnapshot(next));
       return next;
     });

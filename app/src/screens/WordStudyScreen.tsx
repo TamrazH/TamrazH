@@ -1,7 +1,6 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { useAppStore } from '../store/useAppStore';
-import { getWordPoolForMode } from '../lib/selectors';
 import { t } from '../lib/i18n';
 import { Button, Card, CefrBadge, ContentStatusBadge, ScreenHeader } from '../components/ui';
 import { getExampleDisplay, getTranslationDisplay } from '../lib/contentDisplay';
@@ -11,24 +10,37 @@ import type { Oxford5000Scope } from '../types';
 export default function WordStudyScreen() {
   const words = useAppStore((s) => s.words);
   const settings = useAppStore((s) => s.settings);
+  const studySession = useAppStore((s) => s.studySession);
+  const ensureStudySession = useAppStore((s) => s.ensureStudySession);
+  const startNewStudySession = useAppStore((s) => s.startNewStudySession);
   const markKnown = useAppStore((s) => s.markKnown);
   const markDifficult = useAppStore((s) => s.markDifficult);
   const markReviewLater = useAppStore((s) => s.markReviewLater);
   const recordWordsStudied = useAppStore((s) => s.recordWordsStudied);
+  const advanceStudySession = useAppStore((s) => s.advanceStudySession);
   const [searchParams] = useSearchParams();
   const oxford5000Scope = (searchParams.get('scope') as Oxford5000Scope | null) ?? 'ALL';
 
-  const sessionWords = useMemo(() => {
-    const pool = getWordPoolForMode(words, settings.activeMode, oxford5000Scope);
-    return pool
-      .filter((w) => w.status === 'NEW')
-      .sort((a, b) => a.word.localeCompare(b.word))
-      .slice(0, settings.newWordsPerSession);
+  const [counts, setCounts] = useState({ known: 0, difficult: 0, later: 0 });
+
+  // Resume today's unfinished session for this mode/scope if one matches (same
+  // ordering settings, same day), otherwise generate a fresh one. The generated
+  // order is snapshotted into the session so refreshing the page or navigating
+  // away and back does not reshuffle or lose lesson progress.
+  useEffect(() => {
+    ensureStudySession(settings.activeMode, oxford5000Scope);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const [index, setIndex] = useState(0);
-  const [counts, setCounts] = useState({ known: 0, difficult: 0, later: 0 });
+  const belongsToThisScreen =
+    studySession && studySession.mode === settings.activeMode && studySession.oxford5000Scope === oxford5000Scope;
+  const sessionWords = belongsToThisScreen ? studySession!.wordIds.map((id) => words[id]).filter(Boolean) : [];
+  const index = belongsToThisScreen ? studySession!.currentIndex : 0;
+
+  if (!belongsToThisScreen) {
+    // session not created yet (effect hasn't run) — render nothing for one tick
+    return null;
+  }
 
   if (sessionWords.length === 0) {
     return (
@@ -54,9 +66,18 @@ export default function WordStudyScreen() {
         <p className="text-sm text-[var(--color-text-muted)]">
           {t.study.sessionSummary(counts.known, counts.difficult, counts.later)}
         </p>
-        <Link to="/" className="mt-2 w-full">
-          <Button className="w-full">{t.study.backToHome}</Button>
-        </Link>
+        <div className="mt-2 flex w-full flex-col gap-3">
+          <Link to="/">
+            <Button className="w-full">{t.study.backToHome}</Button>
+          </Link>
+          <Button
+            variant="secondary"
+            className="w-full"
+            onClick={() => startNewStudySession(settings.activeMode, oxford5000Scope)}
+          >
+            {t.study.startNewSession}
+          </Button>
+        </div>
       </div>
     );
   }
@@ -77,7 +98,7 @@ export default function WordStudyScreen() {
       setCounts((c) => ({ ...c, later: c.later + 1 }));
     }
     recordWordsStudied(1);
-    setIndex((i) => i + 1);
+    advanceStudySession();
   }
 
   return (
@@ -88,6 +109,9 @@ export default function WordStudyScreen() {
           {t.study.progressOf(index + 1, sessionWords.length)}
         </span>
       </div>
+      <p className="-mt-3 mb-4 text-xs text-[var(--color-text-muted)]">
+        {t.reviewStrategyLabel[studySession!.reviewStrategy]}
+      </p>
 
       <Card key={word.id} className="animate-fade-in flex flex-col gap-5 p-6">
         <div className="flex items-start justify-between">

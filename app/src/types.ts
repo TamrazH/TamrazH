@@ -83,6 +83,14 @@ export const APP_MODES: AppMode[] = ['OXFORD_3000', 'OXFORD_5000', 'REVIEW_DUE',
 /** Within Oxford 5000 mode, whether a lesson draws from the complete list or just the extension. */
 export type Oxford5000Scope = 'ALL' | 'ADDITIONAL_ONLY';
 
+/** How a lesson's word order is generated. MIXED is the smart default; ALPHABETICAL is opt-in. */
+export type ReviewStrategy = 'MIXED' | 'REVIEW_FIRST' | 'NEW_FIRST' | 'DIFFICULT_FIRST' | 'ALPHABETICAL';
+
+export const REVIEW_STRATEGIES: ReviewStrategy[] = ['MIXED', 'REVIEW_FIRST', 'NEW_FIRST', 'DIFFICULT_FIRST', 'ALPHABETICAL'];
+
+export const SESSION_SIZES = [5, 10, 20, 30] as const;
+export type SessionSize = (typeof SESSION_SIZES)[number];
+
 export interface AppSettings {
   dailyWordTarget: number;
   newWordsPerSession: number;
@@ -91,6 +99,25 @@ export interface AppSettings {
   interfaceLanguage: 'az';
   theme: 'light' | 'dark' | 'system';
   activeMode: AppMode;
+  reviewStrategy: ReviewStrategy;
+  sessionSize: SessionSize;
+}
+
+/**
+ * A generated lesson word order, snapshotted at creation time so it survives refresh
+ * and so the user can resume an unfinished lesson instead of getting a new order every
+ * time. Only regenerated when the user explicitly starts a new session (or the day
+ * changes and the "for today" queue is naturally superseded).
+ */
+export interface StudySession {
+  sessionId: string;
+  mode: AppMode;
+  oxford5000Scope: Oxford5000Scope;
+  reviewStrategy: ReviewStrategy;
+  sessionSize: number;
+  wordIds: string[];
+  currentIndex: number;
+  createdDateKey: string; // YYYY-MM-DD, the deterministic-shuffle seed date
 }
 
 export interface DailyLogEntry {
@@ -113,4 +140,5 @@ export interface PersistedState {
   words: Record<string, VocabWord>;
   settings: AppSettings;
   progress: ProgressState;
+  studySession: StudySession | null;
 }

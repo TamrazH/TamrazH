@@ -45,6 +45,32 @@ function wordsById(list: VocabWord[]): Record<string, VocabWord> {
   return map;
 }
 
+/**
+ * Only these fields are per-user learning progress and should survive a dataset update.
+ * Everything else (word, translationAz, englishDefinition, exampleSentence, contentStatus,
+ * contentSource, etc.) must always come from the freshly-shipped dataset — otherwise a
+ * user's old cached save (from before content was enriched) would keep overwriting new
+ * content with its stale MISSING/null values forever.
+ */
+const PROGRESS_FIELDS = [
+  'status',
+  'repetitions',
+  'correctAnswers',
+  'incorrectAnswers',
+  'difficulty',
+  'confidenceScore',
+  'lastReviewedAt',
+  'nextReviewAt',
+] as const satisfies readonly (keyof VocabWord)[];
+
+function mergeProgressOnto(freshWord: VocabWord, persistedWord: VocabWord): VocabWord {
+  const merged = { ...freshWord };
+  for (const key of PROGRESS_FIELDS) {
+    (merged as Record<string, unknown>)[key] = persistedWord[key];
+  }
+  return merged;
+}
+
 /** Only safe to call once `fetchVocabulary` has resolved at least once (i.e. after hydrate()). */
 function buildDefaultWords(): Record<string, VocabWord> {
   return wordsById(cachedVocabulary ?? []);
@@ -133,11 +159,12 @@ export const useAppStore = create<AppState>((set) => ({
     const defaults = wordsById(vocabulary);
     const persisted = await loadState();
     if (persisted && persisted.version === STATE_VERSION) {
-      // merge persisted word progress onto the canonical (static) word list so that
-      // any dataset corrections/additions on our side don't get shadowed by stale saves.
+      // carry over only progress fields onto the canonical (static) word list so that
+      // dataset content updates (new translations/definitions/examples) on our side
+      // are never shadowed by a stale saved copy of the old content.
       const merged: Record<string, VocabWord> = { ...defaults };
       for (const id of Object.keys(persisted.words)) {
-        if (merged[id]) merged[id] = { ...merged[id], ...persisted.words[id] };
+        if (merged[id]) merged[id] = mergeProgressOnto(merged[id], persisted.words[id]);
       }
       set({
         words: merged,
@@ -234,7 +261,7 @@ export const useAppStore = create<AppState>((set) => ({
     const defaults = buildDefaultWords();
     const merged: Record<string, VocabWord> = { ...defaults };
     for (const id of Object.keys(imported.words || {})) {
-      if (merged[id]) merged[id] = { ...merged[id], ...imported.words[id] };
+      if (merged[id]) merged[id] = mergeProgressOnto(merged[id], imported.words[id]);
     }
     const next = {
       words: merged,

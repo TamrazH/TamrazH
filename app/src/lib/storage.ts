@@ -1,8 +1,12 @@
 import { get, set, del } from 'idb-keyval';
 import type { PersistedState } from '../types';
 
-const STORAGE_KEY = 'oxford-vocab-app-state';
-const LOCALSTORAGE_FALLBACK_KEY = 'oxford-vocab-app-state-fallback';
+// v2: dual-mode data model (Oxford 3000 / Oxford 5000 + content-source tracking).
+// Bumping the storage key discards any v1 saved state instead of migrating it —
+// the project is in its initial phase, so a clean slate was preferred over
+// carrying over field-renamed/reshaped progress data.
+const STORAGE_KEY = 'oxford-vocab-app-state-v2';
+const LOCALSTORAGE_FALLBACK_KEY = 'oxford-vocab-app-state-fallback-v2';
 
 /**
  * IndexedDB is the primary store (via idb-keyval); localStorage is a synchronous

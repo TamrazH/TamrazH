@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import type { WordStatus } from '../types';
+import type { ContentStatus, WordStatus } from '../types';
 import { t } from '../lib/i18n';
 
 export function Card({ children, className = '' }: { children: ReactNode; className?: string }) {
@@ -47,15 +47,29 @@ export function Button({
   );
 }
 
-export function DemoBadge() {
+const CONTENT_STATUS_COLORS: Record<ContentStatus, string> = {
+  VERIFIED: 'bg-[var(--color-success-soft)] text-[var(--color-success)]',
+  LICENSED: 'bg-[var(--color-success-soft)] text-[var(--color-success)]',
+  OWN_CONTENT: 'bg-[var(--color-info-soft)] text-[var(--color-info)]',
+  AI_DRAFT: 'bg-[var(--color-warning-soft)] text-[var(--color-warning)]',
+  MISSING: 'bg-[var(--color-surface-muted)] text-[var(--color-text-muted)]',
+};
+
+/** Shows the real provenance of a content field (AI_DRAFT/OWN_CONTENT/LICENSED/VERIFIED). */
+export function ContentStatusBadge({ status }: { status: ContentStatus }) {
+  if (status === 'MISSING') return null;
   return (
     <span
-      title={t.demoDataNotice}
-      className="inline-flex items-center rounded-full bg-[var(--color-warning-soft)] px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-[var(--color-warning)]"
+      className={`inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide ${CONTENT_STATUS_COLORS[status]}`}
     >
-      {t.demoDataBadge}
+      {t.contentStatus[status]}
     </span>
   );
+}
+
+/** The explicit "not added yet" label a missing content field must show instead of fabricated text. */
+export function MissingContentLabel({ text }: { text: string }) {
+  return <p className="text-sm italic text-[var(--color-text-muted)]">{text}</p>;
 }
 
 const STATUS_COLORS: Record<WordStatus, string> = {

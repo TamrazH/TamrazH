@@ -4,9 +4,35 @@
  */
 export const t = {
   appName: 'Oxford Söz Ehtiyatı',
-  demoDataBadge: 'demo',
-  demoDataNotice: 'Bu, hələ təsdiqlənməmiş nümunə (demo) mətndir, rəsmi Oxford tərcüməsi/tərifi deyil.',
-  notProvided: 'mənbədə yoxdur',
+  missingContent: 'Bu məlumat hələ əlavə edilməyib',
+
+  modes: {
+    label: 'Rejim',
+    OXFORD_3000: 'Oxford 3000',
+    OXFORD_5000: 'Oxford 5000',
+    REVIEW_DUE: 'Təkrar',
+    DIFFICULT: 'Çətin sözlər',
+    oxford3000Desc: 'Əsas 3000 söz (A1–B2)',
+    oxford5000Desc: 'Tam 5000 söz (əsas + genişləndirilmiş)',
+    reviewDueDesc: 'Vaxtı çatan sözləri təkrarla',
+    difficultDesc: 'Çətin qeyd olunan sözlər',
+    activeModeLabel: 'Aktiv rejim',
+    foundation: 'Əsas (Oxford 3000)',
+    additional: 'Əlavə sözlər',
+    complete: 'Tam siyahı',
+    startFromAll: 'Bütün 5000 sözdən',
+    startFromAdditionalOnly: 'Yalnız əlavə sözlərdən',
+    chooseLessonScope: 'Dərs üçün söz mənbəyini seçin',
+  },
+
+  contentStatus: {
+    label: 'Məzmun statusu',
+    VERIFIED: 'Təsdiqlənmiş',
+    LICENSED: 'Lisenziyalı',
+    OWN_CONTENT: 'Öz məzmunu',
+    AI_DRAFT: 'AI qaralaması',
+    MISSING: 'Əlavə edilməyib',
+  },
 
   nav: {
     home: 'Əsas',
@@ -30,6 +56,9 @@ export const t = {
     difficultWords: 'Çətin sözlər',
     noWordsDue: 'Hazırda təkrar üçün söz yoxdur',
     allCaughtUp: 'Əla! Bugünkü işiniz tamamlanıb.',
+    dueWords: 'Təkrarı vaxtı çatan sözlər',
+    oxford3000Dashboard: 'Oxford 3000 statistikası',
+    oxford5000Dashboard: 'Oxford 5000 statistikası',
   },
 
   study: {
@@ -82,7 +111,8 @@ export const t = {
     finished: 'Məşq tamamlandı',
     score: (correct: number, total: number) => `Nəticə: ${correct} / ${total}`,
     backToHub: 'Məşq siyahısına qayıt',
-    notEnoughWords: 'Bu rejim üçün kifayət qədər söz yoxdur (ən azı 4 söz lazımdır).',
+    notEnoughWords:
+      'Bu rejim üçün kifayət qədər söz yoxdur: ən azı 4 sözün tərcüməsi, tərifi və nümunə cümləsi olmalıdır. Məzmun hələ əlavə edilməyib.',
   },
 
   review: {
@@ -118,6 +148,7 @@ export const t = {
   wordDetail: {
     title: 'Söz təfərrüatı',
     definition: 'Tərif',
+    pronunciationLabel: 'Tələffüz (fonetik)',
     statistics: 'Statistika',
     repetitions: 'Təkrarlar',
     correct: 'Doğru',
@@ -173,6 +204,30 @@ export const t = {
     importError: 'Fayl oxuna bilmədi. Zəhmət olmasa düzgün JSON faylı seçin.',
     algorithmNote:
       'Təkrar araları sadə tətbiq qaydasıdır (Yenidən → bu gün, Çətin → sabah, Yaxşı → 3 gün, Asan → 7 gün) — elmi/tibbi baxımdan optimallaşdırılmış alqoritm olduğu iddia edilmir.',
+  },
+
+  admin: {
+    title: 'Söz siyahısını idxal et (admin)',
+    subtitle: 'CSV və ya JSON faylından yeni söz məzmunu idxal edin. Mövcud irəliləyiş dəyişməz qalır.',
+    chooseFile: 'Fayl seç (CSV/JSON)',
+    validating: 'Yoxlanılır…',
+    reportTitle: 'Yoxlama hesabatı',
+    rowsTotal: (n: number) => `Ümumi sətir: ${n}`,
+    rowsValid: (n: number) => `Doğru sətir: ${n}`,
+    rowsInvalid: (n: number) => `Xətalı sətir: ${n}`,
+    duplicateWords: (n: number) => `Təkrarlanan söz: ${n}`,
+    duplicateWordPos: (n: number) => `Təkrarlanan söz+nitq hissəsi: ${n}`,
+    missingWord: (n: number) => `Söz sahəsi boş: ${n}`,
+    invalidCefr: (n: number) => `Yanlış CEFR dəyəri: ${n}`,
+    invalidPos: (n: number) => `Yanlış nitq hissəsi: ${n}`,
+    emptyTranslation: (n: number) => `Boş tərcümə: ${n}`,
+    emptyDefinition: (n: number) => `Boş tərif: ${n}`,
+    emptyExample: (n: number) => `Boş nümunə cümlə: ${n}`,
+    confirmImport: 'Doğru sətirləri idxal et',
+    importSuccess: (n: number) => `${n} söz uğurla yeniləndi.`,
+    noValidRows: 'İdxal üçün doğru sətir yoxdur.',
+    matchedExisting: (n: number) => `Mövcud sözlə uyğunlaşdı: ${n}`,
+    notMatched: (n: number) => `Mövcud lüğətdə tapılmadı (keçiləcək): ${n}`,
   },
 
   common: {

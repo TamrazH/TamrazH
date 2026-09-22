@@ -1,10 +1,11 @@
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useAppStore } from '../store/useAppStore';
 import { t } from '../lib/i18n';
-import { Button, Card, CefrBadge, DemoBadge, StatusBadge } from '../components/ui';
-import { getDisplayDefinition, getDisplayExample, getDisplayTranslation } from '../lib/demoContent';
+import { Button, Card, CefrBadge, ContentStatusBadge, StatusBadge } from '../components/ui';
+import { getDefinitionDisplay, getExampleDisplay, getTranslationDisplay } from '../lib/contentDisplay';
 import { formatDateTime } from '../lib/date';
 import { speakWord } from '../lib/speech';
+import type { ContentStatus } from '../types';
 
 export default function WordDetailScreen() {
   const { id } = useParams<{ id: string }>();
@@ -27,9 +28,9 @@ export default function WordDetailScreen() {
     );
   }
 
-  const translation = getDisplayTranslation(word);
-  const definition = getDisplayDefinition(word);
-  const example = getDisplayExample(word);
+  const translation = getTranslationDisplay(word);
+  const definition = getDefinitionDisplay(word);
+  const example = getExampleDisplay(word);
 
   return (
     <div className="flex flex-col gap-4 px-5 pb-6 pt-6">
@@ -59,9 +60,21 @@ export default function WordDetailScreen() {
           {t.study.pronounce}
         </button>
 
-        <DetailField label={t.study.translation} value={translation.text} isDemo={translation.isDemo} />
-        <DetailField label={t.wordDetail.definition} value={definition.text} isDemo={definition.isDemo} />
-        <DetailField label={t.study.example} value={example.text} isDemo={example.isDemo} italic />
+        <DetailField
+          label={t.wordDetail.pronunciationLabel}
+          value={word.pronunciation ?? t.missingContent}
+          status={word.pronunciation ? word.contentStatus : 'MISSING'}
+          isMissing={!word.pronunciation}
+        />
+        <DetailField label={t.study.translation} value={translation.text} status={translation.status} isMissing={translation.isMissing} />
+        <DetailField label={t.wordDetail.definition} value={definition.text} status={definition.status} isMissing={definition.isMissing} />
+        <DetailField
+          label={t.study.example}
+          value={example.text}
+          status={example.status}
+          isMissing={example.isMissing}
+          italic
+        />
 
         {word.allSenses && word.allSenses.length > 1 && (
           <div>
@@ -80,6 +93,20 @@ export default function WordDetailScreen() {
             </div>
           </div>
         )}
+      </Card>
+
+      <Card className="p-4">
+        <div className="flex items-center justify-between">
+          <p className="text-xs font-semibold uppercase tracking-wide text-[var(--color-text-muted)]">
+            {t.contentStatus.label}
+          </p>
+          {word.contentStatus === 'MISSING' ? (
+            <span className="text-xs text-[var(--color-text-muted)]">{t.contentStatus.MISSING}</span>
+          ) : (
+            <ContentStatusBadge status={word.contentStatus} />
+          )}
+        </div>
+        {word.contentSource && <p className="mt-1 text-xs text-[var(--color-text-muted)]">{word.contentSource}</p>}
       </Card>
 
       <Card className="p-6">
@@ -116,14 +143,32 @@ export default function WordDetailScreen() {
   );
 }
 
-function DetailField({ label, value, isDemo, italic }: { label: string; value: string; isDemo: boolean; italic?: boolean }) {
+function DetailField({
+  label,
+  value,
+  status,
+  isMissing,
+  italic,
+}: {
+  label: string;
+  value: string;
+  status: ContentStatus;
+  isMissing: boolean;
+  italic?: boolean;
+}) {
   return (
     <div>
       <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--color-text-muted)]">
         {label}
-        {isDemo && <DemoBadge />}
+        <ContentStatusBadge status={status} />
       </div>
-      <p className={`mt-1 text-base text-[var(--color-text)] ${italic ? 'italic' : ''}`}>{value}</p>
+      <p
+        className={`mt-1 text-base ${italic ? 'italic' : ''} ${
+          isMissing ? 'italic text-[var(--color-text-muted)]' : 'text-[var(--color-text)]'
+        }`}
+      >
+        {value}
+      </p>
     </div>
   );
 }

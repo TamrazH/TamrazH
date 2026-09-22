@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { useAppStore } from '../store/useAppStore';
 import { getDueWords } from '../lib/selectors';
 import { t } from '../lib/i18n';
-import { Button, CefrBadge, DemoBadge, ScreenHeader } from '../components/ui';
-import { getDisplayExample, getDisplayTranslation } from '../lib/demoContent';
+import { Button, CefrBadge, ContentStatusBadge, ScreenHeader } from '../components/ui';
+import { getExampleDisplay, getTranslationDisplay } from '../lib/contentDisplay';
 import { speakWord } from '../lib/speech';
 import type { ReviewGrade } from '../types';
 
@@ -54,8 +54,8 @@ export default function FlashcardScreen() {
   }
 
   const word = sessionWords[index];
-  const translation = getDisplayTranslation(word);
-  const example = getDisplayExample(word);
+  const translation = getTranslationDisplay(word);
+  const example = getExampleDisplay(word);
 
   function grade(g: ReviewGrade) {
     applyGrade(word.id, g);
@@ -94,14 +94,14 @@ export default function FlashcardScreen() {
             <div>
               <div className="flex items-center gap-2 text-xs font-semibold uppercase text-[var(--color-text-muted)]">
                 {t.study.translation}
-                {translation.isDemo && <DemoBadge />}
+                <ContentStatusBadge status={translation.status} />
               </div>
               <p className="text-base">{translation.text}</p>
             </div>
             <div>
               <div className="flex items-center gap-2 text-xs font-semibold uppercase text-[var(--color-text-muted)]">
                 {t.study.example}
-                {example.isDemo && <DemoBadge />}
+                <ContentStatusBadge status={example.status} />
               </div>
               <p className="text-base italic">{example.text}</p>
             </div>

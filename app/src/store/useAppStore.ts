@@ -3,8 +3,9 @@ import { loadState, saveState, clearState } from '../lib/storage';
 import { todayKey, daysBetween } from '../lib/date';
 import type { AppSettings, PersistedState, ProgressState, ReviewGrade, VocabWord } from '../types';
 import { applyReview, markDifficult as srsMarkDifficult, markKnown as srsMarkKnown, markReviewLater as srsMarkReviewLater } from '../lib/srs';
+import { applyImportRows, type ValidatedRow } from '../lib/importValidation';
 
-const STATE_VERSION = 1;
+const STATE_VERSION = 2;
 
 export const DEFAULT_SETTINGS: AppSettings = {
   dailyWordTarget: 20,
@@ -13,6 +14,7 @@ export const DEFAULT_SETTINGS: AppSettings = {
   pronunciationAccent: 'american',
   interfaceLanguage: 'az',
   theme: 'system',
+  activeMode: 'OXFORD_3000',
 };
 
 const DEFAULT_PROGRESS: ProgressState = {
@@ -71,6 +73,7 @@ interface AppState {
   updateSettings: (partial: Partial<AppSettings>) => void;
   resetProgress: () => Promise<void>;
   importState: (imported: PersistedState) => void;
+  applyContentImport: (validatedRows: ValidatedRow[]) => void;
 }
 
 function persistedSnapshot(state: AppState): PersistedState {
@@ -240,5 +243,14 @@ export const useAppStore = create<AppState>((set) => ({
     };
     set(next);
     schedulePersist({ version: STATE_VERSION, ...next });
+  },
+
+  applyContentImport: (validatedRows) => {
+    set((state) => {
+      const words = applyImportRows(state.words, validatedRows);
+      const next = { ...state, words };
+      schedulePersist(persistedSnapshot(next));
+      return next;
+    });
   },
 }));

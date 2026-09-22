@@ -1,11 +1,12 @@
 import { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { useAppStore } from '../store/useAppStore';
-import { getNewWords } from '../lib/selectors';
+import { getWordPoolForMode } from '../lib/selectors';
 import { t } from '../lib/i18n';
-import { Button, Card, CefrBadge, DemoBadge, ScreenHeader } from '../components/ui';
-import { getDisplayExample, getDisplayTranslation } from '../lib/demoContent';
+import { Button, Card, CefrBadge, ContentStatusBadge, ScreenHeader } from '../components/ui';
+import { getExampleDisplay, getTranslationDisplay } from '../lib/contentDisplay';
 import { speakWord } from '../lib/speech';
+import type { Oxford5000Scope } from '../types';
 
 export default function WordStudyScreen() {
   const words = useAppStore((s) => s.words);
@@ -14,9 +15,13 @@ export default function WordStudyScreen() {
   const markDifficult = useAppStore((s) => s.markDifficult);
   const markReviewLater = useAppStore((s) => s.markReviewLater);
   const recordWordsStudied = useAppStore((s) => s.recordWordsStudied);
+  const [searchParams] = useSearchParams();
+  const oxford5000Scope = (searchParams.get('scope') as Oxford5000Scope | null) ?? 'ALL';
 
   const sessionWords = useMemo(() => {
-    return getNewWords(words)
+    const pool = getWordPoolForMode(words, settings.activeMode, oxford5000Scope);
+    return pool
+      .filter((w) => w.status === 'NEW')
       .sort((a, b) => a.word.localeCompare(b.word))
       .slice(0, settings.newWordsPerSession);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -57,8 +62,8 @@ export default function WordStudyScreen() {
   }
 
   const word = sessionWords[index];
-  const translation = getDisplayTranslation(word);
-  const example = getDisplayExample(word);
+  const translation = getTranslationDisplay(word);
+  const example = getExampleDisplay(word);
 
   function advance(kind: 'known' | 'difficult' | 'later') {
     if (kind === 'known') {
@@ -108,17 +113,21 @@ export default function WordStudyScreen() {
         <div>
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--color-text-muted)]">
             {t.study.translation}
-            {translation.isDemo && <DemoBadge />}
+            <ContentStatusBadge status={translation.status} />
           </div>
-          <p className="mt-1 text-base text-[var(--color-text)]">{translation.text}</p>
+          <p className={`mt-1 text-base ${translation.isMissing ? 'italic text-[var(--color-text-muted)]' : 'text-[var(--color-text)]'}`}>
+            {translation.text}
+          </p>
         </div>
 
         <div>
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--color-text-muted)]">
             {t.study.example}
-            {example.isDemo && <DemoBadge />}
+            <ContentStatusBadge status={example.status} />
           </div>
-          <p className="mt-1 text-base italic text-[var(--color-text)]">{example.text}</p>
+          <p className={`mt-1 text-base italic ${example.isMissing ? 'text-[var(--color-text-muted)]' : 'text-[var(--color-text)]'}`}>
+            {example.text}
+          </p>
         </div>
       </Card>
 

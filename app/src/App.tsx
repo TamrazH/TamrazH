@@ -15,6 +15,7 @@ import WordListScreen from './screens/WordListScreen';
 import WordDetailScreen from './screens/WordDetailScreen';
 import ProgressScreen from './screens/ProgressScreen';
 import SettingsScreen from './screens/SettingsScreen';
+import AdminImportScreen from './screens/AdminImportScreen';
 
 function AppShell() {
   useTheme();
@@ -35,6 +36,7 @@ function AppShell() {
           <Route path="/words/:id" element={<WordDetailScreen />} />
           <Route path="/progress" element={<ProgressScreen />} />
           <Route path="/settings" element={<SettingsScreen />} />
+          <Route path="/settings/import-content" element={<AdminImportScreen />} />
         </Routes>
       </main>
       <BottomNav />

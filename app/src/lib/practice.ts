@@ -1,5 +1,5 @@
-import type { VocabWord } from '../types';
-import { getDisplayDefinition, getDisplayExampleBlanked, getPracticeMeaning, pickRandom } from './demoContent';
+import type { ContentStatus, VocabWord } from '../types';
+import { getExampleDisplayBlanked, hasUsableContent, pickRandom } from './contentDisplay';
 
 export type PracticeMode = 'en-az' | 'az-en' | 'choice' | 'spelling' | 'sentence';
 
@@ -10,17 +10,22 @@ export interface PracticeQuestion {
   kind: 'choice' | 'input';
   promptLabel: string;
   promptText: string;
-  promptIsDemo: boolean;
+  promptContentStatus: ContentStatus;
   options?: string[];
   correctAnswer: string;
 }
 
 const MIN_POOL_SIZE = 4;
 
+/**
+ * Practice modes only draw on words that actually have real content (translation,
+ * definition, example) — never fabricated placeholders. Until a word is enriched
+ * (AI_DRAFT or better), it simply isn't eligible for practice.
+ */
 export function buildPracticePool(words: Record<string, VocabWord>): VocabWord[] {
-  const all = Object.values(words);
-  const touched = all.filter((w) => w.status !== 'NEW');
-  return touched.length >= MIN_POOL_SIZE ? touched : all;
+  const withContent = Object.values(words).filter(hasUsableContent);
+  const touched = withContent.filter((w) => w.status !== 'NEW');
+  return touched.length >= MIN_POOL_SIZE ? touched : withContent;
 }
 
 export function buildQuestions(mode: PracticeMode, words: Record<string, VocabWord>, count: number): PracticeQuestion[] {
@@ -30,66 +35,66 @@ export function buildQuestions(mode: PracticeMode, words: Record<string, VocabWo
   const chosen = pickRandom(pool, Math.min(count, pool.length));
 
   return chosen.map((word) => {
+    // pool guarantees these are non-null (hasUsableContent)
+    const translation = word.translationAz as string;
+    const definition = word.englishDefinition as string;
+
     switch (mode) {
       case 'en-az': {
-        const meaning = getPracticeMeaning(word);
-        const distractors = pickRandom(pool, 3, word).map((w) => getPracticeMeaning(w).text);
+        const distractors = pickRandom(pool, 3, word).map((w) => w.translationAz as string);
         return {
           word,
           kind: 'choice',
           promptLabel: 'en-az',
           promptText: word.word,
-          promptIsDemo: meaning.isDemo,
-          options: shuffle([meaning.text, ...distractors]),
-          correctAnswer: meaning.text,
+          promptContentStatus: word.contentStatus,
+          options: shuffle([translation, ...distractors]),
+          correctAnswer: translation,
         };
       }
       case 'az-en': {
-        const meaning = getPracticeMeaning(word);
         const distractors = pickRandom(pool, 3, word).map((w) => w.word);
         return {
           word,
           kind: 'choice',
           promptLabel: 'az-en',
-          promptText: meaning.text,
-          promptIsDemo: meaning.isDemo,
+          promptText: translation,
+          promptContentStatus: word.contentStatus,
           options: shuffle([word.word, ...distractors]),
           correctAnswer: word.word,
         };
       }
       case 'choice': {
-        const definition = getDisplayDefinition(word);
         const distractors = pickRandom(pool, 3, word).map((w) => w.word);
         return {
           word,
           kind: 'choice',
           promptLabel: 'choice',
-          promptText: definition.text,
-          promptIsDemo: definition.isDemo,
+          promptText: definition,
+          promptContentStatus: word.contentStatus,
           options: shuffle([word.word, ...distractors]),
           correctAnswer: word.word,
         };
       }
       case 'spelling': {
-        const meaning = getPracticeMeaning(word);
         return {
           word,
           kind: 'input',
           promptLabel: 'spelling',
-          promptText: meaning.text,
-          promptIsDemo: meaning.isDemo,
+          promptText: translation,
+          promptContentStatus: word.contentStatus,
           correctAnswer: word.word,
         };
       }
       case 'sentence': {
-        const blanked = getDisplayExampleBlanked(word);
+        const blanked = getExampleDisplayBlanked(word);
         const distractors = pickRandom(pool, 3, word).map((w) => w.word);
         return {
           word,
           kind: 'choice',
           promptLabel: 'sentence',
           promptText: blanked.text,
-          promptIsDemo: blanked.isDemo,
+          promptContentStatus: blanked.status,
           options: shuffle([word.word, ...distractors]),
           correctAnswer: word.word,
         };

@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useAppStore } from '../store/useAppStore';
 import { t } from '../lib/i18n';
 import { Button, Card, Modal, ScreenHeader } from '../components/ui';
@@ -18,7 +19,7 @@ export default function SettingsScreen() {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   function currentSnapshot(): PersistedState {
-    return { version: 1, words, settings, progress };
+    return { version: 2, words, settings, progress };
   }
 
   function handleImportFile(file: File) {
@@ -136,6 +137,14 @@ export default function SettingsScreen() {
             {t.settings.resetProgress}
           </Button>
         </div>
+      </Section>
+
+      <Section title={t.admin.title}>
+        <Link to="/settings/import-content">
+          <Button variant="secondary" className="w-full">
+            {t.admin.chooseFile}
+          </Button>
+        </Link>
       </Section>
 
       {toast && (

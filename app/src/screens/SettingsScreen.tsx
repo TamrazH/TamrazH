@@ -6,6 +6,7 @@ import { Button, Card, Modal, ScreenHeader } from '../components/ui';
 import { exportAsCsv, exportAsJson, parseImportedJson } from '../lib/exportImport';
 import type { PersistedState, ReviewStrategy } from '../types';
 import { REVIEW_STRATEGIES, SESSION_SIZES } from '../types';
+import { TranslationSwitch } from './WelcomeScreen';
 
 export default function SettingsScreen() {
   const settings = useAppStore((s) => s.settings);
@@ -119,6 +120,16 @@ export default function SettingsScreen() {
             {t.settings.shuffleNow}
           </Button>
         </div>
+      </Section>
+
+      <Section title={t.settings.translationVisibility}>
+        <div className="flex items-center justify-between gap-3">
+          <span className="text-sm font-medium text-[var(--color-text)]">
+            {settings.showTranslation ? t.welcome.showTranslation : t.welcome.hideTranslation}
+          </span>
+          <TranslationSwitch checked={settings.showTranslation} onChange={(v) => updateSettings({ showTranslation: v })} />
+        </div>
+        <p className="mt-2 text-xs text-[var(--color-text-muted)]">{t.welcome.translationHelper}</p>
       </Section>
 
       <Section title={t.settings.pronunciationAccent}>

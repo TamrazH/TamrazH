@@ -1,4 +1,20 @@
-import { CEFR_LEVELS, CONTENT_STATUSES, type CefrLevel, type ContentStatus, type VocabWord } from '../types';
+import { CEFR_LEVELS, CONTENT_STATUSES, type CefrLevel, type ContentStatus, type DefinitionSource, type VocabWord } from '../types';
+
+/** Maps the general contentStatus onto the definition-specific source/status enum. */
+function definitionSourceForContentStatus(status: ContentStatus): DefinitionSource {
+  switch (status) {
+    case 'VERIFIED':
+      return 'OXFORD_LICENSED';
+    case 'LICENSED':
+      return 'APPROVED_DICTIONARY';
+    case 'OWN_CONTENT':
+      return 'OWN_CONTENT';
+    case 'AI_DRAFT':
+      return 'AI_GENERATED';
+    default:
+      return 'MISSING';
+  }
+}
 
 /** Known part-of-speech abbreviations used by the Oxford lists (mirrors the original extraction). */
 const KNOWN_POS_TOKENS = new Set([
@@ -274,6 +290,9 @@ export function applyImportRows(
       synonyms: v.row.synonyms ? v.row.synonyms.split(';').map((s) => s.trim()).filter(Boolean) : existing.synonyms,
       contentSource: v.row.contentSource || existing.contentSource,
       contentStatus: status,
+      ...(v.row.englishDefinition
+        ? { definitionSource: definitionSourceForContentStatus(status), definitionStatus: definitionSourceForContentStatus(status) }
+        : {}),
     };
   }
   return next;

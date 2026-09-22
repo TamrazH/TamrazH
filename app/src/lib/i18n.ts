@@ -50,6 +50,19 @@ export const t = {
     settings: 'Ayarlar',
   },
 
+  welcome: {
+    appTitle: 'Oxford Vocabulary',
+    subtitle: 'Oxford söz siyahıları ilə ingilis dilini öyrənin',
+    chooseMode: 'Rejim seçin',
+    translationLabel: 'Azərbaycan dilində tərcüməni göstər',
+    showTranslation: 'Tərcüməni göstər',
+    hideTranslation: 'Tərcüməni gizlət',
+    translationHelper:
+      'Tərcüməni gizlətmək sözün mənasını ingilis dilində anlamağı məşq etməyə kömək edir.',
+    dailyTarget: 'Gündəlik söz hədəfi',
+    startLesson: 'Dərsə başla',
+  },
+
   home: {
     title: 'Əsas səhifə',
     greeting: 'Salam!',
@@ -225,6 +238,7 @@ export const t = {
     sessionSize: 'Sessiya ölçüsü',
     shuffleNow: 'İndi qarışdır',
     shuffleNowSuccess: 'Növbəti dərs yeni sırayla yaradılacaq.',
+    translationVisibility: 'Tərcümə görünürlüyü',
   },
 
   admin: {

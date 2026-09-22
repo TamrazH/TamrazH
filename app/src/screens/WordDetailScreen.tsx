@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useAppStore } from '../store/useAppStore';
 import { t } from '../lib/i18n';
@@ -14,6 +15,8 @@ export default function WordDetailScreen() {
   const settings = useAppStore((s) => s.settings);
   const markKnown = useAppStore((s) => s.markKnown);
   const markDifficult = useAppStore((s) => s.markDifficult);
+  const [revealedTranslation, setRevealedTranslation] = useState(false);
+  const showTranslation = settings.showTranslation || revealedTranslation;
 
   const word = id ? words[id] : undefined;
 
@@ -66,7 +69,21 @@ export default function WordDetailScreen() {
           status={word.pronunciation ? word.contentStatus : 'MISSING'}
           isMissing={!word.pronunciation}
         />
-        <DetailField label={t.study.translation} value={translation.text} status={translation.status} isMissing={translation.isMissing} />
+        {showTranslation ? (
+          <DetailField label={t.study.translation} value={translation.text} status={translation.status} isMissing={translation.isMissing} />
+        ) : (
+          <div>
+            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--color-text-muted)]">
+              {t.study.translation}
+            </div>
+            <button
+              onClick={() => setRevealedTranslation(true)}
+              className="mt-1 text-sm font-medium text-[var(--color-accent)] underline"
+            >
+              {t.welcome.showTranslation}
+            </button>
+          </div>
+        )}
         <DetailField label={t.wordDetail.definition} value={definition.text} status={definition.status} isMissing={definition.isMissing} />
         <DetailField
           label={t.study.example}

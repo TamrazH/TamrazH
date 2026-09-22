@@ -3,7 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { useAppStore } from '../store/useAppStore';
 import { t } from '../lib/i18n';
 import { Button, Card, CefrBadge, ContentStatusBadge, ScreenHeader } from '../components/ui';
-import { getExampleDisplay, getTranslationDisplay } from '../lib/contentDisplay';
+import { getDefinitionDisplay, getExampleDisplay, getTranslationDisplay } from '../lib/contentDisplay';
 import { speakWord } from '../lib/speech';
 import type { Oxford5000Scope } from '../types';
 
@@ -22,6 +22,8 @@ export default function WordStudyScreen() {
   const oxford5000Scope = (searchParams.get('scope') as Oxford5000Scope | null) ?? 'ALL';
 
   const [counts, setCounts] = useState({ known: 0, difficult: 0, later: 0 });
+  const [revealedTranslation, setRevealedTranslation] = useState(false);
+  const showTranslation = settings.showTranslation || revealedTranslation;
 
   // Resume today's unfinished session for this mode/scope if one matches (same
   // ordering settings, same day), otherwise generate a fresh one. The generated
@@ -83,6 +85,7 @@ export default function WordStudyScreen() {
   }
 
   const word = sessionWords[index];
+  const definition = getDefinitionDisplay(word);
   const translation = getTranslationDisplay(word);
   const example = getExampleDisplay(word);
 
@@ -98,6 +101,7 @@ export default function WordStudyScreen() {
       setCounts((c) => ({ ...c, later: c.later + 1 }));
     }
     recordWordsStudied(1);
+    setRevealedTranslation(false);
     advanceStudySession();
   }
 
@@ -136,12 +140,31 @@ export default function WordStudyScreen() {
 
         <div>
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--color-text-muted)]">
+            {t.wordDetail.definition}
+            <ContentStatusBadge status={definition.status} />
+          </div>
+          <p className={`mt-1 text-base ${definition.isMissing ? 'italic text-[var(--color-text-muted)]' : 'text-[var(--color-text)]'}`}>
+            {definition.text}
+          </p>
+        </div>
+
+        <div>
+          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--color-text-muted)]">
             {t.study.translation}
             <ContentStatusBadge status={translation.status} />
           </div>
-          <p className={`mt-1 text-base ${translation.isMissing ? 'italic text-[var(--color-text-muted)]' : 'text-[var(--color-text)]'}`}>
-            {translation.text}
-          </p>
+          {showTranslation ? (
+            <p className={`mt-1 text-base ${translation.isMissing ? 'italic text-[var(--color-text-muted)]' : 'text-[var(--color-text)]'}`}>
+              {translation.text}
+            </p>
+          ) : (
+            <button
+              onClick={() => setRevealedTranslation(true)}
+              className="mt-1 text-sm font-medium text-[var(--color-accent)] underline"
+            >
+              {t.welcome.showTranslation}
+            </button>
+          )}
         </div>
 
         <div>

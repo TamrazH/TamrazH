@@ -18,6 +18,8 @@ export const DEFAULT_SETTINGS: AppSettings = {
   activeMode: 'OXFORD_3000',
   reviewStrategy: 'MIXED',
   sessionSize: 10,
+  showTranslation: true,
+  hasCompletedOnboarding: false,
 };
 
 const DEFAULT_PROGRESS: ProgressState = {

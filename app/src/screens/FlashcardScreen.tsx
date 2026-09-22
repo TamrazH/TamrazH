@@ -4,7 +4,7 @@ import { useAppStore } from '../store/useAppStore';
 import { getDueWords } from '../lib/selectors';
 import { t } from '../lib/i18n';
 import { Button, CefrBadge, ContentStatusBadge, ScreenHeader } from '../components/ui';
-import { getExampleDisplay, getTranslationDisplay } from '../lib/contentDisplay';
+import { getDefinitionDisplay, getExampleDisplay, getTranslationDisplay } from '../lib/contentDisplay';
 import { speakWord } from '../lib/speech';
 import type { ReviewGrade } from '../types';
 
@@ -21,6 +21,8 @@ export default function FlashcardScreen() {
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [gradeCounts, setGradeCounts] = useState<Record<ReviewGrade, number>>({ again: 0, hard: 0, good: 0, easy: 0 });
+  const [revealedTranslation, setRevealedTranslation] = useState(false);
+  const showTranslation = settings.showTranslation || revealedTranslation;
 
   if (sessionWords.length === 0) {
     return (
@@ -54,6 +56,7 @@ export default function FlashcardScreen() {
   }
 
   const word = sessionWords[index];
+  const definition = getDefinitionDisplay(word);
   const translation = getTranslationDisplay(word);
   const example = getExampleDisplay(word);
 
@@ -61,6 +64,7 @@ export default function FlashcardScreen() {
     applyGrade(word.id, g);
     setGradeCounts((c) => ({ ...c, [g]: c[g] + 1 }));
     setFlipped(false);
+    setRevealedTranslation(false);
     setIndex((i) => i + 1);
   }
 
@@ -93,10 +97,29 @@ export default function FlashcardScreen() {
             </div>
             <div>
               <div className="flex items-center gap-2 text-xs font-semibold uppercase text-[var(--color-text-muted)]">
+                {t.wordDetail.definition}
+                <ContentStatusBadge status={definition.status} />
+              </div>
+              <p className="text-base">{definition.text}</p>
+            </div>
+            <div>
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase text-[var(--color-text-muted)]">
                 {t.study.translation}
                 <ContentStatusBadge status={translation.status} />
               </div>
-              <p className="text-base">{translation.text}</p>
+              {showTranslation ? (
+                <p className="text-base">{translation.text}</p>
+              ) : (
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setRevealedTranslation(true);
+                  }}
+                  className="text-sm font-medium text-[var(--color-accent)] underline"
+                >
+                  {t.welcome.showTranslation}
+                </button>
+              )}
             </div>
             <div>
               <div className="flex items-center gap-2 text-xs font-semibold uppercase text-[var(--color-text-muted)]">

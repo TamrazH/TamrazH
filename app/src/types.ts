@@ -21,6 +21,25 @@ export type ContentStatus = 'VERIFIED' | 'LICENSED' | 'OWN_CONTENT' | 'AI_DRAFT'
 
 export const CONTENT_STATUSES: ContentStatus[] = ['VERIFIED', 'LICENSED', 'OWN_CONTENT', 'AI_DRAFT', 'MISSING'];
 
+/**
+ * Provenance specifically for `englishDefinition`, tracked separately from the
+ * general `contentStatus` (which historically covered translation/definition/
+ * example together as one unit). `definitionSource` records where the text came
+ * from; `definitionStatus` records its current review state. Today the two are
+ * set together (nothing here has been through a separate human-review pass yet),
+ * but they are kept as distinct fields so a future review workflow can promote a
+ * definition's status without needing to fabricate a new "source".
+ */
+export type DefinitionSource = 'OXFORD_LICENSED' | 'APPROVED_DICTIONARY' | 'OWN_CONTENT' | 'AI_GENERATED' | 'MISSING';
+
+export const DEFINITION_SOURCES: DefinitionSource[] = [
+  'OXFORD_LICENSED',
+  'APPROVED_DICTIONARY',
+  'OWN_CONTENT',
+  'AI_GENERATED',
+  'MISSING',
+];
+
 /** A single part-of-speech + level pairing, for words with more than one dictionary sense. */
 export interface WordSense {
   partOfSpeech: string;
@@ -57,6 +76,10 @@ export interface VocabWord {
   /** Free-text provenance note (e.g. an API name, "project owner", "AI (Claude)"). */
   contentSource: string | null;
   contentStatus: ContentStatus;
+
+  /** Provenance specifically for englishDefinition — see DefinitionSource doc comment. */
+  definitionSource: DefinitionSource;
+  definitionStatus: DefinitionSource;
 
   status: WordStatus;
   repetitions: number;
@@ -101,6 +124,10 @@ export interface AppSettings {
   activeMode: AppMode;
   reviewStrategy: ReviewStrategy;
   sessionSize: SessionSize;
+  /** Global Azerbaijani-translation visibility, set on the entry screen and changeable in Settings. */
+  showTranslation: boolean;
+  /** Whether the one-time welcome/setup screen has been completed. */
+  hasCompletedOnboarding: boolean;
 }
 
 /**

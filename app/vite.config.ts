@@ -31,6 +31,10 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,svg,png,ico}'],
         globIgnores: ['data/**'],
         navigateFallback: '/index.html',
+        // Removes stale precache entries from prior SW versions on activation.
+        // This only touches the Cache Storage API (app-shell assets) — it never
+        // touches IndexedDB or localStorage, so learning progress is unaffected.
+        cleanupOutdatedCaches: true,
         runtimeCaching: [
           {
             urlPattern: ({ request }) => request.destination === 'document',

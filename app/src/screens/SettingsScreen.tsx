@@ -209,6 +209,16 @@ export default function SettingsScreen() {
         </Link>
       </Section>
 
+      {import.meta.env.DEV && (
+        <Section title="Developer">
+          <Link to="/settings/diagnostics">
+            <Button variant="secondary" className="w-full">
+              Storage diagnostics
+            </Button>
+          </Link>
+        </Section>
+      )}
+
       {toast && (
         <div className="fixed bottom-20 left-1/2 z-50 w-[calc(100%-2.5rem)] max-w-[420px] -translate-x-1/2 rounded-xl bg-[var(--color-text)] px-4 py-3 text-center text-sm text-[var(--color-bg)] shadow-lg">
           {toast}

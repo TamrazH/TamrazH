@@ -17,6 +17,7 @@ import WordDetailScreen from './screens/WordDetailScreen';
 import ProgressScreen from './screens/ProgressScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import AdminImportScreen from './screens/AdminImportScreen';
+import StorageDiagnosticsScreen from './screens/StorageDiagnosticsScreen';
 
 function AppShell() {
   useTheme();
@@ -42,6 +43,7 @@ function AppShell() {
           <Route path="/progress" element={<ProgressScreen />} />
           <Route path="/settings" element={<SettingsScreen />} />
           <Route path="/settings/import-content" element={<AdminImportScreen />} />
+          {import.meta.env.DEV && <Route path="/settings/diagnostics" element={<StorageDiagnosticsScreen />} />}
         </Routes>
       </main>
       {showBottomNav && <BottomNav />}

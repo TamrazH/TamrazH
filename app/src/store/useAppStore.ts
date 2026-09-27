@@ -1,12 +1,12 @@
 import { create } from 'zustand';
-import { loadState, saveState, clearState } from '../lib/storage';
+import { loadState, saveState, clearState, backupState, recordMigrationStatus } from '../lib/storage';
 import { todayKey, daysBetween } from '../lib/date';
 import type { AppMode, AppSettings, Oxford5000Scope, PersistedState, ProgressState, ReviewGrade, StudySession, VocabWord } from '../types';
 import { applyReview, markDifficult as srsMarkDifficult, markKnown as srsMarkKnown, markReviewLater as srsMarkReviewLater } from '../lib/srs';
 import { applyImportRows, type ValidatedRow } from '../lib/importValidation';
 import { getStudyQueue } from '../lib/studyQueue';
 
-const STATE_VERSION = 2;
+export const STATE_VERSION = 2;
 
 export const DEFAULT_SETTINGS: AppSettings = {
   dailyWordTarget: 20,
@@ -71,7 +71,11 @@ const PROGRESS_FIELDS = [
 function mergeProgressOnto(freshWord: VocabWord, persistedWord: VocabWord): VocabWord {
   const merged = { ...freshWord };
   for (const key of PROGRESS_FIELDS) {
-    (merged as Record<string, unknown>)[key] = persistedWord[key];
+    const value = persistedWord[key];
+    // Skip fields absent on an older/partial persisted record instead of stomping
+    // the fresh default with `undefined` — this is what makes loading a record
+    // saved under a different schema version safe rather than destructive.
+    if (value !== undefined) (merged as Record<string, unknown>)[key] = value;
   }
   return merged;
 }
@@ -200,7 +204,17 @@ export const useAppStore = create<AppState>((set) => ({
     const vocabulary = await fetchVocabulary();
     const defaults = wordsById(vocabulary);
     const persisted = await loadState();
-    if (persisted && persisted.version === STATE_VERSION) {
+
+    // Any persisted record with a recognizable shape is loaded and merged — never
+    // discarded just because its `version` doesn't match the current schema. A
+    // version mismatch is treated as a migration (backed up first), not a wipe.
+    if (persisted && persisted.words && typeof persisted.words === 'object') {
+      const fromVersion = typeof persisted.version === 'number' ? persisted.version : 1;
+      const isMigration = fromVersion !== STATE_VERSION;
+      if (isMigration) {
+        await backupState(persisted, fromVersion);
+      }
+
       // carry over only progress fields onto the canonical (static) word list so that
       // dataset content updates (new translations/definitions/examples) on our side
       // are never shadowed by a stale saved copy of the old content.
@@ -208,13 +222,15 @@ export const useAppStore = create<AppState>((set) => ({
       for (const id of Object.keys(persisted.words)) {
         if (merged[id]) merged[id] = mergeProgressOnto(merged[id], persisted.words[id]);
       }
-      set({
-        words: merged,
-        settings: { ...DEFAULT_SETTINGS, ...persisted.settings },
-        progress: { ...DEFAULT_PROGRESS, ...persisted.progress },
-        studySession: persisted.studySession ?? null,
-        hydrated: true,
-      });
+      const settings = { ...DEFAULT_SETTINGS, ...persisted.settings };
+      const progress = { ...DEFAULT_PROGRESS, ...persisted.progress };
+      const studySession = persisted.studySession ?? null;
+      set({ words: merged, settings, progress, studySession, hydrated: true });
+
+      if (isMigration) {
+        await recordMigrationStatus({ fromVersion, toVersion: STATE_VERSION, migratedAt: new Date().toISOString() });
+        await saveState({ version: STATE_VERSION, words: merged, settings, progress, studySession });
+      }
     } else {
       set({ words: defaults, hydrated: true });
     }

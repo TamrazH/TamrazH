@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --nav-h: 60px;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  background: #f4f6fa;
+  color-scheme: light;
+}
+html.dark {
+  background: #0b1020;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+  background: #f4f6fa;
+  color: #0f172a;
+  overscroll-behavior-y: none;
+  -webkit-font-smoothing: antialiased;
+}
+html.dark body {
+  background: #0b1020;
+  color: #e5e7eb;
+}
+
+/* iOS Safari fokusda zoom etməsin: input-lar həmişə ≥16px */
+input, select, textarea {
+  font-size: 16px;
+}
+
+@layer components {
+  .page {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+    padding-bottom: calc(var(--nav-h) + var(--safe-bottom) + 28px);
+  }
+  .card {
+    @apply rounded-2xl bg-white p-4 shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-900 dark:ring-slate-800;
+  }
+  .btn {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl px-4 text-[16px] font-semibold transition active:scale-[0.98] disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-brand-500 text-white active:bg-brand-600;
+  }
+  .btn-secondary {
+    @apply btn bg-slate-100 text-slate-800 active:bg-slate-200 dark:bg-slate-800 dark:text-slate-100 dark:active:bg-slate-700;
+  }
+  .btn-danger {
+    @apply btn bg-rose-50 text-rose-700 active:bg-rose-100 dark:bg-rose-950/50 dark:text-rose-300;
+  }
+  .input {
+    @apply min-h-[48px] w-full rounded-xl border border-slate-300 bg-white px-3.5 text-[16px] text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500;
+  }
+  .input[aria-invalid="true"] {
+    @apply border-rose-500 ring-2 ring-rose-500/20;
+  }
+  .label {
+    @apply mb-1.5 block text-[13px] font-semibold text-slate-600 dark:text-slate-400;
+  }
+  .field-error {
+    @apply mt-1.5 text-[13px] font-medium text-rose-600 dark:text-rose-400;
+  }
+  .chip {
+    @apply inline-flex min-h-[44px] items-center rounded-full bg-slate-100 px-3.5 text-[14px] font-medium text-slate-700 dark:bg-slate-800 dark:text-slate-200;
+  }
+  .num {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Klaviatura açıqdırsa naviqasiya gizlənir (yer qazanmaq üçün) */
+body.kb-open .bottom-nav {
+  display: none;
+}
+body.kb-open .page {
+  padding-bottom: 40vh;
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(-8px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+.animate-toast { animation: toast-in 0.2s ease-out; }
+
+@keyframes sheet-up {
+  from { transform: translateY(24px); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+.animate-sheet { animation: sheet-up 0.22s ease-out; }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+.animate-fade { animation: fade-in 0.2s ease-out; }
+
+.skeleton {
+  @apply animate-pulse rounded-xl bg-slate-200 dark:bg-slate-800;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

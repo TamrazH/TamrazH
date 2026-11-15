@@ -5,7 +5,8 @@ import { getDueWords } from '../lib/selectors';
 import { t } from '../lib/i18n';
 import { Button, CefrBadge, ScreenHeader } from '../components/ui';
 import { getDefinitionDisplay, getExampleDisplay, getTranslationDisplay } from '../lib/contentDisplay';
-import { speakWord } from '../lib/speech';
+import { SpeakButton, Transcription, WordImage } from '../components/wordParts';
+import { spokenForm } from '../lib/contentDisplay';
 import type { ReviewGrade } from '../types';
 
 export default function FlashcardScreen() {
@@ -91,8 +92,13 @@ export default function FlashcardScreen() {
           </div>
 
           <div className="flip-card-face flip-card-face-back flex flex-col justify-center gap-4 overflow-y-auto p-6">
+            <WordImage word={word} className="aspect-[16/9] shrink-0" />
             <div>
-              <p className="text-xl font-bold">{word.word}</p>
+              <div className="flex items-center gap-1">
+                <p className="text-xl font-bold">{word.word}</p>
+                <SpeakButton text={spokenForm(word.word)} accent={settings.pronunciationAccent} label={t.study.pronounce} />
+              </div>
+              <Transcription word={word} accent={settings.pronunciationAccent} className="text-sm" />
               <p className="text-sm italic text-[var(--color-text-muted)]">{word.partOfSpeech}</p>
             </div>
             <div>
@@ -123,20 +129,13 @@ export default function FlashcardScreen() {
               <div className="flex items-center gap-2 text-xs font-semibold uppercase text-[var(--color-text-muted)]">
                 {t.study.example}
               </div>
-              <p className="text-base italic">{example.text}</p>
+              <div className="flex items-start gap-1">
+                <p className="flex-1 pt-2 text-base italic">{example.text}</p>
+                {!example.isMissing && (
+                  <SpeakButton text={example.text} accent={settings.pronunciationAccent} label={t.study.pronounceExample} rate={0.85} />
+                )}
+              </div>
             </div>
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                speakWord(word.word, settings.pronunciationAccent);
-              }}
-              className="flex min-h-11 w-fit items-center gap-2 rounded-full border border-[var(--color-border)] px-4 text-sm font-medium active:scale-95"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M4 9v6h4l5 5V4L8 9H4Z" strokeLinejoin="round" />
-              </svg>
-              {t.study.pronounce}
-            </button>
           </div>
         </div>
       </div>

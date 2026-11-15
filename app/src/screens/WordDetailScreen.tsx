@@ -5,7 +5,8 @@ import { t } from '../lib/i18n';
 import { Button, Card, CefrBadge, StatusBadge } from '../components/ui';
 import { getDefinitionDisplay, getExampleDisplay, getTranslationDisplay } from '../lib/contentDisplay';
 import { formatDateTime } from '../lib/date';
-import { speakWord } from '../lib/speech';
+import { SpeakButton, Transcription, WordImage } from '../components/wordParts';
+import { spokenForm } from '../lib/contentDisplay';
 
 export default function WordDetailScreen() {
   const { id } = useParams<{ id: string }>();
@@ -40,10 +41,15 @@ export default function WordDetailScreen() {
         ← {t.common.close}
       </button>
 
-      <Card className="flex flex-col gap-4 p-6">
-        <div className="flex items-start justify-between">
-          <div>
-            <p className="text-2xl font-bold">{word.word}</p>
+      <Card className="flex flex-col gap-4 p-5">
+        <WordImage word={word} className="aspect-[4/3]" />
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0">
+            <div className="flex items-center gap-1">
+              <p className="text-2xl font-bold">{word.word}</p>
+              <SpeakButton text={spokenForm(word.word)} accent={settings.pronunciationAccent} label={t.study.pronounce} />
+            </div>
+            <Transcription word={word} accent={settings.pronunciationAccent} />
             <p className="mt-1 text-sm italic text-[var(--color-text-muted)]">{word.partOfSpeech}</p>
           </div>
           <div className="flex flex-col items-end gap-2">
@@ -52,21 +58,6 @@ export default function WordDetailScreen() {
           </div>
         </div>
 
-        <button
-          onClick={() => speakWord(word.word, settings.pronunciationAccent)}
-          className="flex min-h-11 w-fit items-center gap-2 rounded-full border border-[var(--color-border)] px-4 text-sm font-medium active:scale-95"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M4 9v6h4l5 5V4L8 9H4Z" strokeLinejoin="round" />
-          </svg>
-          {t.study.pronounce}
-        </button>
-
-        <DetailField
-          label={t.wordDetail.pronunciationLabel}
-          value={word.pronunciation ?? t.missingContent}
-          isMissing={!word.pronunciation}
-        />
         {showTranslation ? (
           <DetailField label={t.study.translation} value={translation.text} isMissing={translation.isMissing} />
         ) : (
@@ -83,12 +74,14 @@ export default function WordDetailScreen() {
           </div>
         )}
         <DetailField label={t.wordDetail.definition} value={definition.text} isMissing={definition.isMissing} />
-        <DetailField
-          label={t.study.example}
-          value={example.text}
-          isMissing={example.isMissing}
-          italic
-        />
+        <div className="flex items-start gap-1">
+          <div className="flex-1">
+            <DetailField label={t.study.example} value={example.text} isMissing={example.isMissing} italic />
+          </div>
+          {!example.isMissing && (
+            <SpeakButton text={example.text} accent={settings.pronunciationAccent} label={t.study.pronounceExample} rate={0.85} />
+          )}
+        </div>
 
         {word.allSenses && word.allSenses.length > 1 && (
           <div>

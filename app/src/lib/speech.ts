@@ -1,16 +1,15 @@
 import type { PronunciationAccent } from '../types';
 
 /**
- * Uses the browser's built-in Web Speech API (SpeechSynthesis) for pronunciation.
- * No audio files are bundled or played — this avoids any copyrighted dictionary
- * audio while still giving the learner a spoken form of the word.
+ * Uses the browser's built-in Web Speech API (SpeechSynthesis) for pronunciation
+ * of words and example sentences. No audio files are bundled or played.
  */
-export function speakWord(word: string, accent: PronunciationAccent): void {
-  if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
+export function speak(text: string, accent: PronunciationAccent, rate = 0.9): void {
+  if (!isSpeechSupported()) return;
 
-  const utterance = new SpeechSynthesisUtterance(word);
+  const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = accent === 'british' ? 'en-GB' : 'en-US';
-  utterance.rate = 0.9;
+  utterance.rate = rate;
 
   const voices = window.speechSynthesis.getVoices();
   const preferred = voices.find((v) => v.lang === utterance.lang);

@@ -18,6 +18,11 @@ function field(value: string | null, status: ContentStatus): DisplayField {
   return { text: t.missingContent, status: 'MISSING', isMissing: true };
 }
 
+/** Headword without homograph numbers or sense labels ("can1" -> "can", "bank (money)" -> "bank"), for speech. */
+export function spokenForm(headword: string): string {
+  return headword.replace(/\s*\(.*\)$/, '').replace(/\d+$/, '').trim();
+}
+
 export function getTranslationDisplay(word: VocabWord): DisplayField {
   return field(word.translationAz, word.contentStatus);
 }

@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { loadState, saveState, clearState, backupState, recordMigrationStatus } from '../lib/storage';
 import { todayKey, daysBetween } from '../lib/date';
 import type { AppMode, AppSettings, Oxford5000Scope, PersistedState, ProgressState, ReviewGrade, StudySession, VocabWord } from '../types';
-import { applyReview, markDifficult as srsMarkDifficult, markKnown as srsMarkKnown, markReviewLater as srsMarkReviewLater } from '../lib/srs';
+import { applyReview, markDifficult as srsMarkDifficult, markKnown as srsMarkKnown } from '../lib/srs';
 import { applyImportRows, type ValidatedRow } from '../lib/importValidation';
 import { getStudyQueue } from '../lib/studyQueue';
 
@@ -104,7 +104,6 @@ interface AppState {
   applyGrade: (id: string, grade: ReviewGrade) => void;
   markKnown: (id: string) => void;
   markDifficult: (id: string) => void;
-  markReviewLater: (id: string) => void;
   recordWordsStudied: (count: number) => void;
   updateSettings: (partial: Partial<AppSettings>) => void;
   resetProgress: () => Promise<void>;
@@ -272,17 +271,6 @@ export const useAppStore = create<AppState>((set) => ({
       const updated = srsMarkDifficult(word);
       const progress = touchDailyLog(state.progress, { reviewsCompleted: 1, incorrectAnswers: 1 });
       const next = { ...state, words: { ...state.words, [id]: updated }, progress };
-      schedulePersist(persistedSnapshot(next));
-      return next;
-    });
-  },
-
-  markReviewLater: (id) => {
-    set((state) => {
-      const word = state.words[id];
-      if (!word) return state;
-      const updated = srsMarkReviewLater(word);
-      const next = { ...state, words: { ...state.words, [id]: updated } };
       schedulePersist(persistedSnapshot(next));
       return next;
     });

@@ -66,7 +66,12 @@ export interface VocabWord {
   isOxford3000: boolean;
   isAdditionalOxford5000: boolean;
 
+  /** IPA, American (CMUdict-derived). */
   pronunciation: string | null;
+  /** IPA, British. */
+  pronunciationUk: string | null;
+  /** Relative path to a bundled illustration; absent/null until images are fetched for this word. */
+  imageUrl?: string | null;
   translationAz: string | null;
   englishDefinition: string | null;
   exampleSentence: string | null;

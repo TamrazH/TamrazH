@@ -3,7 +3,7 @@
 // and records the path as `imageUrl` in public/data/vocabulary.json.
 //
 // Usage:
-//   PIXABAY_API_KEY=... node scripts/fetch-pixabay-images.mjs [--limit N] [--level A1] [--redo id1,id2] [--dry-run]
+//   PIXABAY_API_KEY=... node scripts/fetch-pixabay-images.mjs [--limit N] [--level A1] [--redo id1,id2 | --redo-file ids.txt] [--dry-run]
 //
 // Resumable: words that already have an image file are skipped, and the dataset is
 // saved every 25 words. A word only gets an image if a result's tags contain the
@@ -28,7 +28,8 @@ const flag = (name) => {
 const DRY = args.includes('--dry-run');
 const LIMIT = Number(flag('--limit') ?? Infinity);
 const LEVEL = flag('--level');
-const REDO = new Set((flag('--redo') ?? '').split(',').filter(Boolean));
+const redoArg = flag('--redo-file') ? fs.readFileSync(flag('--redo-file'), 'utf8') : (flag('--redo') ?? '');
+const REDO = new Set(redoArg.split(/[,\s]+/).filter(Boolean));
 const KEY = process.env.PIXABAY_API_KEY;
 if (!KEY && !DRY) {
   console.error('PIXABAY_API_KEY is not set');
@@ -133,20 +134,27 @@ for (const w of vocab) {
     continue;
   }
   try {
-    let hit;
+    let candidates = [];
     for (const q of queries) {
       const hits = await pixabaySearch(q);
       // a hand-written query is trusted as is; automatic ones must match the word's tags
-      hit = overrides[w.id] ? hits[0] : pickHit(hits, baseWord(w.word));
-      if (hit) break;
+      candidates = overrides[w.id] ? hits : hits.filter((h) => pickHit([h], baseWord(w.word)));
+      if (candidates.length) break;
     }
-    if (hit) {
-      w.imageUrl = await download(hit, w.id);
-      added++;
-    } else {
-      w.imageUrl = null;
-      noMatch.push(`${w.word} (${w.id}) — searched: ${queries.join(' | ')}`);
+    w.imageUrl = null;
+    let lastError;
+    // a result can be in a format sharp can't decode; fall back to the next one
+    for (const hit of candidates.slice(0, 3)) {
+      try {
+        w.imageUrl = await download(hit, w.id);
+        break;
+      } catch (e) {
+        lastError = e;
+      }
     }
+    if (w.imageUrl) added++;
+    else if (lastError) failed.push(`${w.id}: ${lastError.message}`);
+    else noMatch.push(`${w.word} (${w.id}) — searched: ${queries.join(' | ')}`);
   } catch (e) {
     failed.push(`${w.id}: ${e.message}`);
   }
@@ -156,7 +164,12 @@ for (const w of vocab) {
   }
 }
 
-if (!DRY) {
+if (!DRY && REDO.size) {
+  // a partial rerun only covers the listed words, so it leaves the full-run report as is
+  save();
+  console.log(`redo done: ${added} images added, ${noMatch.length} no match, ${failed.length} failed`);
+  for (const x of [...noMatch, ...failed]) console.log('  ' + x);
+} else if (!DRY) {
   save();
   const withImage = vocab.filter((w) => w.imageUrl).length;
   fs.writeFileSync(

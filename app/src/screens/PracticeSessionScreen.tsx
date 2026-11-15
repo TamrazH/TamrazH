@@ -4,6 +4,8 @@ import { useAppStore } from '../store/useAppStore';
 import { t } from '../lib/i18n';
 import { Button, Card, ScreenHeader } from '../components/ui';
 import { buildQuestions, type PracticeMode } from '../lib/practice';
+import { acceptedAnswers } from '../lib/contentDisplay';
+import { SpeakButton } from '../components/wordParts';
 
 const QUESTIONS_PER_SESSION = 10;
 
@@ -19,6 +21,7 @@ export default function PracticeSessionScreen() {
   const { mode } = useParams<{ mode: string }>();
   const words = useAppStore((s) => s.words);
   const applyGrade = useAppStore((s) => s.applyGrade);
+  const accent = useAppStore((s) => s.settings.pronunciationAccent);
 
   const validMode = (mode && MODE_TITLES[mode as PracticeMode] ? (mode as PracticeMode) : null) as PracticeMode | null;
 
@@ -73,7 +76,7 @@ export default function PracticeSessionScreen() {
 
   const q = questions[index];
   const isCorrectSelected = selected !== null && selected.trim().toLowerCase() === q.correctAnswer.trim().toLowerCase();
-  const isCorrectTyped = textAnswer.trim().toLowerCase() === q.correctAnswer.trim().toLowerCase();
+  const isCorrectTyped = acceptedAnswers(q.word.word).includes(textAnswer.trim().toLowerCase());
 
   function choose(option: string) {
     if (revealed) return;
@@ -87,7 +90,7 @@ export default function PracticeSessionScreen() {
   function submitTyped() {
     if (revealed) return;
     setRevealed(true);
-    const correct = textAnswer.trim().toLowerCase() === q.correctAnswer.trim().toLowerCase();
+    const correct = isCorrectTyped;
     if (correct) setScore((s) => s + 1);
     applyGrade(q.word.id, applyReviewGradeFor(correct));
   }
@@ -106,8 +109,9 @@ export default function PracticeSessionScreen() {
         <span className="text-sm font-medium text-[var(--color-text-muted)]">{t.practice.question(index + 1, questions.length)}</span>
       </div>
 
-      <Card className="p-6">
+      <Card className="flex items-start justify-between gap-2 p-6">
         <p className="mt-2 text-xl font-semibold text-[var(--color-text)]">{q.promptText}</p>
+        {validMode === 'spelling' && <SpeakButton text={q.correctAnswer} accent={accent} label={t.study.pronounce} />}
       </Card>
 
       {q.kind === 'choice' && q.options && (

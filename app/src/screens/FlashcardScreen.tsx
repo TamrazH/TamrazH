@@ -1,21 +1,29 @@
 import { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { useAppStore } from '../store/useAppStore';
-import { getDueWords } from '../lib/selectors';
+import { getDifficultWords, getDueWords } from '../lib/selectors';
+import { formatDateTime } from '../lib/date';
 import { t } from '../lib/i18n';
 import { Button, CefrBadge, ScreenHeader } from '../components/ui';
 import { getDefinitionDisplay, getExampleDisplay, getTranslationDisplay } from '../lib/contentDisplay';
-import { SpeakButton, Transcription, WordImage } from '../components/wordParts';
+import { Headword, SpeakButton, Transcription, WordImage } from '../components/wordParts';
 import { spokenForm } from '../lib/contentDisplay';
 import type { ReviewGrade } from '../types';
 
 export default function FlashcardScreen() {
+  const [searchParams] = useSearchParams();
+  const set = searchParams.get('set');
+  // keyed so switching between the due set and the difficult set starts a fresh session
+  return <FlashcardSession key={set ?? 'due'} difficultSet={set === 'difficult'} />;
+}
+
+function FlashcardSession({ difficultSet }: { difficultSet: boolean }) {
   const words = useAppStore((s) => s.words);
   const settings = useAppStore((s) => s.settings);
   const applyGrade = useAppStore((s) => s.applyGrade);
 
   const sessionWords = useMemo(() => {
-    return getDueWords(words).slice(0, settings.reviewLimit);
+    return (difficultSet ? getDifficultWords(words) : getDueWords(words)).slice(0, settings.reviewLimit);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -26,13 +34,24 @@ export default function FlashcardScreen() {
   const showTranslation = settings.showTranslation || revealedTranslation;
 
   if (sessionWords.length === 0) {
+    const difficultCount = getDifficultWords(words).length;
+    const nextDue = Object.values(words)
+      .filter((w) => w.status !== 'KNOWN' && w.nextReviewAt)
+      .map((w) => w.nextReviewAt as string)
+      .sort()[0];
     return (
       <div className="pb-4">
         <ScreenHeader title={t.flashcard.title} />
-        <p className="px-5 text-sm text-[var(--color-text-muted)]">{t.review.empty}</p>
-        <div className="mt-4 px-5">
+        <div className="flex flex-col gap-3 px-5">
+          <p className="text-sm text-[var(--color-text-muted)]">{t.review.empty}</p>
+          {nextDue && <p className="text-sm text-[var(--color-text-muted)]">{t.review.nextDue(formatDateTime(nextDue))}</p>}
+          {difficultCount > 0 && (
+            <Link to="/study/flashcards?set=difficult">
+              <Button className="w-full">{t.review.practiceDifficultNow(difficultCount)}</Button>
+            </Link>
+          )}
           <Link to="/">
-            <Button variant="secondary">{t.study.backToHome}</Button>
+            <Button variant="secondary" className="w-full">{t.study.backToHome}</Button>
           </Link>
         </div>
       </div>
@@ -72,7 +91,7 @@ export default function FlashcardScreen() {
   return (
     <div className="flex flex-col px-5 pb-4 pt-6">
       <div className="mb-4 flex items-center justify-between">
-        <h1 className="text-lg font-semibold">{t.flashcard.title}</h1>
+        <h1 className="text-lg font-semibold">{difficultSet ? t.review.difficultTitle : t.flashcard.title}</h1>
         <span className="text-sm font-medium text-[var(--color-text-muted)]">
           {t.study.progressOf(index + 1, sessionWords.length)}
         </span>
@@ -87,15 +106,15 @@ export default function FlashcardScreen() {
         >
           <div className="flip-card-face absolute inset-0 flex flex-col items-center justify-center gap-3 p-6 text-center">
             <CefrBadge level={word.cefrLevel} />
-            <p className="text-3xl font-bold">{word.word}</p>
+            <Headword word={word} className="text-3xl font-bold" />
             <p className="text-sm text-[var(--color-text-muted)]">{t.flashcard.tapToReveal}</p>
           </div>
 
-          <div className="flip-card-face flip-card-face-back flex flex-col justify-center gap-4 overflow-y-auto p-6">
+          <div className="flip-card-face flip-card-face-back flex min-h-72 flex-col gap-4 p-6">
             <WordImage word={word} className="aspect-[16/9] shrink-0" />
             <div>
               <div className="flex items-center gap-1">
-                <p className="text-xl font-bold">{word.word}</p>
+                <Headword word={word} className="text-xl font-bold" />
                 <SpeakButton text={spokenForm(word.word)} accent={settings.pronunciationAccent} label={t.study.pronounce} />
               </div>
               <Transcription word={word} accent={settings.pronunciationAccent} className="text-sm" />
@@ -140,8 +159,8 @@ export default function FlashcardScreen() {
         </div>
       </div>
 
-      {flipped ? (
-        <div className="mt-5 grid grid-cols-4 gap-2">
+      {flipped && (
+        <div className="sticky bottom-0 -mx-5 mt-2 grid grid-cols-4 gap-2 bg-[var(--color-bg)] px-5 pb-2 pt-3">
           <Button variant="danger" onClick={() => grade('again')} className="flex-col text-xs">
             {t.flashcard.again}
           </Button>
@@ -155,8 +174,6 @@ export default function FlashcardScreen() {
             {t.flashcard.easy}
           </Button>
         </div>
-      ) : (
-        <p className="mt-5 text-center text-sm text-[var(--color-text-muted)]">{t.flashcard.tapToReveal}</p>
       )}
     </div>
   );

@@ -66,15 +66,6 @@ export default function SettingsScreen() {
         />
       </Section>
 
-      <Section title={t.settings.newWordsPerSession}>
-        <NumberField
-          value={settings.newWordsPerSession}
-          min={1}
-          max={100}
-          onChange={(v) => updateSettings({ newWordsPerSession: v })}
-        />
-      </Section>
-
       <Section title={t.settings.reviewLimit}>
         <NumberField value={settings.reviewLimit} min={1} max={200} onChange={(v) => updateSettings({ reviewLimit: v })} />
       </Section>

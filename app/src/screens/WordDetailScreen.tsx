@@ -5,7 +5,7 @@ import { t } from '../lib/i18n';
 import { Button, Card, CefrBadge, StatusBadge } from '../components/ui';
 import { getDefinitionDisplay, getExampleDisplay, getTranslationDisplay } from '../lib/contentDisplay';
 import { formatDateTime } from '../lib/date';
-import { SpeakButton, Transcription, WordImage } from '../components/wordParts';
+import { Headword, SpeakButton, Transcription, WordImage } from '../components/wordParts';
 import { spokenForm } from '../lib/contentDisplay';
 
 export default function WordDetailScreen() {
@@ -25,7 +25,7 @@ export default function WordDetailScreen() {
       <div className="px-5 pt-8">
         <p className="text-sm text-[var(--color-text-muted)]">{t.common.error}</p>
         <button onClick={() => navigate(-1)} className="mt-3 text-sm font-medium text-[var(--color-accent)]">
-          ← {t.common.close}
+          ← {t.common.back}
         </button>
       </div>
     );
@@ -38,15 +38,15 @@ export default function WordDetailScreen() {
   return (
     <div className="flex flex-col gap-4 px-5 pb-6 pt-6">
       <button onClick={() => navigate(-1)} className="w-fit text-sm font-medium text-[var(--color-text-muted)]">
-        ← {t.common.close}
+        ← {t.common.back}
       </button>
 
       <Card className="flex flex-col gap-4 p-5">
-        <WordImage word={word} className="aspect-[4/3]" />
+        <WordImage word={word} className="aspect-[16/10]" />
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
             <div className="flex items-center gap-1">
-              <p className="text-2xl font-bold">{word.word}</p>
+              <Headword word={word} className="text-2xl font-bold" />
               <SpeakButton text={spokenForm(word.word)} accent={settings.pronunciationAccent} label={t.study.pronounce} />
             </div>
             <Transcription word={word} accent={settings.pronunciationAccent} />

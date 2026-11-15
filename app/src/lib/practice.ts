@@ -1,5 +1,5 @@
 import type { ContentStatus, VocabWord } from '../types';
-import { getExampleDisplayBlanked, hasUsableContent, pickRandom } from './contentDisplay';
+import { getExampleDisplayBlanked, hasUsableContent, pickRandom, spokenForm } from './contentDisplay';
 
 export type PracticeMode = 'en-az' | 'az-en' | 'choice' | 'spelling' | 'sentence';
 
@@ -29,7 +29,9 @@ export function buildPracticePool(words: Record<string, VocabWord>): VocabWord[]
 }
 
 export function buildQuestions(mode: PracticeMode, words: Record<string, VocabWord>, count: number): PracticeQuestion[] {
-  const pool = buildPracticePool(words);
+  let pool = buildPracticePool(words);
+  // sentence mode needs a sentence whose blank actually hides the word
+  if (mode === 'sentence') pool = pool.filter((w) => getExampleDisplayBlanked(w));
   if (pool.length < MIN_POOL_SIZE) return [];
 
   const chosen = pickRandom(pool, Math.min(count, pool.length));
@@ -38,69 +40,77 @@ export function buildQuestions(mode: PracticeMode, words: Record<string, VocabWo
     // pool guarantees these are non-null (hasUsableContent)
     const translation = word.translationAz as string;
     const definition = word.englishDefinition as string;
+    const headword = spokenForm(word.word);
+    const headwordOptions = () => shuffle([headword, ...distractors(pool, word, (w) => spokenForm(w.word), headword)]);
 
     switch (mode) {
-      case 'en-az': {
-        const distractors = pickRandom(pool, 3, word).map((w) => w.translationAz as string);
+      case 'en-az':
         return {
           word,
           kind: 'choice',
           promptLabel: 'en-az',
-          promptText: word.word,
+          promptText: headword,
           promptContentStatus: word.contentStatus,
-          options: shuffle([translation, ...distractors]),
+          options: shuffle([translation, ...distractors(pool, word, (w) => w.translationAz as string, translation)]),
           correctAnswer: translation,
         };
-      }
-      case 'az-en': {
-        const distractors = pickRandom(pool, 3, word).map((w) => w.word);
+      case 'az-en':
         return {
           word,
           kind: 'choice',
           promptLabel: 'az-en',
           promptText: translation,
           promptContentStatus: word.contentStatus,
-          options: shuffle([word.word, ...distractors]),
-          correctAnswer: word.word,
+          options: headwordOptions(),
+          correctAnswer: headword,
         };
-      }
-      case 'choice': {
-        const distractors = pickRandom(pool, 3, word).map((w) => w.word);
+      case 'choice':
         return {
           word,
           kind: 'choice',
           promptLabel: 'choice',
           promptText: definition,
           promptContentStatus: word.contentStatus,
-          options: shuffle([word.word, ...distractors]),
-          correctAnswer: word.word,
+          options: headwordOptions(),
+          correctAnswer: headword,
         };
-      }
-      case 'spelling': {
+      case 'spelling':
         return {
           word,
           kind: 'input',
           promptLabel: 'spelling',
           promptText: translation,
           promptContentStatus: word.contentStatus,
-          correctAnswer: word.word,
+          correctAnswer: headword,
         };
-      }
       case 'sentence': {
-        const blanked = getExampleDisplayBlanked(word);
-        const distractors = pickRandom(pool, 3, word).map((w) => w.word);
+        const blanked = getExampleDisplayBlanked(word)!;
         return {
           word,
           kind: 'choice',
           promptLabel: 'sentence',
           promptText: blanked.text,
           promptContentStatus: blanked.status,
-          options: shuffle([word.word, ...distractors]),
-          correctAnswer: word.word,
+          options: headwordOptions(),
+          correctAnswer: headword,
         };
       }
     }
   });
+}
+
+/** Three wrong options, never equal to the answer or to each other (several words share a translation or headword). */
+function distractors(pool: VocabWord[], word: VocabWord, label: (w: VocabWord) => string, answer: string): string[] {
+  const seen = new Set([answer.toLowerCase()]);
+  const out: string[] = [];
+  for (const w of pickRandom(pool, pool.length, word)) {
+    const value = label(w);
+    if (seen.has(value.toLowerCase())) continue;
+    seen.add(value.toLowerCase());
+    out.push(value);
+    if (out.length === 3) break;
+  }
+  return out;
 }
 
 function shuffle<T>(arr: T[]): T[] {

@@ -109,7 +109,7 @@ export function TranslationSwitch({ checked, onChange }: { checked: boolean; onC
       }`}
     >
       <span
-        className={`absolute top-0.5 h-6 w-6 rounded-full bg-[var(--color-surface)] shadow transition-transform ${
+        className={`absolute left-0 top-0.5 h-6 w-6 rounded-full bg-[var(--color-surface)] shadow transition-transform ${
           checked ? 'translate-x-[22px]' : 'translate-x-0.5'
         }`}
       />

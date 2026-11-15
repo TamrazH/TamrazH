@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { PronunciationAccent, VocabWord } from '../types';
 import { speak } from '../lib/speech';
+import { senseLabel, spokenForm } from '../lib/contentDisplay';
 
 function transcriptionFor(word: VocabWord, accent: PronunciationAccent): string | null {
   return accent === 'british' ? (word.pronunciationUk ?? word.pronunciation) : (word.pronunciation ?? word.pronunciationUk);
@@ -58,5 +59,16 @@ export function WordImage({ word, className = '' }: { word: VocabWord; className
       onError={() => setFailed(true)}
       className={`w-full rounded-xl bg-[var(--color-surface-muted)] object-cover ${className}`}
     />
+  );
+}
+
+/** Headword without the dataset's homograph number, with any sense label shown small ("bank (money)"). */
+export function Headword({ word, className = '' }: { word: VocabWord; className?: string }) {
+  const label = senseLabel(word.word);
+  return (
+    <span className={className}>
+      {spokenForm(word.word)}
+      {label && <span className="ml-1.5 text-[0.6em] font-medium text-[var(--color-text-muted)]">({label})</span>}
+    </span>
   );
 }

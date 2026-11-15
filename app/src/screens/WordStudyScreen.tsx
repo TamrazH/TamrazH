@@ -4,7 +4,7 @@ import { useAppStore } from '../store/useAppStore';
 import { t } from '../lib/i18n';
 import { Button, Card, CefrBadge, ScreenHeader } from '../components/ui';
 import { getDefinitionDisplay, getExampleDisplay, getTranslationDisplay } from '../lib/contentDisplay';
-import { SpeakButton, Transcription, WordImage } from '../components/wordParts';
+import { Headword, SpeakButton, Transcription, WordImage } from '../components/wordParts';
 import { spokenForm } from '../lib/contentDisplay';
 import type { Oxford5000Scope } from '../types';
 
@@ -70,8 +70,15 @@ export default function WordStudyScreen() {
           {t.study.sessionSummary(counts.known, counts.unknown)}
         </p>
         <div className="mt-2 flex w-full flex-col gap-3">
+          {counts.unknown > 0 && (
+            <Link to="/study/flashcards?set=difficult">
+              <Button className="w-full">{t.study.reviewUnknownNow(counts.unknown)}</Button>
+            </Link>
+          )}
           <Link to="/">
-            <Button className="w-full">{t.study.backToHome}</Button>
+            <Button variant={counts.unknown > 0 ? 'secondary' : 'primary'} className="w-full">
+              {t.study.backToHome}
+            </Button>
           </Link>
           <Button
             variant="secondary"
@@ -116,12 +123,12 @@ export default function WordStudyScreen() {
       </p>
 
       <Card key={word.id} className="animate-fade-in flex flex-col gap-5 p-5">
-        <WordImage word={word} className="aspect-[4/3]" />
+        <WordImage word={word} className="aspect-[16/10]" />
 
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
             <div className="flex items-center gap-1">
-              <p className="text-2xl font-bold text-[var(--color-text)]">{word.word}</p>
+              <Headword word={word} className="text-2xl font-bold text-[var(--color-text)]" />
               <SpeakButton text={spokenForm(word.word)} accent={accent} label={t.study.pronounce} />
             </div>
             <Transcription word={word} accent={accent} />
@@ -172,7 +179,7 @@ export default function WordStudyScreen() {
         </div>
       </Card>
 
-      <div className="mt-5 grid grid-cols-2 gap-3">
+      <div className="sticky bottom-0 -mx-5 mt-2 grid grid-cols-2 gap-3 bg-[var(--color-bg)] px-5 pb-2 pt-3">
         <Button variant="danger" onClick={() => advance(false)}>
           {t.study.dontKnow}
         </Button>

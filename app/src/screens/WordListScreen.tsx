@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { useAppStore } from '../store/useAppStore';
 import { t } from '../lib/i18n';
+import { Headword } from '../components/wordParts';
 import { Card, CefrBadge, EmptyState, ScreenHeader, StatusBadge } from '../components/ui';
 import { CEFR_LEVELS, WORD_STATUSES, type CefrLevel, type WordStatus } from '../types';
 import { getPartsOfSpeech } from '../lib/selectors';
@@ -12,6 +13,7 @@ const PAGE_SIZE = 60;
 
 export default function WordListScreen() {
   const words = useAppStore((s) => s.words);
+  const showTranslation = useAppStore((s) => s.settings.showTranslation);
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [query, setQuery] = useState('');
@@ -104,8 +106,11 @@ export default function WordListScreen() {
           <Link key={w.id} to={`/words/${w.id}`}>
             <Card className="flex items-center justify-between p-3.5 active:scale-[0.99]">
               <div className="min-w-0">
-                <p className="truncate font-semibold text-[var(--color-text)]">{w.word}</p>
-                <p className="truncate text-xs italic text-[var(--color-text-muted)]">{w.partOfSpeech}</p>
+                <Headword word={w} className="block truncate font-semibold text-[var(--color-text)]" />
+                <p className="truncate text-xs text-[var(--color-text-muted)]">
+                  <span className="italic">{w.partOfSpeech}</span>
+                  {showTranslation && w.translationAz && <> · {w.translationAz}</>}
+                </p>
               </div>
               <div className="flex shrink-0 items-center gap-2">
                 <CefrBadge level={w.cefrLevel} />

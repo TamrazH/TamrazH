@@ -122,7 +122,7 @@ function StatTile({ label, value, colorClass }: { label: string; value: number; 
 
 function StatRow({ stats }: { stats: ModeStats }) {
   return (
-    <div className="grid grid-cols-5 gap-2">
+    <div className="grid grid-cols-3 gap-2">
       <StatTile label={t.progressScreen.totalWords} value={stats.total} />
       <StatTile label={t.progressScreen.wordsStudied} value={stats.studied} />
       <StatTile label={t.progressScreen.wordsKnown} value={stats.known} colorClass="text-[var(--color-success)]" />
@@ -158,20 +158,20 @@ function Oxford3000Panel({ words }: { words: Record<string, VocabWord> }) {
   return (
     <div className="mt-4">
       <div className="px-5">
-        <h2 className="mb-2 text-sm font-semibold">{t.home.oxford3000Dashboard}</h2>
-        <StatRow stats={stats} />
-      </div>
-      <div className="mt-4 px-5">
-        <h2 className="mb-2 text-sm font-semibold">{t.home.cefrProgress}</h2>
-        <ModeCefrProgress words={filterWordsByFlag(words, 'isOxford3000')} levels={['A1', 'A2', 'B1', 'B2']} />
-      </div>
-      <div className="mt-4 px-5">
         <Link
           to="/study/lesson"
           className="flex min-h-12 items-center justify-center rounded-xl bg-[var(--color-accent)] px-4 text-[15px] font-semibold text-[var(--color-accent-contrast)] active:scale-[0.98]"
         >
           {t.home.startLesson}
         </Link>
+      </div>
+      <div className="mt-4 px-5">
+        <h2 className="mb-2 text-sm font-semibold">{t.home.oxford3000Dashboard}</h2>
+        <StatRow stats={stats} />
+      </div>
+      <div className="mt-4 px-5">
+        <h2 className="mb-2 text-sm font-semibold">{t.home.cefrProgress}</h2>
+        <ModeCefrProgress words={filterWordsByFlag(words, 'isOxford3000')} levels={['A1', 'A2', 'B1', 'B2']} />
       </div>
     </div>
   );
@@ -181,20 +181,7 @@ function Oxford5000Panel({ words }: { words: Record<string, VocabWord> }) {
   const stats = getOxford5000Stats(words);
   return (
     <div className="mt-4">
-      <div className="px-5">
-        <h2 className="mb-2 text-sm font-semibold">{t.home.oxford5000Dashboard}</h2>
-        <p className="mb-1 text-xs font-semibold text-[var(--color-text-muted)]">{t.modes.foundation}</p>
-        <StatRow stats={stats.foundation} />
-        <p className="mb-1 mt-3 text-xs font-semibold text-[var(--color-text-muted)]">{t.modes.additional}</p>
-        <StatRow stats={stats.additional} />
-        <p className="mb-1 mt-3 text-xs font-semibold text-[var(--color-text-muted)]">{t.modes.complete}</p>
-        <StatRow stats={stats.complete} />
-      </div>
-      <div className="mt-4 px-5">
-        <h2 className="mb-2 text-sm font-semibold">{t.home.cefrProgress}</h2>
-        <ModeCefrProgress words={words} levels={CEFR_LEVELS} />
-      </div>
-      <div className="mt-4 flex flex-col gap-3 px-5">
+      <div className="flex flex-col gap-3 px-5">
         <p className="text-xs font-semibold text-[var(--color-text-muted)]">{t.modes.chooseLessonScope}</p>
         <Link
           to="/study/lesson?scope=ALL"
@@ -208,6 +195,19 @@ function Oxford5000Panel({ words }: { words: Record<string, VocabWord> }) {
         >
           {t.modes.startFromAdditionalOnly}
         </Link>
+      </div>
+      <div className="mt-4 px-5">
+        <h2 className="mb-2 text-sm font-semibold">{t.home.oxford5000Dashboard}</h2>
+        <p className="mb-1 text-xs font-semibold text-[var(--color-text-muted)]">{t.modes.foundation}</p>
+        <StatRow stats={stats.foundation} />
+        <p className="mb-1 mt-3 text-xs font-semibold text-[var(--color-text-muted)]">{t.modes.additional}</p>
+        <StatRow stats={stats.additional} />
+        <p className="mb-1 mt-3 text-xs font-semibold text-[var(--color-text-muted)]">{t.modes.complete}</p>
+        <StatRow stats={stats.complete} />
+      </div>
+      <div className="mt-4 px-5">
+        <h2 className="mb-2 text-sm font-semibold">{t.home.cefrProgress}</h2>
+        <ModeCefrProgress words={words} levels={CEFR_LEVELS} />
       </div>
     </div>
   );

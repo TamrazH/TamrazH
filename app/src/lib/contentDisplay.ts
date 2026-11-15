@@ -18,9 +18,20 @@ function field(value: string | null, status: ContentStatus): DisplayField {
   return { text: t.missingContent, status: 'MISSING', isMissing: true };
 }
 
-/** Headword without homograph numbers or sense labels ("can1" -> "can", "bank (money)" -> "bank"), for speech. */
+/** Headword without homograph numbers or sense labels ("can1" -> "can", "bank (money)" -> "bank"). */
 export function spokenForm(headword: string): string {
   return headword.replace(/\s*\(.*\)$/, '').replace(/\d+$/, '').trim();
+}
+
+/** The sense label of a homograph headword ("bank (money)" -> "money"), if any. */
+export function senseLabel(headword: string): string | null {
+  return headword.match(/\((.*)\)$/)?.[1] ?? null;
+}
+
+/** Answers accepted for a headword: "a, an" accepts "a", "an" and "a, an". */
+export function acceptedAnswers(headword: string): string[] {
+  const base = spokenForm(headword);
+  return [base, ...base.split(/,\s*/)].map((s) => s.trim().toLowerCase());
 }
 
 export function getTranslationDisplay(word: VocabWord): DisplayField {
@@ -35,10 +46,20 @@ export function getExampleDisplay(word: VocabWord): DisplayField {
   return field(word.exampleSentence, word.contentStatus);
 }
 
-/** Example sentence with the target word blanked out, for sentence-completion practice. */
-export function getExampleDisplayBlanked(word: VocabWord): DisplayField {
-  if (!word.exampleSentence) return field(null, word.contentStatus);
-  const re = new RegExp(`\\b${word.word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
+/**
+ * Example sentence with the target word blanked out, for sentence-completion practice.
+ * Matches regular inflections too (abandon -> abandoned, apply -> applied, arise -> arising);
+ * returns null when the sentence uses an irregular form the blank can't hide (be -> was).
+ */
+export function getExampleDisplayBlanked(word: VocabWord): DisplayField | null {
+  if (!word.exampleSentence) return null;
+  const base = spokenForm(word.word).split(/,\s*/)[0];
+  let stem = base.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  if (/[^aeiou]y$/i.test(base)) stem = stem.slice(0, -1) + '(?:y|i)';
+  else if (/e$/i.test(base)) stem = stem.slice(0, -1) + 'e?';
+  const doubled = /[bdgklmnprtz]$/i.test(base) ? `${base.at(-1)}?` : '';
+  const re = new RegExp(`\\b${stem}${doubled}(?:s|es|ed|d|ing|er|ers|est)?\\b`, 'i');
+  if (!re.test(word.exampleSentence)) return null;
   return { text: word.exampleSentence.replace(re, '_____'), status: word.contentStatus, isMissing: false };
 }
 

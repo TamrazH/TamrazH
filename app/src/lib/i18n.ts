@@ -98,6 +98,7 @@ export const t = {
     backToHome: 'Əsas səhifəyə qayıt',
     noWords: 'Bu meyarlara uyğun söz tapılmadı',
     startNewSession: 'Yeni sessiya başlat',
+    reviewUnknownNow: (n: number) => `Bilmədiyim ${n} sözü indi təkrarla`,
     continuingSession: 'Yarımçıq dərs davam etdirilir',
   },
 
@@ -137,10 +138,19 @@ export const t = {
       'Bu rejim üçün kifayət qədər söz yoxdur: ən azı 4 sözün tərcüməsi, tərifi və nümunə cümləsi olmalıdır. Məzmun hələ əlavə edilməyib.',
   },
 
+  studyHub: {
+    newWaiting: (n: number, list: string) => `${list}: ${n} yeni söz gözləyir`,
+    difficultWaiting: (n: number) => `İndi təkrar yoxdur · ${n} bilinməyən sözü məşq edə bilərsiniz`,
+    nothingDue: 'Hazırda təkrar üçün söz yoxdur',
+  },
+
   review: {
     title: 'Təkrar növbəsi',
     dueCount: (n: number) => `${n} söz təkrar üçün hazırdır`,
-    empty: 'Təkrar üçün söz yoxdur. Əla iş!',
+    empty: 'Hazırda təkrar vaxtı çatmış söz yoxdur.',
+    nextDue: (when: string) => `Növbəti təkrar: ${when}`,
+    practiceDifficultNow: (n: number) => `Bilinməyən sözləri indi təkrarla (${n})`,
+    difficultTitle: 'Bilinməyən sözlər',
   },
 
   words: {
@@ -265,6 +275,7 @@ export const t = {
 
   common: {
     close: 'Bağla',
+    back: 'Geri',
     cancel: 'İmtina',
     save: 'Yadda saxla',
     loading: 'Yüklənir…',

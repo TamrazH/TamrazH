@@ -25,7 +25,7 @@ export default defineConfig({
       includeAssets: ['favicon.svg', 'icons/icon-192.png', 'icons/icon-512.png'],
       manifest: {
         name: 'Oxford Söz Ehtiyatı',
-        short_name: 'OxfordSöz',
+        short_name: 'Oxford Söz',
         description: 'Oxford 5000 söz siyahısı ilə ingilis dili lüğətini öyrənmək üçün tətbiq',
         theme_color: '#2f6f4f',
         background_color: '#f7f6f2',

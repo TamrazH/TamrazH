@@ -1,6 +1,6 @@
 # Word image report
 
-Words with an image: 1752 / 5000 (after manual review; 307 more queued in scripts/image-redo.txt)
+Words with an image: 1986 / 5000 (every one checked by eye)
 
 ## Manual review
 All 3791 downloaded images were checked by eye against their word and meaning.
@@ -8,8 +8,9 @@ All 3791 downloaded images were checked by eye against their word and meaning.
   and ideas a single photo can't show reliably). They were deleted and the word is
   set to `""` in scripts/image-queries.json so later runs leave it without an image.
 - 303 concrete words had a wrong photo but can be pictured; they got a hand-written
-  query in scripts/image-queries.json and are listed in scripts/image-redo.txt.
-- The 4 file errors below are retried in the same rerun.
+  query in scripts/image-queries.json and were re-downloaded together with the 4 file
+  errors below. Those 307 new images were reviewed again: 234 kept, 73 still wrong and
+  pinned to `""`.
 
 ## No matching image this run (1028)
 Add a better search term to scripts/image-queries.json and rerun with `--redo <id>`.

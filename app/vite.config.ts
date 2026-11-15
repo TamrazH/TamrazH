@@ -2,9 +2,21 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import { defineConfig } from 'vite'
+import { createHash } from 'node:crypto'
+import { readFileSync } from 'node:fs'
+
+// Content hash of the dataset, appended to its URL so a new deploy's word data is
+// fetched instead of being served from the long-lived runtime cache.
+const vocabularyVersion = createHash('sha256')
+  .update(readFileSync(new URL('./public/data/vocabulary.json', import.meta.url)))
+  .digest('hex')
+  .slice(0, 12)
 
 // https://vite.dev/config/
 export default defineConfig({
+  define: {
+    __VOCABULARY_VERSION__: JSON.stringify(vocabularyVersion),
+  },
   plugins: [
     react(),
     tailwindcss(),
@@ -40,6 +52,15 @@ export default defineConfig({
             urlPattern: ({ request }) => request.destination === 'document',
             handler: 'NetworkFirst',
             options: { cacheName: 'app-shell' },
+          },
+          {
+            // word illustrations: cached as each one is first shown, then available offline
+            urlPattern: ({ url }) => url.pathname.includes('/images/words/'),
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'word-images',
+              expiration: { maxEntries: 6000, maxAgeSeconds: 60 * 60 * 24 * 365 },
+            },
           },
           {
             // the 5000-word vocabulary dataset: cache on first load, then serve

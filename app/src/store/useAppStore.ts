@@ -38,7 +38,7 @@ let cachedVocabulary: VocabWord[] | null = null;
 
 async function fetchVocabulary(): Promise<VocabWord[]> {
   if (cachedVocabulary) return cachedVocabulary;
-  const res = await fetch(`${import.meta.env.BASE_URL}data/vocabulary.json`);
+  const res = await fetch(`${import.meta.env.BASE_URL}data/vocabulary.json?v=${__VOCABULARY_VERSION__}`);
   const data = (await res.json()) as VocabWord[];
   cachedVocabulary = data;
   return data;

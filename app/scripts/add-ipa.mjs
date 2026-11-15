@@ -156,7 +156,7 @@ function arpabetToIpa(rawPhones) {
 function syllabicConsonants(ipa) {
   return ipa
     .replace(/([pbtdkɡfvθðszʃʒmnŋ])əl$/u, '$1l')
-    .replace(/([tdszʃʒ])ən$/u, '$1n');
+    .replace(/([ʃʒ])ən$/u, '$1n');
 }
 
 const primaryStressSyllable = (phones) => phones.filter((p) => /\d$/.test(p)).findIndex((p) => p.endsWith('1'));

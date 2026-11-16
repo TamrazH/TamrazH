@@ -1,7 +1,15 @@
 {
+ "big-a1": {
+  "source": "chatgpt-batch-002.webp",
+  "cell": 7
+ },
  "boring-a1": {
   "source": "chatgpt-batch-001.webp",
   "cell": 1
+ },
+ "boy-a1": {
+  "source": "chatgpt-batch-002.webp",
+  "cell": 3
  },
  "cheap-a1": {
   "source": "chatgpt-batch-001.webp",
@@ -11,12 +19,20 @@
   "source": "chatgpt-batch-001.webp",
   "cell": 3
  },
+ "come-a1": {
+  "source": "chatgpt-batch-002.webp",
+  "cell": 13
+ },
  "compare-a1": {
   "source": "chatgpt-batch-001.webp",
   "cell": 11
  },
  "decide-a1": {
   "source": "chatgpt-batch-001.webp",
+  "cell": 12
+ },
+ "difficult-a1": {
+  "source": "chatgpt-batch-002.webp",
   "cell": 12
  },
  "early-a1": {
@@ -27,29 +43,81 @@
   "source": "chatgpt-batch-001.webp",
   "cell": 7
  },
+ "far-a1": {
+  "source": "chatgpt-batch-002.webp",
+  "cell": 10
+ },
  "forget-a1": {
   "source": "chatgpt-batch-001.webp",
   "cell": 4
+ },
+ "friendly-a1": {
+  "source": "chatgpt-batch-002.webp",
+  "cell": 11
  },
  "healthy-a1": {
   "source": "chatgpt-batch-001.webp",
   "cell": 6
  },
+ "high-a1": {
+  "source": "chatgpt-batch-002.webp",
+  "cell": 9
+ },
+ "homework-a1": {
+  "source": "chatgpt-batch-002.webp",
+  "cell": 23
+ },
+ "leave-a1": {
+  "source": "chatgpt-batch-002.webp",
+  "cell": 14
+ },
  "lose-a1": {
   "source": "chatgpt-batch-001.webp",
   "cell": 13
+ },
+ "neighbor-a1": {
+  "source": "chatgpt-batch-002.webp",
+  "cell": 5
  },
  "opposite-a1": {
   "source": "chatgpt-batch-001.webp",
   "cell": 15
  },
+ "prepare-a1": {
+  "source": "chatgpt-batch-002.webp",
+  "cell": 22
+ },
+ "problem-a1": {
+  "source": "chatgpt-batch-002.webp",
+  "cell": 25
+ },
  "remember-a1": {
   "source": "chatgpt-batch-001.webp",
   "cell": 9
  },
+ "return-a1": {
+  "source": "chatgpt-batch-002.webp",
+  "cell": 15
+ },
  "sell-a1": {
   "source": "chatgpt-batch-001.webp",
   "cell": 10
+ },
+ "share-a1": {
+  "source": "chatgpt-batch-002.webp",
+  "cell": 20
+ },
+ "short-a1": {
+  "source": "chatgpt-batch-002.webp",
+  "cell": 8
+ },
+ "spend-a1": {
+  "source": "chatgpt-batch-002.webp",
+  "cell": 21
+ },
+ "teach-a1": {
+  "source": "chatgpt-batch-002.webp",
+  "cell": 19
  },
  "thirsty-a1": {
   "source": "chatgpt-batch-001.webp",
@@ -58,6 +126,30 @@
  "tomorrow-a1": {
   "source": "chatgpt-batch-001.webp",
   "cell": 16
+ },
+ "vacation-a1": {
+  "source": "chatgpt-batch-002.webp",
+  "cell": 24
+ },
+ "visit-a1": {
+  "source": "chatgpt-batch-002.webp",
+  "cell": 16
+ },
+ "visitor-a1": {
+  "source": "chatgpt-batch-002.webp",
+  "cell": 6
+ },
+ "wash-a1": {
+  "source": "chatgpt-batch-002.webp",
+  "cell": 17
+ },
+ "wear-a1": {
+  "source": "chatgpt-batch-002.webp",
+  "cell": 18
+ },
+ "wife-a1": {
+  "source": "chatgpt-batch-002.webp",
+  "cell": 4
  },
  "wrong-a1": {
   "source": "chatgpt-batch-001.webp",

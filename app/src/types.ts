@@ -113,9 +113,9 @@ export type ReviewGrade = 'again' | 'hard' | 'good' | 'easy';
 export type PronunciationAccent = 'british' | 'american';
 
 /** The four top-level learning modes shown on the home screen's mode selector. */
-export type AppMode = 'OXFORD_3000' | 'OXFORD_5000' | 'REVIEW_DUE' | 'DIFFICULT';
+export type AppMode = 'OXFORD_3000' | 'OXFORD_5000' | 'PICTURES' | 'REVIEW_DUE' | 'DIFFICULT';
 
-export const APP_MODES: AppMode[] = ['OXFORD_3000', 'OXFORD_5000', 'REVIEW_DUE', 'DIFFICULT'];
+export const APP_MODES: AppMode[] = ['OXFORD_3000', 'OXFORD_5000', 'PICTURES', 'REVIEW_DUE', 'DIFFICULT'];
 
 /** Within Oxford 5000 mode, whether a lesson draws from the complete list or just the extension. */
 export type Oxford5000Scope = 'ALL' | 'ADDITIONAL_ONLY';

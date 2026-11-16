@@ -10,12 +10,14 @@ export const t = {
     label: 'Rejim',
     OXFORD_3000: 'Oxford 3000',
     OXFORD_5000: 'Oxford 5000',
+    PICTURES: 'Şəkilli sözlər',
     REVIEW_DUE: 'Təkrar',
     DIFFICULT: 'Çətin sözlər',
     oxford3000Desc: 'Əsas 3000 söz (A1–B2)',
     oxford5000Desc: 'Tam 5000 söz (əsas + genişləndirilmiş)',
     reviewDueDesc: 'Vaxtı çatan sözləri təkrarla',
     difficultDesc: 'Çətin qeyd olunan sözlər',
+    picturesDesc: 'Yalnız şəkli olan sözlər — görüntü ilə daha asan yadda qalır',
     activeModeLabel: 'Aktiv rejim',
     foundation: 'Əsas (Oxford 3000)',
     additional: 'Əlavə sözlər',
@@ -136,6 +138,17 @@ export const t = {
     backToHub: 'Məşq siyahısına qayıt',
     notEnoughWords:
       'Bu rejim üçün kifayət qədər söz yoxdur: ən azı 4 sözün tərcüməsi, tərifi və nümunə cümləsi olmalıdır. Məzmun hələ əlavə edilməyib.',
+  },
+
+  pictures: {
+    title: 'Şəkilli sözlər',
+    subtitle: (n: number) => `${n} söz şəkillə`,
+    dashboard: 'Şəkilli sözlər kolleksiyası',
+    startLesson: 'Şəkilli sözlərlə dərsə başla',
+    openGallery: 'Kolleksiyaya bax',
+    allLevels: 'Hamısı',
+    empty: 'Bu səviyyədə şəkilli söz yoxdur',
+    loadMore: 'Daha çox göstər',
   },
 
   studyHub: {

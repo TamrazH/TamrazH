@@ -18,6 +18,7 @@ import ProgressScreen from './screens/ProgressScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import AdminImportScreen from './screens/AdminImportScreen';
 import StorageDiagnosticsScreen from './screens/StorageDiagnosticsScreen';
+import PictureGalleryScreen from './screens/PictureGalleryScreen';
 
 function AppShell() {
   useTheme();
@@ -40,6 +41,7 @@ function AppShell() {
           <Route path="/study/practice/:mode" element={<PracticeSessionScreen />} />
           <Route path="/words" element={<WordListScreen />} />
           <Route path="/words/:id" element={<WordDetailScreen />} />
+          <Route path="/pictures" element={<PictureGalleryScreen />} />
           <Route path="/progress" element={<ProgressScreen />} />
           <Route path="/settings" element={<SettingsScreen />} />
           <Route path="/settings/import-content" element={<AdminImportScreen />} />

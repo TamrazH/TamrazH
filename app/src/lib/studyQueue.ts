@@ -1,5 +1,5 @@
 import { isDueForReview } from './srs';
-import { getOxford3000Words, getOxford5000AdditionalWords, getAllWords } from './selectors';
+import { getOxford3000Words, getOxford5000AdditionalWords, getAllWords, getPictureWords } from './selectors';
 import type { AppMode, Oxford5000Scope, ReviewStrategy, VocabWord } from '../types';
 
 /**
@@ -44,6 +44,7 @@ const MAX_CONSECUTIVE_SAME_CEFR = 2;
 
 function getPool(mode: AppMode, oxford5000Scope: Oxford5000Scope, words: Record<string, VocabWord>): VocabWord[] {
   if (mode === 'OXFORD_3000') return getOxford3000Words(words);
+  if (mode === 'PICTURES') return getPictureWords(words);
   if (mode === 'OXFORD_5000') {
     return oxford5000Scope === 'ADDITIONAL_ONLY' ? getOxford5000AdditionalWords(words) : getAllWords(words);
   }

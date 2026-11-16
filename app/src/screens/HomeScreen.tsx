@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useAppStore } from '../store/useAppStore';
 import { t } from '../lib/i18n';
 import { Card, ProgressBar, ScreenHeader } from '../components/ui';
-import { getCefrProgress, getDifficultWords, getDueWords, getOxford3000Stats, getOxford5000Stats, type ModeStats } from '../lib/selectors';
+import { computeStats, getCefrProgress, getDifficultWords, getDueWords, getOxford3000Stats, getOxford5000Stats, getPictureWords, type ModeStats } from '../lib/selectors';
 import { todayKey } from '../lib/date';
 import { APP_MODES, CEFR_LEVELS, type AppMode, type VocabWord } from '../types';
 
@@ -51,6 +51,7 @@ export default function HomeScreen() {
 
       {activeMode === 'OXFORD_3000' && <Oxford3000Panel words={words} />}
       {activeMode === 'OXFORD_5000' && <Oxford5000Panel words={words} />}
+      {activeMode === 'PICTURES' && <PicturesPanel words={words} />}
 
       {activeMode === 'REVIEW_DUE' && (
         <div className="mt-4 px-5">
@@ -208,6 +209,39 @@ function Oxford5000Panel({ words }: { words: Record<string, VocabWord> }) {
       <div className="mt-4 px-5">
         <h2 className="mb-2 text-sm font-semibold">{t.home.cefrProgress}</h2>
         <ModeCefrProgress words={words} levels={CEFR_LEVELS} />
+      </div>
+    </div>
+  );
+}
+
+function PicturesPanel({ words }: { words: Record<string, VocabWord> }) {
+  const list = getPictureWords(words);
+  const pictureWords: Record<string, VocabWord> = {};
+  for (const w of list) pictureWords[w.id] = w;
+  return (
+    <div className="mt-4">
+      <div className="flex flex-col gap-3 px-5">
+        <p className="text-xs text-[var(--color-text-muted)]">{t.modes.picturesDesc}</p>
+        <Link
+          to="/study/lesson"
+          className="flex min-h-12 items-center justify-center rounded-xl bg-[var(--color-accent)] px-4 text-[15px] font-semibold text-[var(--color-accent-contrast)] active:scale-[0.98]"
+        >
+          {t.pictures.startLesson}
+        </Link>
+        <Link
+          to="/pictures"
+          className="flex min-h-12 items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 text-[15px] font-semibold text-[var(--color-text)] active:scale-[0.98]"
+        >
+          {t.pictures.openGallery}
+        </Link>
+      </div>
+      <div className="mt-4 px-5">
+        <h2 className="mb-2 text-sm font-semibold">{t.pictures.dashboard}</h2>
+        <StatRow stats={computeStats(list)} />
+      </div>
+      <div className="mt-4 px-5">
+        <h2 className="mb-2 text-sm font-semibold">{t.home.cefrProgress}</h2>
+        <ModeCefrProgress words={pictureWords} levels={CEFR_LEVELS} />
       </div>
     </div>
   );

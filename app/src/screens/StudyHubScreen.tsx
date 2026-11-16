@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { ScreenHeader, Card } from '../components/ui';
 import { t } from '../lib/i18n';
 import { useAppStore } from '../store/useAppStore';
-import { getDifficultWords, getDueWords, getWordPoolForMode } from '../lib/selectors';
+import { getDifficultWords, getDueWords, getPictureWords, getWordPoolForMode } from '../lib/selectors';
 
 export default function StudyHubScreen() {
   const words = useAppStore((s) => s.words);
@@ -10,7 +10,7 @@ export default function StudyHubScreen() {
   const dueCount = getDueWords(words).length;
   const difficultCount = getDifficultWords(words).length;
   // lessons draw from the active mode's list, so count new words there
-  const lessonMode = activeMode === 'OXFORD_3000' ? 'OXFORD_3000' : 'OXFORD_5000';
+  const lessonMode = activeMode === 'OXFORD_3000' || activeMode === 'PICTURES' ? activeMode : 'OXFORD_5000';
   const newCount = getWordPoolForMode(words, lessonMode).filter((w) => w.status === 'NEW').length;
 
   const items = [
@@ -23,6 +23,11 @@ export default function StudyHubScreen() {
       to: '/study/flashcards',
       title: t.flashcard.title,
       desc: dueCount > 0 ? t.review.dueCount(dueCount) : difficultCount > 0 ? t.studyHub.difficultWaiting(difficultCount) : t.studyHub.nothingDue,
+    },
+    {
+      to: '/pictures',
+      title: t.pictures.title,
+      desc: t.pictures.subtitle(getPictureWords(words).length),
     },
     {
       to: '/study/practice',

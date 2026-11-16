@@ -71,6 +71,11 @@ export function getOxford5000AdditionalWords(words: Record<string, VocabWord>): 
   return getAllWords(words).filter((w) => w.isAdditionalOxford5000);
 }
 
+/** Words that have an illustration — the "picture words" collection. */
+export function getPictureWords(words: Record<string, VocabWord>): VocabWord[] {
+  return getAllWords(words).filter((w) => w.imageUrl);
+}
+
 /** The word pool a study/practice session should draw from for a given home-screen mode. */
 export function getWordPoolForMode(
   words: Record<string, VocabWord>,
@@ -82,6 +87,8 @@ export function getWordPoolForMode(
       return getOxford3000Words(words);
     case 'OXFORD_5000':
       return oxford5000Scope === 'ADDITIONAL_ONLY' ? getOxford5000AdditionalWords(words) : getAllWords(words);
+    case 'PICTURES':
+      return getPictureWords(words);
     case 'REVIEW_DUE':
       return getDueWords(words);
     case 'DIFFICULT':

@@ -50,15 +50,31 @@ export function SpeakButton({
 export function WordImage({ word, className = '' }: { word: VocabWord; className?: string }) {
   const [failed, setFailed] = useState(false);
   if (!word.imageUrl || failed) return null;
+  const credit = word.imageCredit;
   return (
-    <img
-      src={`${import.meta.env.BASE_URL}${word.imageUrl}`}
-      alt={word.word}
-      loading="lazy"
-      decoding="async"
-      onError={() => setFailed(true)}
-      className={`w-full rounded-xl bg-[var(--color-surface-muted)] object-cover ${className}`}
-    />
+    <figure className="relative shrink-0">
+      <img
+        src={`${import.meta.env.BASE_URL}${word.imageUrl}`}
+        alt={word.word}
+        loading="lazy"
+        decoding="async"
+        onError={() => setFailed(true)}
+        className={`w-full rounded-xl bg-[var(--color-surface-muted)] object-cover ${className}`}
+      />
+      {credit && (
+        <figcaption className="absolute bottom-1 right-1 max-w-[90%] truncate rounded bg-black/55 px-1.5 py-0.5 text-[10px] leading-tight text-white">
+          <a
+            href={credit.source}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="underline-offset-2 hover:underline"
+          >
+            {credit.author} · {credit.license}
+          </a>
+        </figcaption>
+      )}
+    </figure>
   );
 }
 

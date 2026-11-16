@@ -72,6 +72,8 @@ export interface VocabWord {
   pronunciationUk: string | null;
   /** Relative path to a bundled illustration; absent/null until images are fetched for this word. */
   imageUrl?: string | null;
+  /** Required attribution for openly licensed images (Wikimedia Commons); absent for Pixabay ones. */
+  imageCredit?: ImageCredit | null;
   translationAz: string | null;
   englishDefinition: string | null;
   exampleSentence: string | null;
@@ -97,6 +99,13 @@ export interface VocabWord {
 
   /** Present when the same headword has more than one part-of-speech/level pairing. */
   allSenses: WordSense[] | null;
+}
+
+export interface ImageCredit {
+  author: string;
+  license: string;
+  /** File description page, which carries the full license terms. */
+  source: string;
 }
 
 export type ReviewGrade = 'again' | 'hard' | 'good' | 'easy';

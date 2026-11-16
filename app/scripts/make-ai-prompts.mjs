@@ -1,4 +1,4 @@
-// Splits every word that still has no picture into numbered 25-word batches and writes
+// Splits every word that still has no picture into numbered 25-word batches (C1 first) and writes
 // a ready-to-paste ChatGPT prompt for each one.
 //   scripts/ai-batches.json  — batch number -> word ids (cell order), used when importing
 //   scripts/AI-PROMPTS.md    — the prompts to copy into ChatGPT, one per batch
@@ -26,16 +26,24 @@ const SKIP = new Set(
   'aunt-a1 uncle-a1 tuesday-a1 wednesday-a1 thursday-a1 friday-a1'.split(' '),
 );
 
+// Violent, sexual or otherwise sensitive words: an image generator may refuse the whole
+// grid because of one of them, and a cartoon would not suit them anyway.
+const SENSITIVE = new Set(
+  'abortion abuse assassination casualty execute execution lesbian massacre rape sexuality slavery suicide torture kill killing murder sex sexual slave victim violent bombing breast naked racist sexy terror terrorism terrorist violence'.split(' '),
+);
+
 const vocab = JSON.parse(fs.readFileSync(path.join(APP, 'public/data/vocabulary.json'), 'utf8'));
 const batches = fs.existsSync(BATCHES) ? JSON.parse(fs.readFileSync(BATCHES, 'utf8')) : {};
 const planned = new Set(Object.values(batches).flat());
 
 const headword = (w) => w.word.replace(/\d+(?=\s*(\(|$))/, '').trim();
 const isAdverb = (w) => /^adv/.test(w.partOfSpeech);
-const LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1'];
+// C1 first: the hardest words to remember and the level with the fewest pictures
+const LEVELS = ['C1', 'A1', 'A2', 'B1', 'B2'];
 const candidates = vocab
   .filter((w) => !w.imageUrl && !planned.has(w.id) && !SKIP.has(w.id.toLowerCase()) && !GRAMMAR.test(w.partOfSpeech))
   .filter((w) => !isAdverb(w) || DRAWABLE_ADVERBS.has(headword(w).toLowerCase()))
+  .filter((w) => !SENSITIVE.has(headword(w).toLowerCase()))
   .sort((a, b) => LEVELS.indexOf(a.cefrLevel) - LEVELS.indexOf(b.cefrLevel) || a.word.localeCompare(b.word));
 
 let next = Math.max(FIRST_NEW_BATCH - 1, ...Object.keys(batches).map(Number)) + 1;

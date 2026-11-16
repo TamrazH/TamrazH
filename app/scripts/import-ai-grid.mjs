@@ -8,6 +8,7 @@
 // Generators often draw cells of slightly unequal size with no gutters, so each
 // boundary is located near its expected position by the strongest background-colour
 // jump along the top strip of the row (and the outer edges for row boundaries).
+// White gutters, when the generator draws them, are detected and excluded exactly.
 // Each record is logged in scripts/ai-images-log.json.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -52,27 +53,76 @@ function strongestNear(score, len, expected, window) {
   return best;
 }
 
-const edgeXs = [4, 8, W - 5, W - 9, Math.round(W / C) - 6, Math.round(W / C) + 6];
-const rowEdges = [0];
-for (let r = 1; r < R; r++) {
-  const score = (y) => edgeXs.reduce((s, x) => s + jump(px(x, y - 3), px(x, y + 3)), 0);
-  rowEdges.push(strongestNear(score, H, Math.round((H * r) / R), Math.round(H / R / 3)));
+const isWhite = (x, y) => {
+  const [r, g, b] = px(x, y);
+  return r > 235 && g > 235 && b > 235;
+};
+
+/**
+ * Finds the boundary between cell k-1 and k along one axis. A white gutter (a run of
+ * lines that are almost entirely white across the band) gives exact edges; otherwise the
+ * strongest background colour jump near the expected position is used.
+ * Returns [end of previous cell, start of next cell].
+ */
+function boundary(len, expected, window, whiteFraction, jumpScore) {
+  const lo = Math.max(4, expected - window);
+  const hi = Math.min(len - 4, expected + window);
+  let runStart = -1;
+  let best = null;
+  for (let p = lo; p <= hi; p++) {
+    const white = p < hi && whiteFraction(p) > 0.92;
+    if (white && runStart < 0) runStart = p;
+    if (!white && runStart >= 0) {
+      const mid = (runStart + p) / 2;
+      if (!best || Math.abs(mid - expected) < Math.abs((best[0] + best[1]) / 2 - expected)) best = [runStart, p];
+      runStart = -1;
+    }
+  }
+  if (best) return best;
+  const p = strongestNear(jumpScore, len, expected, window);
+  return [p, p];
 }
-rowEdges.push(H);
+
+const edgeXs = [4, 8, W - 5, W - 9, Math.round(W / C) - 6, Math.round(W / C) + 6];
+const sample = (from, to, n) => Array.from({ length: n }, (_, i) => Math.round(from + ((to - from - 1) * i) / (n - 1)));
+const rowBounds = [[0, 0]];
+for (let r = 1; r < R; r++) {
+  const xs = sample(0, W, 200);
+  rowBounds.push(
+    boundary(
+      H,
+      Math.round((H * r) / R),
+      Math.round(H / R / 3),
+      (y) => xs.filter((x) => isWhite(x, y)).length / xs.length,
+      (y) => edgeXs.reduce((s, x) => s + jump(px(x, y - 3), px(x, y + 3)), 0),
+    ),
+  );
+}
+rowBounds.push([H, H]);
 
 const cells = [];
 for (let r = 0; r < R; r++) {
-  const y0 = rowEdges[r];
+  const y0 = rowBounds[r][1];
+  const y1 = rowBounds[r + 1][0];
   // the top strip of a row is almost always plain background; lower down, drawings can cross cells
   const ys = [3, 5, 7, 9, 11, 13].map((d) => y0 + d);
-  const colEdges = [0];
+  const bandYs = sample(y0, y1, 120);
+  const colBounds = [[0, 0]];
   for (let c = 1; c < C; c++) {
-    const score = (x) => ys.reduce((s, y) => s + jump(px(x - 3, y), px(x + 3, y)), 0);
-    colEdges.push(strongestNear(score, W, Math.round((W * c) / C), Math.round(W / C / 3)));
+    colBounds.push(
+      boundary(
+        W,
+        Math.round((W * c) / C),
+        Math.round(W / C / 3),
+        (x) => bandYs.filter((y) => isWhite(x, y)).length / bandYs.length,
+        (x) => ys.reduce((s, y) => s + jump(px(x - 3, y), px(x + 3, y)), 0),
+      ),
+    );
   }
-  colEdges.push(W);
+  colBounds.push([W, W]);
   for (let c = 0; c < C; c++) {
-    cells.push({ left: colEdges[c], top: y0, width: colEdges[c + 1] - colEdges[c], height: rowEdges[r + 1] - y0 });
+    const left = colBounds[c][1];
+    cells.push({ left, top: y0, width: colBounds[c + 1][0] - left, height: y1 - y0 });
   }
 }
 
@@ -89,8 +139,12 @@ for (const [i, cell] of cells.entries()) {
   if (skip.has(id) || DRY) continue;
   const inset = 3; // stay clear of anti-aliased borders and neighbouring cells
   const out = `images/words/${id}.webp`;
-  await sharp(file)
+  // two steps: sharp applies trim before extract within a single pipeline
+  const cellImage = await sharp(file)
     .extract({ left: cell.left + inset, top: cell.top + inset, width: cell.width - 2 * inset, height: cell.height - 2 * inset })
+    .toBuffer();
+  await sharp(cellImage)
+    .trim({ background: '#ffffff', threshold: 25 }) // white outer frame some generators add
     .resize(400, 300, { fit: 'cover', kernel: 'lanczos3' })
     .webp({ quality: 80 })
     .toFile(path.join(APP, 'public', out));

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useAppStore } from '../store/useAppStore';
 import { t } from '../lib/i18n';
 import { Card, ProgressBar, ScreenHeader } from '../components/ui';
@@ -34,8 +35,13 @@ export default function ProgressScreen() {
         <StatCard label={t.progressScreen.totalWords} value={all.length} />
         <StatCard label={t.progressScreen.wordsStudied} value={statusCounts.LEARNING + statusCounts.KNOWN + statusCounts.DIFFICULT} />
         <StatCard label={t.progressScreen.wordsKnown} value={statusCounts.KNOWN} accent="success" />
-        <StatCard label={t.progressScreen.difficultWords} value={statusCounts.DIFFICULT} accent="danger" />
-        <StatCard label={t.progressScreen.dueNow} value={dueCount} />
+        <StatCard
+          label={t.progressScreen.difficultWords}
+          value={statusCounts.DIFFICULT}
+          accent="danger"
+          to={statusCounts.DIFFICULT > 0 ? '/study/flashcards?set=difficult' : undefined}
+        />
+        <StatCard label={t.progressScreen.dueNow} value={dueCount} to={dueCount > 0 ? '/study/flashcards' : undefined} />
         <StatCard label={t.progressScreen.correctRate} value={`${correctRate}%`} />
       </div>
 
@@ -77,13 +83,38 @@ export default function ProgressScreen() {
   );
 }
 
-function StatCard({ label, value, accent }: { label: string; value: string | number; accent?: 'success' | 'danger' }) {
+function StatCard({
+  label,
+  value,
+  accent,
+  to,
+}: {
+  label: string;
+  value: string | number;
+  accent?: 'success' | 'danger';
+  /** When set, the card opens these words for review. */
+  to?: string;
+}) {
   const color = accent === 'success' ? 'text-[var(--color-success)]' : accent === 'danger' ? 'text-[var(--color-danger)]' : 'text-[var(--color-text)]';
-  return (
-    <Card className="p-4">
+  const card = (
+    <Card className={`h-full p-4 ${to ? 'active:scale-[0.98]' : ''}`}>
       <p className="text-xs font-medium text-[var(--color-text-muted)]">{label}</p>
-      <p className={`mt-1 text-xl font-semibold ${color}`}>{value}</p>
+      <div className="mt-1 flex items-center justify-between gap-2">
+        <p className={`text-xl font-semibold ${color}`}>{value}</p>
+        {to && (
+          <span className="text-xs font-semibold text-[var(--color-accent)]">
+            {t.progressScreen.review} ›
+          </span>
+        )}
+      </div>
     </Card>
+  );
+  return to ? (
+    <Link to={to} aria-label={`${label}: ${value}. ${t.progressScreen.review}`}>
+      {card}
+    </Link>
+  ) : (
+    card
   );
 }
 

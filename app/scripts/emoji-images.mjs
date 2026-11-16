@@ -13,7 +13,6 @@ import { getIconData, iconToSVG, iconToHTML, replaceIDs } from '@iconify/utils';
 
 const APP = new URL('..', import.meta.url).pathname;
 const VOCAB = path.join(APP, 'public/data/vocabulary.json');
-const IMG_DIR = path.join(APP, 'public/images/words');
 const MAP = JSON.parse(fs.readFileSync(path.join(APP, 'scripts/emoji-map.json'), 'utf8'));
 const req = (p) => JSON.parse(fs.readFileSync(path.join(APP, 'node_modules/@iconify-json/noto', p), 'utf8'));
 const icons = req('icons.json');

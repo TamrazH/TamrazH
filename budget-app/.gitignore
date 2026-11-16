@@ -1,0 +1,17 @@
+node_modules
+.next
+out
+next-env.d.ts
+*.tsbuildinfo
+.vercel
+.DS_Store
+
+# Gizli məlumatlar — HEÇ VAXT commit etmə
+.env
+.env.*
+!.env.example
+service-account*.json
+*-service-account*.json
+*credentials*.json
+*.pem
+*.key

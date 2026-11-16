@@ -1,7 +1,7 @@
 // Imports a grid image of AI-generated word illustrations (made in ChatGPT / Gemini
 // from a prompt listing the words in reading order) into the app.
 //
-// Usage: node scripts/import-ai-grid.mjs <grid image> <rows> <cols> <id1,id2,...> [--skip id,id] [--dry-run]
+// Usage: node scripts/import-ai-grid.mjs <grid image> <rows> <cols> (<id1,id2,...> | --batch N) [--skip id,id] [--dry-run]
 //   ids are word ids in the same left-to-right, top-to-bottom order as the prompt;
 //   --skip leaves out cells that were judged wrong on review.
 //
@@ -23,13 +23,19 @@ const flag = (name) => {
   const i = args.indexOf(name);
   return i >= 0 ? args[i + 1] : undefined;
 };
-const [file, rowsArg, colsArg, idsArg] = args;
+const [file, rowsArg, colsArg] = args;
+const idsArg = args[3]?.startsWith('--') ? undefined : args[3];
 const R = Number(rowsArg);
 const C = Number(colsArg);
-const ids = (idsArg ?? '').split(',').filter(Boolean);
+const batchNo = flag('--batch');
+const ids = batchNo
+  ? JSON.parse(fs.readFileSync(path.join(APP, 'scripts/ai-batches.json'), 'utf8'))[batchNo]
+  : (idsArg ?? '').split(',').filter(Boolean);
+if (batchNo && !ids) throw new Error(`no batch ${batchNo} in scripts/ai-batches.json`);
 const skip = new Set((flag('--skip') ?? '').split(',').filter(Boolean));
 const DRY = args.includes('--dry-run');
-if (!file || !R || !C || ids.length !== R * C) {
+// a short last batch leaves trailing cells empty
+if (!file || !R || !C || ids.length > R * C || ids.length <= (R - 1) * C) {
   console.error(`usage: node scripts/import-ai-grid.mjs <image> <rows> <cols> <${'id,'.repeat(2)}...> (need rows*cols ids, got ${ids.length})`);
   process.exit(1);
 }
@@ -131,7 +137,7 @@ const byId = Object.fromEntries(vocab.map((w) => [w.id, w]));
 const log = fs.existsSync(LOG) ? JSON.parse(fs.readFileSync(LOG, 'utf8')) : {};
 const source = path.basename(file);
 let added = 0;
-for (const [i, cell] of cells.entries()) {
+for (const [i, cell] of cells.slice(0, ids.length).entries()) {
   const id = ids[i];
   const w = byId[id];
   if (!w) throw new Error(`unknown word id ${id}`);

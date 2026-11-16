@@ -49,15 +49,18 @@ const STOP = new Set('a an the of to in on for and or with by from as at is be t
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 let last = 0;
 async function api(base, params) {
-  const wait = last + 120 - Date.now();
+  const wait = last + 250 - Date.now();
   if (wait > 0) await sleep(wait);
   last = Date.now();
   const url = new URL(base);
-  url.search = new URLSearchParams({ format: 'json', formatversion: '2', maxlag: '5', ...params }).toString();
-  for (let attempt = 0; attempt < 5; attempt++) {
+  url.search = new URLSearchParams({ format: 'json', formatversion: '2', ...params }).toString();
+  let lastStatus;
+  for (let attempt = 0; attempt < 8; attempt++) {
     const res = await fetch(url, { headers: { 'User-Agent': UA } });
+    lastStatus = res.status;
     if (res.status === 429 || res.status >= 500) {
-      await sleep(2000 * (attempt + 1));
+      const retryAfter = Number(res.headers.get('retry-after')) || 0;
+      await sleep(Math.max(retryAfter * 1000, 2000 * (attempt + 1)));
       continue;
     }
     if (!res.ok) throw new Error(`${base} ${res.status}`);
@@ -69,7 +72,7 @@ async function api(base, params) {
     if (json.error) throw new Error(`${base}: ${json.error.code} ${json.error.info}`);
     return json;
   }
-  throw new Error(`${base}: gave up after retries`);
+  throw new Error(`${base}: gave up after retries (last HTTP ${lastStatus})`);
 }
 
 function baseWord(headword) {
@@ -226,7 +229,7 @@ for (const [n, w] of candidates.entries()) {
       log[w.id] = { result: 'none' };
     } else {
       const info = await commonsInfo(hit.file);
-      if (!info || !/^image\/(jpeg|png|webp|gif|tiff)/.test(info.mime)) {
+      if (!info || !/^image\/(jpeg|png|webp|gif|tiff|svg\+xml)/.test(info.mime)) {
         counts.none++;
         log[w.id] = { result: 'none', reason: `unusable file ${hit.file}` };
       } else if (DRY) {

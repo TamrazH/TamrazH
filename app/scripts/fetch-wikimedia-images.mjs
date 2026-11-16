@@ -200,6 +200,7 @@ async function download(url, id) {
 
 // ---------- main ----------
 const vocab = JSON.parse(fs.readFileSync(VOCAB, 'utf8'));
+const log = fs.existsSync(LOG) ? JSON.parse(fs.readFileSync(LOG, 'utf8')) : {};
 let candidates = vocab.filter((w) => !w.imageUrl && !NO_IMAGE_POS.test(w.partOfSpeech));
 if (IDS.size) candidates = vocab.filter((w) => IDS.has(w.id));
 if (SAMPLE) {
@@ -211,10 +212,11 @@ if (SAMPLE) {
     .slice(0, SAMPLE)
     .map(([, w]) => w);
 }
+// words already tried (found nothing, or an image was rejected in review) are not retried
+if (!IDS.size) candidates = candidates.filter((w) => !log[w.id] || log[w.id].result === 'error');
 candidates = candidates.slice(0, LIMIT);
 fs.mkdirSync(IMG_DIR, { recursive: true });
 
-const log = fs.existsSync(LOG) ? JSON.parse(fs.readFileSync(LOG, 'utf8')) : {};
 const save = () => {
   fs.writeFileSync(VOCAB, JSON.stringify(vocab));
   fs.writeFileSync(LOG, JSON.stringify(log, null, 1) + '\n');

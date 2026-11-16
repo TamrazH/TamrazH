@@ -1,0 +1,342 @@
+{
+ "great-a1": {
+  "result": "none"
+ },
+ "clearly-a2": {
+  "result": "none"
+ },
+ "indoors-b1": {
+  "result": "none"
+ },
+ "theft-b2": {
+  "result": "rejected",
+  "file": "Constant Wauters Der ertappte Hausdiener.jpg",
+  "detail": "unlawful taking of property, act or process of stealing -> Q2727213 theft"
+ },
+ "largely-b2": {
+  "result": "none"
+ },
+ "responsibility-b1": {
+  "result": "none"
+ },
+ "bold-b2": {
+  "result": "rejected",
+  "file": "Emphasis methods.svg",
+  "detail": "the weight of the font is stated as bold -> Q920915 emphasis"
+ },
+ "mad-b1": {
+  "result": "none"
+ },
+ "insider-c1": {
+  "result": "none"
+ },
+ "hardly-b1": {
+  "result": "none"
+ },
+ "sense-a2": {
+  "result": "rejected",
+  "file": "Makart Fuenf Sinne.jpg",
+  "detail": "any of the manners by which living beings perceive the physical world -> Q173253 sense"
+ },
+ "vast-b2": {
+  "result": "none"
+ },
+ "cultivate-c1": {
+  "result": "none"
+ },
+ "mathematical-c1": {
+  "result": "none"
+ },
+ "thoughtful-c1": {
+  "result": "none"
+ },
+ "else-a1": {
+  "result": "none"
+ },
+ "reluctant-c1": {
+  "result": "none"
+ },
+ "statue-b1": {
+  "result": "lexeme-item",
+  "file": "Madonna and Child from the Church in Kruzlowa Wyzna - MNK I-119 (96516).tiff",
+  "detail": "sculpture primarily concerned as a representational figure -> Q179700 statue"
+ },
+ "lengthy-c1": {
+  "result": "none"
+ },
+ "philosophy-b2": {
+  "result": "rejected",
+  "file": "Hortus Deliciarum, Philosophy and the seven liberal arts (cropped).jpg",
+  "detail": "intellectual and/or logical study of general and fundamental problems -> Q5891 philosophy"
+ },
+ "shrink-c1": {
+  "result": "none"
+ },
+ "weekend-a1": {
+  "result": "none"
+ },
+ "accomplish-b2": {
+  "result": "none"
+ },
+ "sport-a1": {
+  "result": "item",
+  "file": "Youth-soccer-indiana.jpg",
+  "detail": "Q349 form of event or activity involving competition; series of activities that provides challenges for an individual or team/s of participants"
+ },
+ "secondary-b1": {
+  "result": "none"
+ },
+ "pop-c1": {
+  "result": "none"
+ },
+ "revenue-b2": {
+  "result": "none"
+ },
+ "organization-a2": {
+  "result": "rejected",
+  "file": "ExecutiveComitee-IAU-2018-2021.jpg",
+  "detail": "social entity (not necessarily commercial) uniting people into a structured group managing shared means to meet some needs, or to pursue collective goals -> Q43229 organization"
+ },
+ "traditional-a2": {
+  "result": "none"
+ },
+ "consolidate-c1": {
+  "result": "none"
+ },
+ "content1-b1": {
+  "result": "none"
+ },
+ "effectiveness-c1": {
+  "result": "none"
+ },
+ "slash-c1": {
+  "result": "none"
+ },
+ "nickel-b2": {
+  "result": "lexeme-item",
+  "file": "US Nickel 2013 Rev.png",
+  "detail": "United States coin with the value of five cents -> Q238498 nickel"
+ },
+ "slide-b2": {
+  "result": "none"
+ },
+ "scholar-b2": {
+  "result": "rejected",
+  "file": "Two monks discussing, from the manuscript De Universo or \"De rerum naturis\", Monte Cassino MS Casin 132.jpg",
+  "detail": "person who devotes themselves to scholarly pursuits -> Q20826540 scholar"
+ },
+ "sector-b2": {
+  "result": "none"
+ },
+ "empirical-c1": {
+  "result": "none"
+ },
+ "recover-b2": {
+  "result": "none"
+ },
+ "appropriately-b2": {
+  "result": "none"
+ },
+ "everywhere-a2": {
+  "result": "none"
+ },
+ "technique-b1": {
+  "result": "none"
+ },
+ "motivate-b2": {
+  "result": "none"
+ },
+ "behavioral-c1": {
+  "result": "none"
+ },
+ "similarly-b1": {
+  "result": "none"
+ },
+ "say-a1": {
+  "result": "none"
+ },
+ "inform-b2": {
+  "result": "none"
+ },
+ "undergo-b2": {
+  "result": "none"
+ },
+ "special-a1": {
+  "result": "rejected",
+  "file": "Colorful illuminated facades of buildings at night, with green, blue and pink lights, Kabukicho, Shinjuku, Tokyo.jpg",
+  "detail": "distinguished by a unique or unusual quality"
+ },
+ "remove-a2": {
+  "result": "none"
+ },
+ "analyze-a2": {
+  "result": "none"
+ },
+ "grade-b1": {
+  "result": "none"
+ },
+ "feather-b2": {
+  "result": "lexeme-item",
+  "file": "2 feathers.jpg",
+  "detail": "body-covering structure of birds -> Q81025 feather"
+ },
+ "subsequently-b2": {
+  "result": "none"
+ },
+ "out-a1": {
+  "result": "none"
+ },
+ "provision-c1": {
+  "result": "none"
+ },
+ "rental-c1": {
+  "result": "none"
+ },
+ "disappointing-b1": {
+  "result": "lexeme-item",
+  "file": "LSHS football player at Tacoma Dome.jpg",
+  "detail": "disappoint, let down -> Q621206 disappointment"
+ },
+ "fantastic-a1": {
+  "result": "none"
+ },
+ "contemplate-c1": {
+  "result": "none"
+ },
+ "better-a1": {
+  "result": "none"
+ },
+ "inhibit-c1": {
+  "result": "none"
+ },
+ "especially-a2": {
+  "result": "none"
+ },
+ "immigration-b2": {
+  "result": "lexeme-item",
+  "file": "Inmigrantes europeos llegando a Argentina.jpg",
+  "detail": "movement of people into another country or region to which they are not native -> Q131288 immigration"
+ },
+ "normally-a2": {
+  "result": "none"
+ },
+ "ready-a1": {
+  "result": "none"
+ },
+ "being-b2": {
+  "result": "none"
+ },
+ "satellite-b2": {
+  "result": "lexeme-item",
+  "file": "Luna 1 - 2 Spacecraft.png",
+  "detail": "A man-made apparatus designed to explore astronomical spaces -> Q26540 artificial satellite"
+ },
+ "carriage-c1": {
+  "result": "lexeme-item",
+  "file": ".00 4705 Coupé-Pferdekutsche.jpg",
+  "detail": "generally horse-drawn means of transport -> Q235356 carriage"
+ },
+ "whisper-b2": {
+  "result": "none"
+ },
+ "crude-c1": {
+  "result": "none"
+ },
+ "solidarity-c1": {
+  "result": "lexeme-item",
+  "file": "Abramowski-braterstwo-solidarnosc-wspoldzialanie-okladka.png",
+  "detail": "unity of feeling -> Q815726 solidarity"
+ },
+ "preach-c1": {
+  "result": "none"
+ },
+ "benchmark-c1": {
+  "result": "none"
+ },
+ "accent-b2": {
+  "result": "none"
+ },
+ "sight-b1": {
+  "result": "lexeme-item",
+  "file": "Eye iris.jpg",
+  "detail": "ability to see -> Q162668 visual perception"
+ },
+ "overwhelming-c1": {
+  "result": "none"
+ },
+ "technical-b1": {
+  "result": "none"
+ },
+ "troubled-c1": {
+  "result": "none"
+ },
+ "rotation-c1": {
+  "result": "none"
+ },
+ "conservative-b2": {
+  "result": "rejected",
+  "file": "Conservatism - K. LCCN2011647256 (cropped).jpg",
+  "detail": "politically leaning towards conservative -> Q7169 conservatism"
+ },
+ "outer-b2": {
+  "result": "none"
+ },
+ "cite-b2": {
+  "result": "none"
+ },
+ "matching-b2": {
+  "result": "none"
+ },
+ "royal-b1": {
+  "result": "none"
+ },
+ "mainland-c1": {
+  "result": "none"
+ },
+ "familiar-b1": {
+  "result": "none"
+ },
+ "peer-b2": {
+  "result": "none"
+ },
+ "choose-a1": {
+  "result": "none"
+ },
+ "straight-a2": {
+  "result": "none"
+ },
+ "weight-a2": {
+  "result": "rejected",
+  "file": "Zuggewichte, Oberleitungsmast an Eisenbahnlinie.jpg",
+  "detail": "heavy object used for its mass or weight -> Q65088317 weight"
+ },
+ "interaction-b2": {
+  "result": "none"
+ },
+ "rational-c1": {
+  "result": "none"
+ },
+ "roster-c1": {
+  "result": "none"
+ },
+ "municipal-c1": {
+  "result": "none"
+ },
+ "protect-a2": {
+  "result": "none"
+ },
+ "ideal-a2": {
+  "result": "none"
+ },
+ "furthermore-b2": {
+  "result": "none"
+ },
+ "columnist-c1": {
+  "result": "rejected",
+  "file": "Angelique-houtveen-1385997836.jpg",
+  "detail": "someone who writes for publication in a series, creating an article that usually offers commentary and opinions -> Q1086863 columnist"
+ },
+ "designate-c1": {
+  "result": "none"
+ }
+}

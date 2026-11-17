@@ -43,6 +43,10 @@
   "source": "chatgpt-batch-003.webp",
   "cell": 11
  },
+ "action-a1": {
+  "source": "chatgpt-batch-037.webp",
+  "cell": 20
+ },
  "activation-c1": {
   "source": "chatgpt-batch-003.webp",
   "cell": 13
@@ -151,6 +155,10 @@
   "source": "chatgpt-batch-004.webp",
   "cell": 14
  },
+ "area-a1": {
+  "source": "chatgpt-batch-037.webp",
+  "cell": 21
+ },
  "array-c1": {
   "source": "chatgpt-batch-004.webp",
   "cell": 15
@@ -203,6 +211,10 @@
   "source": "chatgpt-batch-005.webp",
   "cell": 6
  },
+ "away-a1": {
+  "source": "chatgpt-batch-037.webp",
+  "cell": 22
+ },
  "backing-c1": {
   "source": "chatgpt-batch-005.webp",
   "cell": 7
@@ -215,6 +227,10 @@
   "source": "chatgpt-batch-005.webp",
   "cell": 9
  },
+ "become-a1": {
+  "source": "chatgpt-batch-037.webp",
+  "cell": 24
+ },
  "behalf-c1": {
   "source": "chatgpt-batch-005.webp",
   "cell": 10
@@ -222,6 +238,10 @@
  "behavioral-c1": {
   "source": "chatgpt-batch-005.webp",
   "cell": 11
+ },
+ "below-a1": {
+  "source": "chatgpt-batch-037.webp",
+  "cell": 25
  },
  "benchmark-c1": {
   "source": "chatgpt-batch-005.webp",
@@ -3267,20 +3287,96 @@
   "source": "chatgpt-batch-036.webp",
   "cell": 25
  },
+ "vulnerability-c1": {
+  "source": "chatgpt-batch-037.webp",
+  "cell": 1
+ },
+ "vulnerable-c1": {
+  "source": "chatgpt-batch-037.webp",
+  "cell": 2
+ },
+ "warrant-c1": {
+  "source": "chatgpt-batch-037.webp",
+  "cell": 3
+ },
  "wash-a1": {
   "source": "chatgpt-batch-002.webp",
   "cell": 17
+ },
+ "weaken-c1": {
+  "source": "chatgpt-batch-037.webp",
+  "cell": 4
  },
  "wear-a1": {
   "source": "chatgpt-batch-002.webp",
   "cell": 18
  },
+ "weed-c1": {
+  "source": "chatgpt-batch-037.webp",
+  "cell": 5
+ },
+ "well-being-c1": {
+  "source": "chatgpt-batch-037.webp",
+  "cell": 7
+ },
+ "well-c1": {
+  "source": "chatgpt-batch-037.webp",
+  "cell": 6
+ },
+ "whip-c1": {
+  "source": "chatgpt-batch-037.webp",
+  "cell": 8
+ },
+ "widen-c1": {
+  "source": "chatgpt-batch-037.webp",
+  "cell": 9
+ },
+ "widow-c1": {
+  "source": "chatgpt-batch-037.webp",
+  "cell": 10
+ },
+ "width-c1": {
+  "source": "chatgpt-batch-037.webp",
+  "cell": 11
+ },
  "wife-a1": {
   "source": "chatgpt-batch-002.webp",
   "cell": 4
  },
+ "willingness-c1": {
+  "source": "chatgpt-batch-037.webp",
+  "cell": 12
+ },
+ "wipe-c1": {
+  "source": "chatgpt-batch-037.webp",
+  "cell": 13
+ },
+ "wit-c1": {
+  "source": "chatgpt-batch-037.webp",
+  "cell": 14
+ },
+ "withdrawal-c1": {
+  "source": "chatgpt-batch-037.webp",
+  "cell": 15
+ },
+ "worthwhile-c1": {
+  "source": "chatgpt-batch-037.webp",
+  "cell": 16
+ },
+ "worthy-c1": {
+  "source": "chatgpt-batch-037.webp",
+  "cell": 17
+ },
  "wrong-a1": {
   "source": "chatgpt-batch-001.webp",
   "cell": 14
+ },
+ "yell-c1": {
+  "source": "chatgpt-batch-037.webp",
+  "cell": 18
+ },
+ "yield-c1": {
+  "source": "chatgpt-batch-037.webp",
+  "cell": 19
  }
 }

@@ -97,15 +97,6 @@ export function markDifficult(word: VocabWord, now: Date = new Date()): VocabWor
   };
 }
 
-export function markReviewLater(word: VocabWord, now: Date = new Date()): VocabWord {
-  return {
-    ...word,
-    status: word.status === 'NEW' ? 'LEARNING' : word.status,
-    lastReviewedAt: now.toISOString(),
-    nextReviewAt: addInterval(now, 'hard').toISOString(),
-  };
-}
-
 export function isDueForReview(word: VocabWord, now: Date = new Date()): boolean {
   if (!word.nextReviewAt) return false;
   return new Date(word.nextReviewAt).getTime() <= now.getTime();

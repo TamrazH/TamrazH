@@ -1,29 +1,49 @@
-import { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import { useAppStore } from '../store/useAppStore';
-import { getNewWords } from '../lib/selectors';
 import { t } from '../lib/i18n';
-import { Button, Card, CefrBadge, DemoBadge, ScreenHeader } from '../components/ui';
-import { getDisplayExample, getDisplayTranslation } from '../lib/demoContent';
-import { speakWord } from '../lib/speech';
+import { Button, Card, CefrBadge, ScreenHeader } from '../components/ui';
+import { getDefinitionDisplay, getExampleDisplay, getTranslationDisplay } from '../lib/contentDisplay';
+import { Headword, SpeakButton, Transcription, WordImage } from '../components/wordParts';
+import { spokenForm } from '../lib/contentDisplay';
+import type { Oxford5000Scope } from '../types';
 
 export default function WordStudyScreen() {
   const words = useAppStore((s) => s.words);
   const settings = useAppStore((s) => s.settings);
+  const studySession = useAppStore((s) => s.studySession);
+  const ensureStudySession = useAppStore((s) => s.ensureStudySession);
+  const startNewStudySession = useAppStore((s) => s.startNewStudySession);
   const markKnown = useAppStore((s) => s.markKnown);
   const markDifficult = useAppStore((s) => s.markDifficult);
-  const markReviewLater = useAppStore((s) => s.markReviewLater);
   const recordWordsStudied = useAppStore((s) => s.recordWordsStudied);
+  const advanceStudySession = useAppStore((s) => s.advanceStudySession);
+  const [searchParams] = useSearchParams();
+  const oxford5000Scope = (searchParams.get('scope') as Oxford5000Scope | null) ?? 'ALL';
 
-  const sessionWords = useMemo(() => {
-    return getNewWords(words)
-      .sort((a, b) => a.word.localeCompare(b.word))
-      .slice(0, settings.newWordsPerSession);
+  const [counts, setCounts] = useState({ known: 0, unknown: 0 });
+  const [revealedTranslation, setRevealedTranslation] = useState(false);
+  const showTranslation = settings.showTranslation || revealedTranslation;
+  const accent = settings.pronunciationAccent;
+
+  // Resume today's unfinished session for this mode/scope if one matches (same
+  // ordering settings, same day), otherwise generate a fresh one. The generated
+  // order is snapshotted into the session so refreshing the page or navigating
+  // away and back does not reshuffle or lose lesson progress.
+  useEffect(() => {
+    ensureStudySession(settings.activeMode, oxford5000Scope);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const [index, setIndex] = useState(0);
-  const [counts, setCounts] = useState({ known: 0, difficult: 0, later: 0 });
+  const belongsToThisScreen =
+    studySession && studySession.mode === settings.activeMode && studySession.oxford5000Scope === oxford5000Scope;
+  const sessionWords = belongsToThisScreen ? studySession!.wordIds.map((id) => words[id]).filter(Boolean) : [];
+  const index = belongsToThisScreen ? studySession!.currentIndex : 0;
+
+  if (!belongsToThisScreen) {
+    // session not created yet (effect hasn't run) — render nothing for one tick
+    return null;
+  }
 
   if (sessionWords.length === 0) {
     return (
@@ -47,32 +67,47 @@ export default function WordStudyScreen() {
         <div className="text-5xl">🎉</div>
         <h1 className="text-xl font-semibold">{t.study.sessionDone}</h1>
         <p className="text-sm text-[var(--color-text-muted)]">
-          {t.study.sessionSummary(counts.known, counts.difficult, counts.later)}
+          {t.study.sessionSummary(counts.known, counts.unknown)}
         </p>
-        <Link to="/" className="mt-2 w-full">
-          <Button className="w-full">{t.study.backToHome}</Button>
-        </Link>
+        <div className="mt-2 flex w-full flex-col gap-3">
+          {counts.unknown > 0 && (
+            <Link to="/study/flashcards?set=difficult">
+              <Button className="w-full">{t.study.reviewUnknownNow(counts.unknown)}</Button>
+            </Link>
+          )}
+          <Link to="/">
+            <Button variant={counts.unknown > 0 ? 'secondary' : 'primary'} className="w-full">
+              {t.study.backToHome}
+            </Button>
+          </Link>
+          <Button
+            variant="secondary"
+            className="w-full"
+            onClick={() => startNewStudySession(settings.activeMode, oxford5000Scope)}
+          >
+            {t.study.startNewSession}
+          </Button>
+        </div>
       </div>
     );
   }
 
   const word = sessionWords[index];
-  const translation = getDisplayTranslation(word);
-  const example = getDisplayExample(word);
+  const definition = getDefinitionDisplay(word);
+  const translation = getTranslationDisplay(word);
+  const example = getExampleDisplay(word);
 
-  function advance(kind: 'known' | 'difficult' | 'later') {
-    if (kind === 'known') {
+  function advance(known: boolean) {
+    if (known) {
       markKnown(word.id);
       setCounts((c) => ({ ...c, known: c.known + 1 }));
-    } else if (kind === 'difficult') {
-      markDifficult(word.id);
-      setCounts((c) => ({ ...c, difficult: c.difficult + 1 }));
     } else {
-      markReviewLater(word.id);
-      setCounts((c) => ({ ...c, later: c.later + 1 }));
+      markDifficult(word.id);
+      setCounts((c) => ({ ...c, unknown: c.unknown + 1 }));
     }
     recordWordsStudied(1);
-    setIndex((i) => i + 1);
+    setRevealedTranslation(false);
+    advanceStudySession();
   }
 
   return (
@@ -83,57 +118,72 @@ export default function WordStudyScreen() {
           {t.study.progressOf(index + 1, sessionWords.length)}
         </span>
       </div>
+      <p className="-mt-3 mb-4 text-xs text-[var(--color-text-muted)]">
+        {t.reviewStrategyLabel[studySession!.reviewStrategy]}
+      </p>
 
-      <Card key={word.id} className="animate-fade-in flex flex-col gap-5 p-6">
-        <div className="flex items-start justify-between">
-          <div>
-            <p className="text-2xl font-bold text-[var(--color-text)]">{word.word}</p>
+      <Card key={word.id} className="animate-fade-in flex flex-col gap-5 p-5">
+        <WordImage word={word} className="aspect-[16/10]" />
+
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0">
+            <div className="flex items-center gap-1">
+              <Headword word={word} className="text-2xl font-bold text-[var(--color-text)]" />
+              <SpeakButton text={spokenForm(word.word)} accent={accent} label={t.study.pronounce} />
+            </div>
+            <Transcription word={word} accent={accent} />
             <p className="mt-1 text-sm italic text-[var(--color-text-muted)]">{word.partOfSpeech}</p>
           </div>
           <CefrBadge level={word.cefrLevel} />
         </div>
 
-        <button
-          onClick={() => speakWord(word.word, settings.pronunciationAccent)}
-          className="flex min-h-11 w-fit items-center gap-2 rounded-full border border-[var(--color-border)] px-4 text-sm font-medium text-[var(--color-text)] active:scale-95"
-          aria-label={t.study.pronounce}
-        >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M4 9v6h4l5 5V4L8 9H4Z" strokeLinejoin="round" />
-            <path d="M16.5 8.5a5 5 0 0 1 0 7" strokeLinecap="round" />
-          </svg>
-          {t.study.pronounce}
-        </button>
+        <div>
+          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--color-text-muted)]">
+            {t.wordDetail.definition}
+          </div>
+          <p className={`mt-1 text-base ${definition.isMissing ? 'italic text-[var(--color-text-muted)]' : 'text-[var(--color-text)]'}`}>
+            {definition.text}
+          </p>
+        </div>
 
         <div>
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--color-text-muted)]">
             {t.study.translation}
-            {translation.isDemo && <DemoBadge />}
           </div>
-          <p className="mt-1 text-base text-[var(--color-text)]">{translation.text}</p>
+          {showTranslation ? (
+            <p className={`mt-1 text-base ${translation.isMissing ? 'italic text-[var(--color-text-muted)]' : 'text-[var(--color-text)]'}`}>
+              {translation.text}
+            </p>
+          ) : (
+            <button
+              onClick={() => setRevealedTranslation(true)}
+              className="mt-1 min-h-11 text-sm font-medium text-[var(--color-accent)] underline"
+            >
+              {t.welcome.showTranslation}
+            </button>
+          )}
         </div>
 
         <div>
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--color-text-muted)]">
             {t.study.example}
-            {example.isDemo && <DemoBadge />}
           </div>
-          <p className="mt-1 text-base italic text-[var(--color-text)]">{example.text}</p>
+          <div className="mt-1 flex items-start gap-1">
+            <p className={`flex-1 pt-2 text-base italic ${example.isMissing ? 'text-[var(--color-text-muted)]' : 'text-[var(--color-text)]'}`}>
+              {example.text}
+            </p>
+            {!example.isMissing && (
+              <SpeakButton text={example.text} accent={accent} label={t.study.pronounceExample} rate={0.85} />
+            )}
+          </div>
         </div>
       </Card>
 
-      <div className="mt-5 flex flex-col gap-3">
-        <Button onClick={() => advance('known')} className="w-full">
-          {t.study.know}
+      <div className="sticky bottom-0 -mx-5 mt-2 grid grid-cols-2 gap-3 bg-[var(--color-bg)] px-5 pb-2 pt-3">
+        <Button variant="danger" onClick={() => advance(false)}>
+          {t.study.dontKnow}
         </Button>
-        <div className="grid grid-cols-2 gap-3">
-          <Button variant="danger" onClick={() => advance('difficult')}>
-            {t.study.difficult}
-          </Button>
-          <Button variant="secondary" onClick={() => advance('later')}>
-            {t.study.reviewLater}
-          </Button>
-        </div>
+        <Button onClick={() => advance(true)}>{t.study.know}</Button>
       </div>
     </div>
   );

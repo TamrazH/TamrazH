@@ -25,6 +25,8 @@ const CSV_COLUMNS: (keyof VocabWord)[] = [
   'word',
   'partOfSpeech',
   'cefrLevel',
+  'sourceList',
+  'contentStatus',
   'status',
   'repetitions',
   'correctAnswers',

@@ -134,8 +134,8 @@ button {
 }
 
 .flip-card-face-back {
-  position: absolute;
-  inset: 0;
+  /* in normal flow so a long answer side sets the card's height instead of being clipped */
+  position: relative;
   transform: rotateY(180deg);
 }
 

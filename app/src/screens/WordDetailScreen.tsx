@@ -1,10 +1,12 @@
+import { useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useAppStore } from '../store/useAppStore';
 import { t } from '../lib/i18n';
-import { Button, Card, CefrBadge, DemoBadge, StatusBadge } from '../components/ui';
-import { getDisplayDefinition, getDisplayExample, getDisplayTranslation } from '../lib/demoContent';
+import { Button, Card, CefrBadge, StatusBadge } from '../components/ui';
+import { getDefinitionDisplay, getExampleDisplay, getTranslationDisplay } from '../lib/contentDisplay';
 import { formatDateTime } from '../lib/date';
-import { speakWord } from '../lib/speech';
+import { Headword, SpeakButton, Transcription, WordImage } from '../components/wordParts';
+import { spokenForm } from '../lib/contentDisplay';
 
 export default function WordDetailScreen() {
   const { id } = useParams<{ id: string }>();
@@ -13,6 +15,8 @@ export default function WordDetailScreen() {
   const settings = useAppStore((s) => s.settings);
   const markKnown = useAppStore((s) => s.markKnown);
   const markDifficult = useAppStore((s) => s.markDifficult);
+  const [revealedTranslation, setRevealedTranslation] = useState(false);
+  const showTranslation = settings.showTranslation || revealedTranslation;
 
   const word = id ? words[id] : undefined;
 
@@ -21,26 +25,31 @@ export default function WordDetailScreen() {
       <div className="px-5 pt-8">
         <p className="text-sm text-[var(--color-text-muted)]">{t.common.error}</p>
         <button onClick={() => navigate(-1)} className="mt-3 text-sm font-medium text-[var(--color-accent)]">
-          ← {t.common.close}
+          ← {t.common.back}
         </button>
       </div>
     );
   }
 
-  const translation = getDisplayTranslation(word);
-  const definition = getDisplayDefinition(word);
-  const example = getDisplayExample(word);
+  const translation = getTranslationDisplay(word);
+  const definition = getDefinitionDisplay(word);
+  const example = getExampleDisplay(word);
 
   return (
     <div className="flex flex-col gap-4 px-5 pb-6 pt-6">
       <button onClick={() => navigate(-1)} className="w-fit text-sm font-medium text-[var(--color-text-muted)]">
-        ← {t.common.close}
+        ← {t.common.back}
       </button>
 
-      <Card className="flex flex-col gap-4 p-6">
-        <div className="flex items-start justify-between">
-          <div>
-            <p className="text-2xl font-bold">{word.word}</p>
+      <Card className="flex flex-col gap-4 p-5">
+        <WordImage word={word} className="aspect-[16/10]" />
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0">
+            <div className="flex items-center gap-1">
+              <Headword word={word} className="text-2xl font-bold" />
+              <SpeakButton text={spokenForm(word.word)} accent={settings.pronunciationAccent} label={t.study.pronounce} />
+            </div>
+            <Transcription word={word} accent={settings.pronunciationAccent} />
             <p className="mt-1 text-sm italic text-[var(--color-text-muted)]">{word.partOfSpeech}</p>
           </div>
           <div className="flex flex-col items-end gap-2">
@@ -49,19 +58,30 @@ export default function WordDetailScreen() {
           </div>
         </div>
 
-        <button
-          onClick={() => speakWord(word.word, settings.pronunciationAccent)}
-          className="flex min-h-11 w-fit items-center gap-2 rounded-full border border-[var(--color-border)] px-4 text-sm font-medium active:scale-95"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M4 9v6h4l5 5V4L8 9H4Z" strokeLinejoin="round" />
-          </svg>
-          {t.study.pronounce}
-        </button>
-
-        <DetailField label={t.study.translation} value={translation.text} isDemo={translation.isDemo} />
-        <DetailField label={t.wordDetail.definition} value={definition.text} isDemo={definition.isDemo} />
-        <DetailField label={t.study.example} value={example.text} isDemo={example.isDemo} italic />
+        {showTranslation ? (
+          <DetailField label={t.study.translation} value={translation.text} isMissing={translation.isMissing} />
+        ) : (
+          <div>
+            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--color-text-muted)]">
+              {t.study.translation}
+            </div>
+            <button
+              onClick={() => setRevealedTranslation(true)}
+              className="mt-1 text-sm font-medium text-[var(--color-accent)] underline"
+            >
+              {t.welcome.showTranslation}
+            </button>
+          </div>
+        )}
+        <DetailField label={t.wordDetail.definition} value={definition.text} isMissing={definition.isMissing} />
+        <div className="flex items-start gap-1">
+          <div className="flex-1">
+            <DetailField label={t.study.example} value={example.text} isMissing={example.isMissing} italic />
+          </div>
+          {!example.isMissing && (
+            <SpeakButton text={example.text} accent={settings.pronunciationAccent} label={t.study.pronounceExample} rate={0.85} />
+          )}
+        </div>
 
         {word.allSenses && word.allSenses.length > 1 && (
           <div>
@@ -116,14 +136,29 @@ export default function WordDetailScreen() {
   );
 }
 
-function DetailField({ label, value, isDemo, italic }: { label: string; value: string; isDemo: boolean; italic?: boolean }) {
+function DetailField({
+  label,
+  value,
+  isMissing,
+  italic,
+}: {
+  label: string;
+  value: string;
+  isMissing: boolean;
+  italic?: boolean;
+}) {
   return (
     <div>
       <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--color-text-muted)]">
         {label}
-        {isDemo && <DemoBadge />}
       </div>
-      <p className={`mt-1 text-base text-[var(--color-text)] ${italic ? 'italic' : ''}`}>{value}</p>
+      <p
+        className={`mt-1 text-base ${italic ? 'italic' : ''} ${
+          isMissing ? 'italic text-[var(--color-text-muted)]' : 'text-[var(--color-text)]'
+        }`}
+      >
+        {value}
+      </p>
     </div>
   );
 }

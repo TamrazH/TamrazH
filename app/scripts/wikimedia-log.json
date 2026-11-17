@@ -1,0 +1,6876 @@
+{
+ "great-a1": {
+  "result": "none"
+ },
+ "clearly-a2": {
+  "result": "none"
+ },
+ "indoors-b1": {
+  "result": "none"
+ },
+ "theft-b2": {
+  "result": "rejected",
+  "file": "Constant Wauters Der ertappte Hausdiener.jpg",
+  "detail": "unlawful taking of property, act or process of stealing -> Q2727213 theft"
+ },
+ "largely-b2": {
+  "result": "none"
+ },
+ "responsibility-b1": {
+  "result": "none"
+ },
+ "bold-b2": {
+  "result": "rejected",
+  "file": "Emphasis methods.svg",
+  "detail": "the weight of the font is stated as bold -> Q920915 emphasis"
+ },
+ "mad-b1": {
+  "result": "none"
+ },
+ "insider-c1": {
+  "result": "none"
+ },
+ "hardly-b1": {
+  "result": "none"
+ },
+ "sense-a2": {
+  "result": "rejected",
+  "file": "Makart Fuenf Sinne.jpg",
+  "detail": "any of the manners by which living beings perceive the physical world -> Q173253 sense"
+ },
+ "vast-b2": {
+  "result": "none"
+ },
+ "cultivate-c1": {
+  "result": "none"
+ },
+ "mathematical-c1": {
+  "result": "none"
+ },
+ "thoughtful-c1": {
+  "result": "none"
+ },
+ "else-a1": {
+  "result": "none"
+ },
+ "reluctant-c1": {
+  "result": "none"
+ },
+ "statue-b1": {
+  "result": "lexeme-item",
+  "file": "Madonna and Child from the Church in Kruzlowa Wyzna - MNK I-119 (96516).tiff",
+  "detail": "sculpture primarily concerned as a representational figure -> Q179700 statue"
+ },
+ "lengthy-c1": {
+  "result": "none"
+ },
+ "philosophy-b2": {
+  "result": "rejected",
+  "file": "Hortus Deliciarum, Philosophy and the seven liberal arts (cropped).jpg",
+  "detail": "intellectual and/or logical study of general and fundamental problems -> Q5891 philosophy"
+ },
+ "shrink-c1": {
+  "result": "none"
+ },
+ "weekend-a1": {
+  "result": "none"
+ },
+ "accomplish-b2": {
+  "result": "none"
+ },
+ "sport-a1": {
+  "result": "item",
+  "file": "Youth-soccer-indiana.jpg",
+  "detail": "Q349 form of event or activity involving competition; series of activities that provides challenges for an individual or team/s of participants"
+ },
+ "secondary-b1": {
+  "result": "none"
+ },
+ "pop-c1": {
+  "result": "none"
+ },
+ "revenue-b2": {
+  "result": "none"
+ },
+ "organization-a2": {
+  "result": "rejected",
+  "file": "ExecutiveComitee-IAU-2018-2021.jpg",
+  "detail": "social entity (not necessarily commercial) uniting people into a structured group managing shared means to meet some needs, or to pursue collective goals -> Q43229 organization"
+ },
+ "traditional-a2": {
+  "result": "none"
+ },
+ "consolidate-c1": {
+  "result": "none"
+ },
+ "content1-b1": {
+  "result": "none"
+ },
+ "effectiveness-c1": {
+  "result": "none"
+ },
+ "slash-c1": {
+  "result": "none"
+ },
+ "nickel-b2": {
+  "result": "lexeme-item",
+  "file": "US Nickel 2013 Rev.png",
+  "detail": "United States coin with the value of five cents -> Q238498 nickel"
+ },
+ "slide-b2": {
+  "result": "none"
+ },
+ "scholar-b2": {
+  "result": "rejected",
+  "file": "Two monks discussing, from the manuscript De Universo or \"De rerum naturis\", Monte Cassino MS Casin 132.jpg",
+  "detail": "person who devotes themselves to scholarly pursuits -> Q20826540 scholar"
+ },
+ "sector-b2": {
+  "result": "none"
+ },
+ "empirical-c1": {
+  "result": "none"
+ },
+ "recover-b2": {
+  "result": "none"
+ },
+ "appropriately-b2": {
+  "result": "none"
+ },
+ "everywhere-a2": {
+  "result": "none"
+ },
+ "technique-b1": {
+  "result": "none"
+ },
+ "motivate-b2": {
+  "result": "none"
+ },
+ "behavioral-c1": {
+  "result": "none"
+ },
+ "similarly-b1": {
+  "result": "none"
+ },
+ "say-a1": {
+  "result": "none"
+ },
+ "inform-b2": {
+  "result": "none"
+ },
+ "undergo-b2": {
+  "result": "none"
+ },
+ "special-a1": {
+  "result": "rejected",
+  "file": "Colorful illuminated facades of buildings at night, with green, blue and pink lights, Kabukicho, Shinjuku, Tokyo.jpg",
+  "detail": "distinguished by a unique or unusual quality"
+ },
+ "remove-a2": {
+  "result": "none"
+ },
+ "analyze-a2": {
+  "result": "none"
+ },
+ "grade-b1": {
+  "result": "none"
+ },
+ "feather-b2": {
+  "result": "lexeme-item",
+  "file": "2 feathers.jpg",
+  "detail": "body-covering structure of birds -> Q81025 feather"
+ },
+ "subsequently-b2": {
+  "result": "none"
+ },
+ "out-a1": {
+  "result": "none"
+ },
+ "provision-c1": {
+  "result": "none"
+ },
+ "rental-c1": {
+  "result": "none"
+ },
+ "disappointing-b1": {
+  "result": "lexeme-item",
+  "file": "LSHS football player at Tacoma Dome.jpg",
+  "detail": "disappoint, let down -> Q621206 disappointment"
+ },
+ "fantastic-a1": {
+  "result": "none"
+ },
+ "contemplate-c1": {
+  "result": "none"
+ },
+ "better-a1": {
+  "result": "none"
+ },
+ "inhibit-c1": {
+  "result": "none"
+ },
+ "especially-a2": {
+  "result": "none"
+ },
+ "immigration-b2": {
+  "result": "lexeme-item",
+  "file": "Inmigrantes europeos llegando a Argentina.jpg",
+  "detail": "movement of people into another country or region to which they are not native -> Q131288 immigration"
+ },
+ "normally-a2": {
+  "result": "none"
+ },
+ "ready-a1": {
+  "result": "none"
+ },
+ "being-b2": {
+  "result": "none"
+ },
+ "satellite-b2": {
+  "result": "lexeme-item",
+  "file": "Luna 1 - 2 Spacecraft.png",
+  "detail": "A man-made apparatus designed to explore astronomical spaces -> Q26540 artificial satellite"
+ },
+ "carriage-c1": {
+  "result": "lexeme-item",
+  "file": ".00 4705 Coupé-Pferdekutsche.jpg",
+  "detail": "generally horse-drawn means of transport -> Q235356 carriage"
+ },
+ "whisper-b2": {
+  "result": "none"
+ },
+ "crude-c1": {
+  "result": "none"
+ },
+ "solidarity-c1": {
+  "result": "lexeme-item",
+  "file": "Abramowski-braterstwo-solidarnosc-wspoldzialanie-okladka.png",
+  "detail": "unity of feeling -> Q815726 solidarity"
+ },
+ "preach-c1": {
+  "result": "none"
+ },
+ "benchmark-c1": {
+  "result": "none"
+ },
+ "accent-b2": {
+  "result": "none"
+ },
+ "sight-b1": {
+  "result": "lexeme-item",
+  "file": "Eye iris.jpg",
+  "detail": "ability to see -> Q162668 visual perception"
+ },
+ "overwhelming-c1": {
+  "result": "none"
+ },
+ "technical-b1": {
+  "result": "none"
+ },
+ "troubled-c1": {
+  "result": "none"
+ },
+ "rotation-c1": {
+  "result": "none"
+ },
+ "conservative-b2": {
+  "result": "rejected",
+  "file": "Conservatism - K. LCCN2011647256 (cropped).jpg",
+  "detail": "politically leaning towards conservative -> Q7169 conservatism"
+ },
+ "outer-b2": {
+  "result": "none"
+ },
+ "cite-b2": {
+  "result": "none"
+ },
+ "matching-b2": {
+  "result": "none"
+ },
+ "royal-b1": {
+  "result": "none"
+ },
+ "mainland-c1": {
+  "result": "none"
+ },
+ "familiar-b1": {
+  "result": "none"
+ },
+ "peer-b2": {
+  "result": "none"
+ },
+ "choose-a1": {
+  "result": "none"
+ },
+ "straight-a2": {
+  "result": "none"
+ },
+ "weight-a2": {
+  "result": "rejected",
+  "file": "Zuggewichte, Oberleitungsmast an Eisenbahnlinie.jpg",
+  "detail": "heavy object used for its mass or weight -> Q65088317 weight"
+ },
+ "interaction-b2": {
+  "result": "none"
+ },
+ "rational-c1": {
+  "result": "none"
+ },
+ "roster-c1": {
+  "result": "none"
+ },
+ "municipal-c1": {
+  "result": "none"
+ },
+ "protect-a2": {
+  "result": "none"
+ },
+ "ideal-a2": {
+  "result": "none"
+ },
+ "furthermore-b2": {
+  "result": "none"
+ },
+ "columnist-c1": {
+  "result": "rejected",
+  "file": "Angelique-houtveen-1385997836.jpg",
+  "detail": "someone who writes for publication in a series, creating an article that usually offers commentary and opinions -> Q1086863 columnist"
+ },
+ "designate-c1": {
+  "result": "none"
+ },
+ "able-a2": {
+  "result": "none"
+ },
+ "abroad-b2": {
+  "result": "none"
+ },
+ "absolute-b2": {
+  "result": "none"
+ },
+ "absolutely-b1": {
+  "result": "none"
+ },
+ "acceptable-b2": {
+  "result": "none"
+ },
+ "accompany-b2": {
+  "result": "none"
+ },
+ "acknowledge-b2": {
+  "result": "none"
+ },
+ "acquire-b2": {
+  "result": "none"
+ },
+ "action-a1": {
+  "result": "none"
+ },
+ "actual-b2": {
+  "result": "none"
+ },
+ "actually-a2": {
+  "result": "none"
+ },
+ "additional-b2": {
+  "result": "none"
+ },
+ "admire-b1": {
+  "result": "none"
+ },
+ "admit-b1": {
+  "result": "none"
+ },
+ "advance-b2": {
+  "result": "none"
+ },
+ "advanced-b1": {
+  "result": "none"
+ },
+ "advantage-a2": {
+  "result": "none"
+ },
+ "advertise-a2": {
+  "result": "none"
+ },
+ "advise-b1": {
+  "result": "none"
+ },
+ "affair-b2": {
+  "result": "none"
+ },
+ "affect-a2": {
+  "result": "none"
+ },
+ "afterward-b2": {
+  "result": "none"
+ },
+ "again-a1": {
+  "result": "none"
+ },
+ "ago-a1": {
+  "result": "none"
+ },
+ "ahead-b1": {
+  "result": "none"
+ },
+ "alive-a2": {
+  "result": "rejected",
+  "file": "Live Fish In Dubai Mall.gif",
+  "detail": "not be dead, being alive, exist in some manner or for some length of time, alive -> Q21075715 living"
+ },
+ "all-right-a2": {
+  "result": "none"
+ },
+ "allow-a2": {
+  "result": "none"
+ },
+ "already-a2": {
+  "result": "none"
+ },
+ "also-a1": {
+  "result": "none"
+ },
+ "alter-b2": {
+  "result": "none"
+ },
+ "alternative-a2": {
+  "result": "none"
+ },
+ "amount-a2": {
+  "result": "none"
+ },
+ "angle-b2": {
+  "result": "rejected",
+  "file": "Fig angle separation.png",
+  "detail": "measure of separation between diverging lines -> Q1357788 angular measure"
+ },
+ "ankle-a2": {
+  "result": "lexeme-item",
+  "file": "Ankle.jpg",
+  "detail": "region where the foot and the leg meet -> Q168002 ankle"
+ },
+ "anymore-a2": {
+  "result": "none"
+ },
+ "anyway-a2": {
+  "result": "none"
+ },
+ "anywhere-a2": {
+  "result": "none"
+ },
+ "apart-b1": {
+  "result": "none"
+ },
+ "apparent-b2": {
+  "result": "none"
+ },
+ "apparently-b2": {
+  "result": "none"
+ },
+ "appeal-b2": {
+  "result": "none"
+ },
+ "appear-a2": {
+  "result": "none"
+ },
+ "appearance-a2": {
+  "result": "none"
+ },
+ "approach-b2": {
+  "result": "none"
+ },
+ "appropriate-b2": {
+  "result": "none"
+ },
+ "approximately-b1": {
+  "result": "none"
+ },
+ "area-a1": {
+  "result": "none"
+ },
+ "argue-a2": {
+  "result": "none"
+ },
+ "arise-b2": {
+  "result": "none"
+ },
+ "arrangement-a2": {
+  "result": "none"
+ },
+ "arrive-a1": {
+  "result": "none"
+ },
+ "ashamed-b2": {
+  "result": "none"
+ },
+ "aside-b2": {
+  "result": "none"
+ },
+ "aspect-b2": {
+  "result": "none"
+ },
+ "associate-b2": {
+  "result": "none"
+ },
+ "associated-b2": {
+  "result": "none"
+ },
+ "association-b2": {
+  "result": "rejected",
+  "file": "Muar Hakka Association.jpg",
+  "detail": "Q15911314 group of individuals (natural persons) or entities (legal persons) of all kinds"
+ },
+ "assume-b2": {
+  "result": "none"
+ },
+ "attach-b1": {
+  "result": "none"
+ },
+ "attack-a2": {
+  "result": "none"
+ },
+ "attempt-b2": {
+  "result": "none"
+ },
+ "aunt-a1": {
+  "result": "none"
+ },
+ "automatically-b1": {
+  "result": "none"
+ },
+ "available-a2": {
+  "result": "none"
+ },
+ "average-a2": {
+  "result": "none"
+ },
+ "avoid-a2": {
+  "result": "none"
+ },
+ "aware-b1": {
+  "result": "none"
+ },
+ "away-a1": {
+  "result": "none"
+ },
+ "awesome-a1": {
+  "result": "none"
+ },
+ "awful-a2": {
+  "result": "none"
+ },
+ "backward-b1": {
+  "result": "none"
+ },
+ "bad-a1": {
+  "result": "none"
+ },
+ "badly-a2": {
+  "result": "none"
+ },
+ "bank-money-a1": {
+  "result": "none"
+ },
+ "base-b1": {
+  "result": "none"
+ },
+ "based-a2": {
+  "result": "none"
+ },
+ "basic-b1": {
+  "result": "none"
+ },
+ "basically-b2": {
+  "result": "none"
+ },
+ "basis-b1": {
+  "result": "none"
+ },
+ "be-a1": {
+  "result": "none"
+ },
+ "bean-a2": {
+  "result": "lexeme-item",
+  "file": "Phaseolus vulgaris seed.jpg",
+  "detail": "seed of one of several genera of the flowering plant family Fabaceae, which are used for human or animal food -> Q379813 bean"
+ },
+ "bear-deal-with-b2": {
+  "result": "none"
+ },
+ "become-a1": {
+  "result": "none"
+ },
+ "beg-b2": {
+  "result": "none"
+ },
+ "behave-a2": {
+  "result": "none"
+ },
+ "behavior-a2": {
+  "result": "rejected",
+  "file": "Consumer behaviour.jpg",
+  "detail": "way that one or something acts in different situations"
+ },
+ "below-a1": {
+  "result": "none"
+ },
+ "bend-b1": {
+  "result": "none"
+ },
+ "benefit-a2": {
+  "result": "none"
+ },
+ "best-a1": {
+  "result": "none"
+ },
+ "big-a1": {
+  "result": "rejected",
+  "file": "Brach humerus.jpg",
+  "detail": "large -> Q12935276 large"
+ },
+ "bit-a2": {
+  "result": "none"
+ },
+ "blind-b2": {
+  "result": "none"
+ },
+ "bond-b2": {
+  "result": "none"
+ },
+ "boring-a1": {
+  "result": "none"
+ },
+ "boss-a2": {
+  "result": "rejected",
+  "file": "Supertux boss.png",
+  "detail": "Q468388 significant and especially strong enemy in video games"
+ },
+ "bother-b1": {
+  "result": "none"
+ },
+ "bottom-a2": {
+  "result": "none"
+ },
+ "boy-a1": {
+  "result": "rejected",
+  "file": "Giulio del Torre Zwei Kartenspieler.jpg",
+  "detail": "male child"
+ },
+ "brand-b1": {
+  "result": "none"
+ },
+ "brave-b1": {
+  "result": "none"
+ },
+ "breast-b2": {
+  "result": "rejected",
+  "file": "Weibliche brust en.jpg",
+  "detail": "region of the torso of a primate containing the mammary gland -> Q9103 breast"
+ },
+ "breath-b1": {
+  "result": "rejected",
+  "file": "Diaphragmatic breathing.gif",
+  "detail": "inhale and exhale air -> Q9530 breathing"
+ },
+ "breathe-b1": {
+  "result": "none"
+ },
+ "brief-b2": {
+  "result": "none"
+ },
+ "brilliant-a2": {
+  "result": "none"
+ },
+ "broad-b2": {
+  "result": "none"
+ },
+ "bury-b1": {
+  "result": "none"
+ },
+ "cable-b1": {
+  "result": "none"
+ },
+ "campaign-b1": {
+  "result": "none"
+ },
+ "cancer-b2": {
+  "result": "rejected",
+  "file": "Breast cancer cell (2).jpg",
+  "detail": "group of diseases -> Q12078 cancer"
+ },
+ "candidate-b1": {
+  "result": "none"
+ },
+ "cannot-a1": {
+  "result": "none"
+ },
+ "capable-b2": {
+  "result": "none"
+ },
+ "capacity-b2": {
+  "result": "rejected",
+  "file": "Capacity 2.jpg",
+  "detail": "Q6025391 shopping mall in Istanbul"
+ },
+ "capital-a1": {
+  "result": "rejected",
+  "file": "Tavares.Forum.Romanum.redux.jpg",
+  "detail": "primary governing city of a top-level (country) or first-level subdivision (country, state, province, etc) political entity -> Q5119 capital city"
+ },
+ "careful-a2": {
+  "result": "none"
+ },
+ "cast-b2": {
+  "result": "rejected",
+  "file": "Elenco de obra 1810 escenificada en la Torre del Vigía de Maldonado en 1962.jpg",
+  "detail": "group of people in a theatrical or film production -> Q15267437 cast"
+ },
+ "category-b1": {
+  "result": "rejected",
+  "file": "Category SVG.svg",
+  "detail": "Q719395 algebraic structure of objects and morphisms between objects, which can be associatively composed if the (co)domains agree"
+ },
+ "center-a1": {
+  "result": "rejected",
+  "file": "Circle-withsegments.svg",
+  "detail": "Q23595 middle point, in some sense, of an object in geometry"
+ },
+ "central-b1": {
+  "result": "rejected",
+  "file": "Circle-withsegments.svg",
+  "detail": "in the middle -> Q23595 center"
+ },
+ "century-a2": {
+  "result": "none"
+ },
+ "ceremony-b1": {
+  "result": "lexeme-item",
+  "file": "Ceremony.lifeguard.london.arp.jpg",
+  "detail": "event of ritual significance, performed on a special occasion -> Q2627975 ceremony"
+ },
+ "certain-a2": {
+  "result": "none"
+ },
+ "certainly-a2": {
+  "result": "none"
+ },
+ "chairman-b2": {
+  "result": "rejected",
+  "file": "Leena Al-Hadid, chairperson, IAEA, 2018.jpg",
+  "detail": "leading officer of an organized group -> Q140686 chairperson"
+ },
+ "change-a1": {
+  "result": "none"
+ },
+ "channel-b1": {
+  "result": "rejected",
+  "file": "Communications men.jpg",
+  "detail": "a physical or logical connection used for transmission of information -> Q733553 channel"
+ },
+ "characteristic-b2": {
+  "result": "none"
+ },
+ "cheap-a1": {
+  "result": "none"
+ },
+ "cheat-b1": {
+  "result": "none"
+ },
+ "civil-b2": {
+  "result": "none"
+ },
+ "claim-b1": {
+  "result": "none"
+ },
+ "clause-b1": {
+  "result": "none"
+ },
+ "close2-a2": {
+  "result": "none"
+ },
+ "closely-b2": {
+  "result": "none"
+ },
+ "collect-a2": {
+  "result": "none"
+ },
+ "combine-b1": {
+  "result": "none"
+ },
+ "come-a1": {
+  "result": "none"
+ },
+ "commercial-b1": {
+  "result": "none"
+ },
+ "commit-b1": {
+  "result": "none"
+ },
+ "common-a1": {
+  "result": "none"
+ },
+ "commonly-b2": {
+  "result": "none"
+ },
+ "compare-a1": {
+  "result": "none"
+ },
+ "competitor-b1": {
+  "result": "none"
+ },
+ "complain-a2": {
+  "result": "none"
+ },
+ "complaint-b1": {
+  "result": "none"
+ },
+ "complicated-b2": {
+  "result": "none"
+ },
+ "concentrate-b1": {
+  "result": "none"
+ },
+ "conclude-b1": {
+  "result": "none"
+ },
+ "confident-b1": {
+  "result": "lexeme-item",
+  "file": "Young Boy in Confident Pose - Centro Habana - Havana - Cuba.JPG",
+  "detail": "sure of something -> Q4116378 confidence"
+ },
+ "connect-a2": {
+  "result": "none"
+ },
+ "conscious-b2": {
+  "result": "none"
+ },
+ "consequence-b1": {
+  "result": "none"
+ },
+ "consider-a2": {
+  "result": "none"
+ },
+ "consideration-b2": {
+  "result": "none"
+ },
+ "consist-b1": {
+  "result": "none"
+ },
+ "consistent-b2": {
+  "result": "none"
+ },
+ "constantly-b2": {
+  "result": "none"
+ },
+ "construct-b2": {
+  "result": "none"
+ },
+ "contain-a2": {
+  "result": "none"
+ },
+ "contest-b2": {
+  "result": "rejected",
+  "file": "Athletics competitions.jpg",
+  "detail": "creative competition -> Q841654 competition"
+ },
+ "context-a2": {
+  "result": "none"
+ },
+ "continue-a2": {
+  "result": "none"
+ },
+ "continuous-b1": {
+  "result": "none"
+ },
+ "contribute-b2": {
+  "result": "none"
+ },
+ "convenient-b1": {
+  "result": "none"
+ },
+ "convert-b2": {
+  "result": "none"
+ },
+ "convince-b1": {
+  "result": "none"
+ },
+ "convinced-b2": {
+  "result": "none"
+ },
+ "cool-a1": {
+  "result": "none"
+ },
+ "correct-a1": {
+  "result": "none"
+ },
+ "correctly-a2": {
+  "result": "none"
+ },
+ "council-b2": {
+  "result": "rejected",
+  "file": "GLA Chamber.jpg",
+  "detail": "group of people who come together to consult, deliberate, or make decisions -> Q4358176 council"
+ },
+ "country-a1": {
+  "result": "rejected",
+  "file": "CIA WorldFactBook-Political world.png",
+  "detail": "distinct region in geography; a broad term that can include political divisions or regions associated with distinct political characteristics -> Q6256 country"
+ },
+ "county-b2": {
+  "result": "none"
+ },
+ "course-a1": {
+  "result": "none"
+ },
+ "crash-b2": {
+  "result": "rejected",
+  "file": "Colliding Cops.svg",
+  "detail": "accidental collision -> Q238053 collision"
+ },
+ "crazy-a2": {
+  "result": "none"
+ },
+ "criterion-b2": {
+  "result": "none"
+ },
+ "crowded-a2": {
+  "result": "none"
+ },
+ "crucial-b2": {
+  "result": "none"
+ },
+ "cruel-b1": {
+  "result": "none"
+ },
+ "curly-a2": {
+  "result": "none"
+ },
+ "current-b1": {
+  "result": "none"
+ },
+ "currently-b1": {
+  "result": "none"
+ },
+ "custom-b1": {
+  "result": "none"
+ },
+ "date-a1": {
+  "result": "none"
+ },
+ "day-a1": {
+  "result": "rejected",
+  "file": "GreenwUhrWelt.jpg",
+  "detail": "unit of time lasting 24 hours regardless of start time -> Q573 day"
+ },
+ "dear-a1": {
+  "result": "none"
+ },
+ "debate-b2": {
+  "result": "rejected",
+  "file": "Petrus alphonsi dialogues.jpg",
+  "detail": "argument with formal rules, is usually used to prepare a substantive vote -> Q179875 debate"
+ },
+ "decade-b1": {
+  "result": "rejected",
+  "file": "2000s decade montage3.png",
+  "detail": "a ten-year period -> Q39911 decade"
+ },
+ "decent-b2": {
+  "result": "none"
+ },
+ "decide-a1": {
+  "result": "none"
+ },
+ "declare-b2": {
+  "result": "none"
+ },
+ "decoration-b2": {
+  "result": "lexeme-item",
+  "file": "Sans Souci 3.jpg",
+  "detail": "serves to beautify an area, a building or an object -> Q2520975 decoration"
+ },
+ "decrease-b2": {
+  "result": "none"
+ },
+ "deeply-b2": {
+  "result": "none"
+ },
+ "define-b1": {
+  "result": "none"
+ },
+ "definite-b1": {
+  "result": "none"
+ },
+ "definitely-a2": {
+  "result": "none"
+ },
+ "deliberate-b2": {
+  "result": "none"
+ },
+ "deliberately-b2": {
+  "result": "none"
+ },
+ "deliver-b1": {
+  "result": "none"
+ },
+ "demand-b2": {
+  "result": "none"
+ },
+ "demonstrate-b2": {
+  "result": "none"
+ },
+ "depend-a2": {
+  "result": "none"
+ },
+ "depressing-b2": {
+  "result": "lexeme-item",
+  "file": "Mental Illness Icon 2.png",
+  "detail": "bring or bringing down (in mood or activity), blue, feeling down, sad -> Q4340209 depression"
+ },
+ "depth-b2": {
+  "result": "none"
+ },
+ "describe-a1": {
+  "result": "none"
+ },
+ "description-a1": {
+  "result": "none"
+ },
+ "desire-b2": {
+  "result": "rejected",
+  "file": "Jacob Jordaens - Susanna and the Elders - Google Art Project.jpg",
+  "detail": "want, crave, desire -> Q775842 desire"
+ },
+ "desperate-b2": {
+  "result": "none"
+ },
+ "detect-b2": {
+  "result": "none"
+ },
+ "determine-b1": {
+  "result": "none"
+ },
+ "dialogue-a1": {
+  "result": "rejected",
+  "file": "Plato and Aristotle dialectics by Luca della Robbia-Museo dell'Opera del Duomo-Florence.jpg",
+  "detail": "conversation between two or more people -> Q131395 dialogue"
+ },
+ "die-a1": {
+  "result": "none"
+ },
+ "difference-a1": {
+  "result": "none"
+ },
+ "differently-a2": {
+  "result": "none"
+ },
+ "difficult-a1": {
+  "result": "none"
+ },
+ "direct-a2": {
+  "result": "none"
+ },
+ "directly-b1": {
+  "result": "none"
+ },
+ "disadvantage-b1": {
+  "result": "none"
+ },
+ "disappear-a2": {
+  "result": "none"
+ },
+ "discipline-b2": {
+  "result": "none"
+ },
+ "dishonest-b2": {
+  "result": "none"
+ },
+ "distribute-b2": {
+  "result": "none"
+ },
+ "distribution-b2": {
+  "result": "none"
+ },
+ "divide-b1": {
+  "result": "none"
+ },
+ "division-b2": {
+  "result": "rejected",
+  "file": "División.png",
+  "detail": "arithmetic operation; one of the four basic operations of arithmetic (others being addition, subtraction, multiplication).The division of two natural numbers is the process of calculating the number of times one number is contained within one another -> Q1226939 division"
+ },
+ "divorced-a2": {
+  "result": "none"
+ },
+ "do1-a1": {
+  "result": "none"
+ },
+ "documentary-b1": {
+  "result": "none"
+ },
+ "dominate-b2": {
+  "result": "none"
+ },
+ "double-a2": {
+  "result": "none"
+ },
+ "down-a1": {
+  "result": "none"
+ },
+ "draft-b2": {
+  "result": "none"
+ },
+ "drag-b2": {
+  "result": "none"
+ },
+ "dramatic-b2": {
+  "result": "none"
+ },
+ "dressed-b1": {
+  "result": "rejected",
+  "file": "Man getting dressed.jpg",
+  "detail": "to put on clothes, decorate, covering, wearing clothes -> Q13128864 dressing"
+ },
+ "due-b1": {
+  "result": "none"
+ },
+ "dust-b1": {
+  "result": "rejected",
+  "file": "Dusty computer keyboard.jpg",
+  "detail": "small particles in the air -> Q165632 dust"
+ },
+ "duty-b1": {
+  "result": "none"
+ },
+ "ear-a1": {
+  "result": "lexeme-item",
+  "file": "Closeup of a human ear.jpg",
+  "detail": "organ that detects sound; organ of hearing and balance -> Q7362 ear"
+ },
+ "early-a1": {
+  "result": "none"
+ },
+ "earn-a2": {
+  "result": "none"
+ },
+ "easily-a2": {
+  "result": "none"
+ },
+ "eastern-b1": {
+  "result": "none"
+ },
+ "educate-b1": {
+  "result": "none"
+ },
+ "educated-b1": {
+  "result": "rejected",
+  "file": "1887 Bettannier Der Schwarze Fleck anagoria.jpg",
+  "detail": "teach, having an education -> Q8434 education"
+ },
+ "effect-a2": {
+  "result": "none"
+ },
+ "effective-b1": {
+  "result": "none"
+ },
+ "effectively-b1": {
+  "result": "none"
+ },
+ "elect-b2": {
+  "result": "none"
+ },
+ "element-b1": {
+  "result": "lexeme-item",
+  "file": "Simple Periodic Table Chart-en.svg",
+  "detail": "chemical element; species of atoms having the same number of protons in the atomic nucleus -> Q11344 chemical element"
+ },
+ "elsewhere-b2": {
+  "result": "none"
+ },
+ "embarrassing-b1": {
+  "result": "none"
+ },
+ "emerge-b2": {
+  "result": "none"
+ },
+ "emphasize-b2": {
+  "result": "none"
+ },
+ "employ-a2": {
+  "result": "none"
+ },
+ "empty-a2": {
+  "result": "none"
+ },
+ "enable-b2": {
+  "result": "none"
+ },
+ "end-a1": {
+  "result": "none"
+ },
+ "ending-a2": {
+  "result": "none"
+ },
+ "enormous-a2": {
+  "result": "none"
+ },
+ "ensure-b2": {
+  "result": "none"
+ },
+ "enthusiastic-b2": {
+  "result": "none"
+ },
+ "entire-b2": {
+  "result": "none"
+ },
+ "entirely-b2": {
+  "result": "none"
+ },
+ "equal-b1": {
+  "result": "none"
+ },
+ "equally-b1": {
+  "result": "none"
+ },
+ "essential-b1": {
+  "result": "none"
+ },
+ "establish-b2": {
+  "result": "none"
+ },
+ "estate-b2": {
+  "result": "lexeme-item",
+  "file": "PM 127503 B Heurne.jpg",
+  "detail": "comprises the buildings and supporting farmland and woods of a very large property -> Q12292478 estate"
+ },
+ "even-a1": {
+  "result": "none"
+ },
+ "eventually-b1": {
+  "result": "none"
+ },
+ "ever-a1": {
+  "result": "none"
+ },
+ "everyday-a2": {
+  "result": "none"
+ },
+ "exact-a2": {
+  "result": "none"
+ },
+ "exactly-a2": {
+  "result": "none"
+ },
+ "example-a1": {
+  "result": "rejected",
+  "file": "Example image not to be used in article namespace.jpg",
+  "detail": "a thing which acts as a typical representative of a set of things"
+ },
+ "exist-a2": {
+  "result": "none"
+ },
+ "existence-b2": {
+  "result": "none"
+ },
+ "expand-b1": {
+  "result": "none"
+ },
+ "expected-b1": {
+  "result": "none"
+ },
+ "experienced-b1": {
+  "result": "none"
+ },
+ "explode-b1": {
+  "result": "none"
+ },
+ "explore-b1": {
+  "result": "none"
+ },
+ "express-a2": {
+  "result": "none"
+ },
+ "extend-b2": {
+  "result": "none"
+ },
+ "extent-b2": {
+  "result": "none"
+ },
+ "extra-a1": {
+  "result": "none"
+ },
+ "extraordinary-b2": {
+  "result": "none"
+ },
+ "extremely-a2": {
+  "result": "none"
+ },
+ "facility-b2": {
+  "result": "none"
+ },
+ "factor-a2": {
+  "result": "none"
+ },
+ "fair-a2": {
+  "result": "none"
+ },
+ "fairly-b1": {
+  "result": "none"
+ },
+ "false-a1": {
+  "result": "none"
+ },
+ "famous-a1": {
+  "result": "none"
+ },
+ "fancy-b1": {
+  "result": "none"
+ },
+ "far-a1": {
+  "result": "none"
+ },
+ "fascinating-b1": {
+  "result": "none"
+ },
+ "fashionable-b1": {
+  "result": "none"
+ },
+ "fat-a1": {
+  "result": "none"
+ },
+ "fault-b2": {
+  "result": "none"
+ },
+ "favor-b1": {
+  "result": "none"
+ },
+ "feature-a2": {
+  "result": "rejected",
+  "file": "Archäologie schichtengrabung.jpg",
+  "detail": "Q814254 archaeological term to describe a collection of one or more contexts representing some human non-portable activity"
+ },
+ "fee-b2": {
+  "result": "none"
+ },
+ "fellow-b2": {
+  "result": "none"
+ },
+ "figure-a2": {
+  "result": "rejected",
+  "file": "African-Songye-Power-Figure-and-Hopi-Ahola-Katsina-Doll.jpg",
+  "detail": "Q29527347 representation of humans, animals, or mythical beasts, in any medium"
+ },
+ "finally-a2": {
+  "result": "none"
+ },
+ "fine-a1": {
+  "result": "none"
+ },
+ "firm-b2": {
+  "result": "rejected",
+  "file": "Carlos Luis Michel Fumero - Equipo de Aducarga.jpg",
+  "detail": "business -> Q783794 company"
+ },
+ "fixed-b1": {
+  "result": "none"
+ },
+ "fold-b1": {
+  "result": "none"
+ },
+ "following-a2": {
+  "result": "none"
+ },
+ "force-b1": {
+  "result": "rejected",
+  "file": "Force examples.svg",
+  "detail": "Q11402 physical influence that tends to cause an object to change motion unless opposed by other forces"
+ },
+ "forget-a1": {
+  "result": "none"
+ },
+ "former-b2": {
+  "result": "none"
+ },
+ "fortunately-a2": {
+  "result": "none"
+ },
+ "found-b2": {
+  "result": "none"
+ },
+ "free-a1": {
+  "result": "none"
+ },
+ "frequently-b1": {
+  "result": "none"
+ },
+ "friday-a1": {
+  "result": "none"
+ },
+ "friendly-a1": {
+  "result": "none"
+ },
+ "front-a1": {
+  "result": "none"
+ },
+ "fully-b2": {
+  "result": "none"
+ },
+ "function-b1": {
+  "result": "none"
+ },
+ "fundamental-b2": {
+  "result": "none"
+ },
+ "further-a2": {
+  "result": "none"
+ },
+ "future-a1": {
+  "result": "rejected",
+  "file": "Light cone.svg",
+  "detail": "time which has yet to occur -> Q344 future"
+ },
+ "gang-b2": {
+  "result": "rejected",
+  "file": "Glatt-Räuber8113.jpg",
+  "detail": "violent group of individuals claiming control over a territory -> Q275186 gang"
+ },
+ "gather-b1": {
+  "result": "none"
+ },
+ "general-a2": {
+  "result": "none"
+ },
+ "generally-b1": {
+  "result": "none"
+ },
+ "generate-b2": {
+  "result": "none"
+ },
+ "generation-b1": {
+  "result": "none"
+ },
+ "generous-b1": {
+  "result": "none"
+ },
+ "get-a1": {
+  "result": "none"
+ },
+ "glad-b1": {
+  "result": "lexeme-item",
+  "file": "Sweet Baby Kisses Family Love.jpg",
+  "detail": "happy and grateful, pleased -> Q8 happiness"
+ },
+ "go-a1": {
+  "result": "none"
+ },
+ "good-a1": {
+  "result": "none"
+ },
+ "goods-b2": {
+  "result": "none"
+ },
+ "govern-b2": {
+  "result": "none"
+ },
+ "governor-b2": {
+  "result": "rejected",
+  "file": "ArnoldSchwarzeneggerSDJun10.jpg",
+  "detail": "Q132050 high ranked governing official in a state"
+ },
+ "grab-b2": {
+  "result": "none"
+ },
+ "gradually-b2": {
+  "result": "none"
+ },
+ "grain-b1": {
+  "result": "lexeme-item",
+  "file": "040719 172 dorset marnhull.jpg",
+  "detail": "small, hard, dry seed used as food; may be ground into flour -> Q2995529 grain"
+ },
+ "grand-b2": {
+  "result": "none"
+ },
+ "grant-b2": {
+  "result": "none"
+ },
+ "gray-a1": {
+  "result": "rejected",
+  "file": "Color icon gray.svg",
+  "detail": "color between black and white"
+ },
+ "guarantee-b2": {
+  "result": "none"
+ },
+ "guess-a1": {
+  "result": "none"
+ },
+ "guest-a2": {
+  "result": "lexeme-item",
+  "file": "HK SKD TKO 寶琳 Po Lam 新都城中心商場 Metro City Plaza MCP Three Discovery mall 惠康超級市場 Wellcome Supermarket March 2022 Px3 self-checkout points.jpg",
+  "detail": "someone who is offered hospitability -> Q852835 customer"
+ },
+ "guide-a2": {
+  "result": "rejected",
+  "file": "Tourguide2.jpg",
+  "detail": "person who escorts travelers or tourists through unknown or unfamiliar locations -> Q14290559 guide"
+ },
+ "guy-a2": {
+  "result": "none"
+ },
+ "half-a1": {
+  "result": "none"
+ },
+ "hall-a2": {
+  "result": "none"
+ },
+ "happen-a1": {
+  "result": "none"
+ },
+ "happily-a2": {
+  "result": "none"
+ },
+ "hard-a1": {
+  "result": "none"
+ },
+ "harm-b2": {
+  "result": "none"
+ },
+ "harmful-b2": {
+  "result": "none"
+ },
+ "have-a1": {
+  "result": "none"
+ },
+ "headache-a2": {
+  "result": "rejected",
+  "file": "The Headache (caricature) RMG PW3879.jpg",
+  "detail": "pain in the head -> Q86 headache"
+ },
+ "healthy-a1": {
+  "result": "none"
+ },
+ "hear-a1": {
+  "result": "none"
+ },
+ "hearing-b2": {
+  "result": "rejected",
+  "file": "Anhörung zu einer Ordnungswidrigkeitenanzeige Stadt Köln.png",
+  "detail": "meeting of a court or tribunal, to decide an issue -> Q545861 legal hearing"
+ },
+ "heat-a2": {
+  "result": "rejected",
+  "file": "Hot metalwork.jpg",
+  "detail": "energy transferred between systems because of a temperature difference -> Q44432 heat"
+ },
+ "heavily-b1": {
+  "result": "none"
+ },
+ "heavy-a2": {
+  "result": "none"
+ },
+ "heel-b2": {
+  "result": "rejected",
+  "file": "Heels for female shoes 08.jpg",
+  "detail": "built-up or elevated part of footwear that supports the heel of the wearer -> Q257120 heel"
+ },
+ "height-a2": {
+  "result": "none"
+ },
+ "hell-b2": {
+  "result": "rejected",
+  "file": "William-Adolphe Bouguereau (1825-1905) - Dante And Virgil In Hell (1850).jpg",
+  "detail": "mythological place of, often eternal, suffering -> Q564 hell"
+ },
+ "here-a1": {
+  "result": "none"
+ },
+ "hesitate-b2": {
+  "result": "none"
+ },
+ "hide-a2": {
+  "result": "none"
+ },
+ "high-a1": {
+  "result": "rejected",
+  "file": "Height demonstration diagram He.png",
+  "detail": "having a specified elevation or height; tall -> Q208826 height"
+ },
+ "highly-b1": {
+  "result": "none"
+ },
+ "hire-b1": {
+  "result": "none"
+ },
+ "hit-a2": {
+  "result": "none"
+ },
+ "hobby-a1": {
+  "result": "lexeme-item",
+  "file": "Vogelbeobachtung Nordmakedonien.jpg",
+  "detail": "regular activity that is done for enjoyment -> Q47728 hobby"
+ },
+ "hold-a2": {
+  "result": "none"
+ },
+ "hollow-b2": {
+  "result": "none"
+ },
+ "homework-a1": {
+  "result": "none"
+ },
+ "honest-b1": {
+  "result": "none"
+ },
+ "honor-b2": {
+  "result": "none"
+ },
+ "horrible-b1": {
+  "result": "none"
+ },
+ "host-b1": {
+  "result": "none"
+ },
+ "hour-a1": {
+  "result": "lexeme-item",
+  "file": "AnalogClockAnimation1 2hands 1h in 6sec.gif",
+  "detail": "period of time -> Q25235 hour"
+ },
+ "how-a1": {
+  "result": "none"
+ },
+ "however-a1": {
+  "result": "none"
+ },
+ "huge-a2": {
+  "result": "none"
+ },
+ "humor-b2": {
+  "result": "rejected",
+  "file": "Eduard von Grützner Falstaff.jpg",
+  "detail": "tendency of particular cognitive experiences to provoke laughter and provide amusement -> Q35874 humor"
+ },
+ "humorous-b2": {
+  "result": "none"
+ },
+ "hunt-b1": {
+  "result": "none"
+ },
+ "hunting-b2": {
+  "result": "lexeme-item",
+  "file": "Paul Childerley driven hunt Finland 06.png",
+  "detail": "searching, pursuing, and catching wild animals -> Q36963 hunting"
+ },
+ "hurt-a2": {
+  "result": "none"
+ },
+ "idea-a1": {
+  "result": "none"
+ },
+ "identify-a2": {
+  "result": "none"
+ },
+ "identity-b1": {
+  "result": "rejected",
+  "file": "Identity.jpg",
+  "detail": "Q844569 set of qualities, beliefs, personality traits, and expressions characterizing a person or group; shaped by social and cultural factors, encompassing occupational, ethnic, religious, gender, national, and political dimensions"
+ },
+ "ignore-b1": {
+  "result": "none"
+ },
+ "illustrate-b2": {
+  "result": "none"
+ },
+ "illustration-b2": {
+  "result": "none"
+ },
+ "image-a2": {
+  "result": "rejected",
+  "file": "1752 James Ayscough A short account of the Eye and nature of vision p30.jpg",
+  "detail": "optical or other representation of a real object; graphic; picture -> Q478798 image"
+ },
+ "imaginary-b1": {
+  "result": "none"
+ },
+ "imagination-b2": {
+  "result": "rejected",
+  "file": "Lieut goverr Gall-stone, inspired by Alecto; -or- the birth of Minerva (BM Y,5.25 1).jpg",
+  "detail": "creative ability -> Q34516 imagination"
+ },
+ "immediate-b1": {
+  "result": "none"
+ },
+ "immediately-a2": {
+  "result": "none"
+ },
+ "impact-b1": {
+  "result": "none"
+ },
+ "impatient-b2": {
+  "result": "none"
+ },
+ "imply-b2": {
+  "result": "none"
+ },
+ "importance-b1": {
+  "result": "none"
+ },
+ "impose-b2": {
+  "result": "none"
+ },
+ "impress-b2": {
+  "result": "none"
+ },
+ "impressed-b2": {
+  "result": "none"
+ },
+ "impression-b1": {
+  "result": "none"
+ },
+ "impressive-b1": {
+  "result": "none"
+ },
+ "improve-a1": {
+  "result": "none"
+ },
+ "improvement-b1": {
+  "result": "none"
+ },
+ "incident-b2": {
+  "result": "none"
+ },
+ "include-a1": {
+  "result": "none"
+ },
+ "included-a2": {
+  "result": "none"
+ },
+ "increasingly-b2": {
+  "result": "none"
+ },
+ "incredible-a2": {
+  "result": "none"
+ },
+ "incredibly-b1": {
+  "result": "none"
+ },
+ "indeed-b1": {
+  "result": "none"
+ },
+ "indirect-b1": {
+  "result": "none"
+ },
+ "individual-a2": {
+  "result": "rejected",
+  "file": "'Sigalegale, KITLV 36D662.tiff",
+  "detail": "a person considered alone, rather than as belonging to a group of people -> Q795052 individual"
+ },
+ "indoor-b1": {
+  "result": "none"
+ },
+ "informal-a2": {
+  "result": "none"
+ },
+ "information-a1": {
+  "result": "rejected",
+  "file": "Structure of the Universe.jpg",
+  "detail": "Q11028 that which informs; the answer to a question; that from which knowledge can be derived"
+ },
+ "initial-b2": {
+  "result": "rejected",
+  "file": "IBM logo.svg",
+  "detail": "initial letter of a word or name, as used in acronyms or abbreviations -> Q29882054 initial"
+ },
+ "initially-b2": {
+  "result": "none"
+ },
+ "initiative-b2": {
+  "result": "none"
+ },
+ "injury-a2": {
+  "result": "rejected",
+  "file": "Burns foot.jpg",
+  "detail": "physiological wound caused by an external source -> Q193078 injury"
+ },
+ "inner-b2": {
+  "result": "none"
+ },
+ "innocent-b1": {
+  "result": "none"
+ },
+ "insight-b2": {
+  "result": "none"
+ },
+ "insist-b2": {
+  "result": "none"
+ },
+ "install-b2": {
+  "result": "none"
+ },
+ "instance-b2": {
+  "result": "none"
+ },
+ "instead-a2": {
+  "result": "none"
+ },
+ "institute-b2": {
+  "result": "none"
+ },
+ "institution-b2": {
+  "result": "rejected",
+  "file": "Vue du Collège des Quatre-Nations – israel.silvestre.fr (Nancy), F 90-2.jpg",
+  "detail": "Q178706 structure or mechanism of social order and cooperation governing the behaviour of a set of individuals within a given community"
+ },
+ "instruction-a2": {
+  "result": "none"
+ },
+ "intelligent-a2": {
+  "result": "rejected",
+  "file": "Guilford model.jpg",
+  "detail": "relatively high mental capacity -> Q83500 intelligence"
+ },
+ "intend-b1": {
+  "result": "none"
+ },
+ "intended-b2": {
+  "result": "none"
+ },
+ "intense-b2": {
+  "result": "none"
+ },
+ "intention-b1": {
+  "result": "none"
+ },
+ "interest-a1": {
+  "result": "none"
+ },
+ "interested-a1": {
+  "result": "rejected",
+  "file": "Bundesarchiv Bild 183-77625-0001, Brigade Komsomol\" schreibt an den Staatsrat\".jpg",
+  "detail": "having the attention engaged or interest provoked; exhibit curiosity -> Q616314 interest"
+ },
+ "interesting-a1": {
+  "result": "rejected",
+  "file": "Bundesarchiv Bild 183-77625-0001, Brigade Komsomol\" schreibt an den Staatsrat\".jpg",
+  "detail": "holding the attention -> Q616314 interest"
+ },
+ "internal-b2": {
+  "result": "none"
+ },
+ "interpret-b2": {
+  "result": "none"
+ },
+ "interrupt-b2": {
+  "result": "none"
+ },
+ "introduce-a1": {
+  "result": "none"
+ },
+ "introduction-a2": {
+  "result": "none"
+ },
+ "invent-a2": {
+  "result": "none"
+ },
+ "invention-a2": {
+  "result": "none"
+ },
+ "investigate-b1": {
+  "result": "none"
+ },
+ "investigation-b2": {
+  "result": "none"
+ },
+ "investment-b2": {
+  "result": "rejected",
+  "file": "Norblin Factory Redevelopment under construction, 8.jpg",
+  "detail": "set of actions with the intent of earning profit. -> Q4290 investment"
+ },
+ "invite-a2": {
+  "result": "none"
+ },
+ "involve-a2": {
+  "result": "none"
+ },
+ "involved-b1": {
+  "result": "none"
+ },
+ "iron-b1": {
+  "result": "lexeme-item",
+  "file": "Electric steam iron.jpg",
+  "detail": "tool or appliance for smoothing cloth using heat and pressure -> Q483634 clothes iron"
+ },
+ "issue-b1": {
+  "result": "none"
+ },
+ "it-b1": {
+  "result": "none"
+ },
+ "item-a2": {
+  "result": "none",
+  "reason": "unusable file ГАКО 1248-1-718. 1859 год. Журналы заседаний магистрата за апрель 1859 года.pdf"
+ },
+ "january-a1": {
+  "result": "rejected",
+  "file": "15th-century unknown painters - Grimani Breviary - The Month of January - WGA15775.jpg",
+  "detail": "Q108 first month in the Julian and Gregorian calendars"
+ },
+ "jewelry-a2": {
+  "result": "lexeme-item",
+  "file": "Parure della regina maria amelia, parigi, 1800-15 poi 1850-75 ca.jpg",
+  "detail": "decorative worn item -> Q161439 jewelry"
+ },
+ "join-a1": {
+  "result": "none"
+ },
+ "joke-a2": {
+  "result": "rejected",
+  "file": "Why did the chicken cross the road?.JPG",
+  "detail": "Q131138 short fictional story with the intent to make people laugh"
+ },
+ "journal-b1": {
+  "result": "none"
+ },
+ "journalist-a2": {
+  "result": "lexeme-item",
+  "file": "Landes wla bfkuu denkmayr 0192 (35381936821).jpg",
+  "detail": "person who collects, writes and distributes news and other information -> Q1930187 journalist"
+ },
+ "journey-b1": {
+  "result": "none"
+ },
+ "joy-b2": {
+  "result": "lexeme-item",
+  "file": "Flickr - don macauley - Happy woman.jpg",
+  "detail": "feeling of happiness -> Q935526 joy"
+ },
+ "july-a1": {
+  "result": "rejected",
+  "file": "Breviarium Grimani - Juli.jpg",
+  "detail": "Q121 seventh month of the year in the Julian and Gregorian calendars"
+ },
+ "june-a1": {
+  "result": "rejected",
+  "file": "Breviarium Grimani - Juni.jpg",
+  "detail": "Q120 sixth month of the year in the Julian and Gregorian calendars"
+ },
+ "junior-b2": {
+  "result": "none"
+ },
+ "just-a1": {
+  "result": "none"
+ },
+ "justify-b2": {
+  "result": "none"
+ },
+ "keep-a1": {
+  "result": "none"
+ },
+ "kill-a2": {
+  "result": "none"
+ },
+ "killing-b1": {
+  "result": "rejected",
+  "file": "GreatBlueHeronTampaFL.JPG",
+  "detail": "Q844482 act of causing death"
+ },
+ "kind-type-a1": {
+  "result": "rejected",
+  "file": "Firmensitz Kind (Burgwedel) IMG 5574.jpg",
+  "detail": "Q43598590 German hearing aid retail chain"
+ },
+ "kind-caring-b1": {
+  "result": "none"
+ },
+ "knee-a2": {
+  "result": "none"
+ },
+ "know-a1": {
+  "result": "none"
+ },
+ "knowledge-a2": {
+  "result": "rejected",
+  "file": "Tetradrachm Athens 480-420BC MBA Lyon.jpg",
+  "detail": "familiarity, awareness, or understanding of someone or something (facts, information, descriptions, skills) which is acquired through experience or education by perceiving, discovering, or learning; theoretical or practical understanding of a subject -> Q9081 knowledge"
+ },
+ "label-b1": {
+  "result": "rejected",
+  "file": "Borg beers.jpg",
+  "detail": "descriptor for a virtual object (for example GUI element) or a material affixed to a container or article with printed information -> Q722218 label"
+ },
+ "labor-b2": {
+  "result": "none"
+ },
+ "lack-b1": {
+  "result": "none"
+ },
+ "lady-a2": {
+  "result": "rejected",
+  "file": "Woman.svg",
+  "detail": "polite synonym for 'woman' regardless of aristocratic status"
+ },
+ "land-a1": {
+  "result": "rejected",
+  "file": "AYool topography 15min.png",
+  "detail": "solid surface of Earth that is not permanently covered by water -> Q11081619 land"
+ },
+ "large-a1": {
+  "result": "rejected",
+  "file": "Brach humerus.jpg",
+  "detail": "Of considerable or relatively great size or extent. -> Q12935276 large"
+ },
+ "last1-taking-time-a2": {
+  "result": "none"
+ },
+ "later-a1": {
+  "result": "none"
+ },
+ "latest-b1": {
+  "result": "none"
+ },
+ "lay-b1": {
+  "result": "none"
+ },
+ "layer-b1": {
+  "result": "none"
+ },
+ "lead1-a2": {
+  "result": "none"
+ },
+ "leadership-b2": {
+  "result": "rejected",
+  "file": "3D Team Leadership Arrow Concept.jpg",
+  "detail": "ability of an individual or organization to guide other individuals, teams, or entire organizations -> Q484275 leadership"
+ },
+ "leading-b1": {
+  "result": "none"
+ },
+ "lean-b2": {
+  "result": "none"
+ },
+ "learning-a2": {
+  "result": "rejected",
+  "file": "10th students Crescent camp of University of Nishapur 09.jpg",
+  "detail": "any process in an organism in which a relatively long-lasting adaptive behavioral change occurs as the result of experience -> Q133500 learning"
+ },
+ "leave-a1": {
+  "result": "none"
+ },
+ "left-a1": {
+  "result": "none"
+ },
+ "lend-a2": {
+  "result": "none"
+ },
+ "let-a1": {
+  "result": "none"
+ },
+ "level-a2": {
+  "result": "none"
+ },
+ "lie1-a1": {
+  "result": "none"
+ },
+ "lie2-tell-a-lie-b1": {
+  "result": "none"
+ },
+ "life-a1": {
+  "result": "rejected",
+  "file": "HumanNewborn.JPG",
+  "detail": "Q3 matter capable of extracting energy from the environment for replication"
+ },
+ "light-from-the-sun-a-lamp-a1": {
+  "result": "none"
+ },
+ "like-find-sb-sth-pleasant-a1": {
+  "result": "none"
+ },
+ "likely-a2": {
+  "result": "none"
+ },
+ "limited-b2": {
+  "result": "none"
+ },
+ "listener-a2": {
+  "result": "none"
+ },
+ "little-a1": {
+  "result": "none"
+ },
+ "live1-a1": {
+  "result": "none"
+ },
+ "live2-b1": {
+  "result": "none"
+ },
+ "lively-b2": {
+  "result": "none"
+ },
+ "living-b1": {
+  "result": "rejected",
+  "file": "Live Fish In Dubai Mall.gif",
+  "detail": "not be dead, being alive, exist in some manner or for some length of time, alive -> Q21075715 living"
+ },
+ "load-b2": {
+  "result": "none"
+ },
+ "loan-b2": {
+  "result": "none"
+ },
+ "local-a1": {
+  "result": "none"
+ },
+ "locate-b1": {
+  "result": "none"
+ },
+ "located-b1": {
+  "result": "none"
+ },
+ "location-b1": {
+  "result": "none"
+ },
+ "logical-b2": {
+  "result": "none"
+ },
+ "lonely-b1": {
+  "result": "none"
+ },
+ "long1-a1": {
+  "result": "none"
+ },
+ "long-term-b2": {
+  "result": "none"
+ },
+ "lord-b2": {
+  "result": "none"
+ },
+ "lose-a1": {
+  "result": "none"
+ },
+ "loss-b1": {
+  "result": "none"
+ },
+ "lost-a2": {
+  "result": "none"
+ },
+ "loudly-a2": {
+  "result": "none"
+ },
+ "low-a2": {
+  "result": "none"
+ },
+ "lower-b2": {
+  "result": "none"
+ },
+ "machine-a1": {
+  "result": "lexeme-item",
+  "file": "Beringen coal mine machinery room.jpg",
+  "detail": "device employing power to achieve desired forces and/or motion -> Q1882685 mechanical device"
+ },
+ "main-a1": {
+  "result": "none"
+ },
+ "mainly-b1": {
+  "result": "none"
+ },
+ "maintain-b2": {
+  "result": "none"
+ },
+ "major-a2": {
+  "result": "none"
+ },
+ "majority-b2": {
+  "result": "none"
+ },
+ "make-a1": {
+  "result": "none"
+ },
+ "male-a2": {
+  "result": "none"
+ },
+ "manage-a2": {
+  "result": "none"
+ },
+ "management-b1": {
+  "result": "none"
+ },
+ "manager-a2": {
+  "result": "rejected",
+  "file": "Female sales manager Sri Lanka.JPG",
+  "detail": "person whose job is to manage something, such as a business, a restaurant, or a sports team -> Q2462658 manager"
+ },
+ "manner-a2": {
+  "result": "none"
+ },
+ "march-a1": {
+  "result": "rejected",
+  "file": "Breviarium Grimani - März.jpg",
+  "detail": "Q110 third month in the Julian and Gregorian calendars"
+ },
+ "mark-a2": {
+  "result": "none"
+ },
+ "marketing-b1": {
+  "result": "none"
+ },
+ "married-a1": {
+  "result": "none"
+ },
+ "mass-b2": {
+  "result": "rejected",
+  "file": "SeminarioAsidoniaJerez2.jpg",
+  "detail": "type of worship service within many Christian denominations -> Q132612 Catholic Mass"
+ },
+ "massive-b2": {
+  "result": "none"
+ },
+ "master-b2": {
+  "result": "rejected",
+  "file": "W-Bro Richard Martin (Bawtry Lodge WM 1933 - 1944).jpg",
+  "detail": "Q2735904 Masonic office"
+ },
+ "material-a2": {
+  "result": "none"
+ },
+ "matter-a2": {
+  "result": "none"
+ },
+ "maximum-b2": {
+  "result": "none"
+ },
+ "may-a1": {
+  "result": "rejected",
+  "file": "Breviarium Grimani - Mai.jpg",
+  "detail": "Q119 fifth month in the Julian and Gregorian calendars"
+ },
+ "maybe-a1": {
+  "result": "none"
+ },
+ "mayor-a2": {
+  "result": "rejected",
+  "file": "Femme Maire 2.jpg",
+  "detail": "head of municipal government such as a town or city -> Q30185 mayor"
+ },
+ "mean-a1": {
+  "result": "none"
+ },
+ "meaning-a1": {
+  "result": "none"
+ },
+ "means-b2": {
+  "result": "rejected",
+  "file": "Suspension Bridge-IMG 1581.jpg",
+  "detail": "means by which an item performs a function -> Q12774177 means"
+ },
+ "meanwhile-b1": {
+  "result": "none"
+ },
+ "measure-b1": {
+  "result": "none"
+ },
+ "measurement-b2": {
+  "result": "lexeme-item",
+  "file": "Taking measurements.jpg",
+  "detail": "The act of measuring -> Q12453 measurement"
+ },
+ "media-a2": {
+  "result": "none"
+ },
+ "medical-a2": {
+  "result": "none"
+ },
+ "medium-b1": {
+  "result": "none"
+ },
+ "meet-a1": {
+  "result": "none"
+ },
+ "member-a1": {
+  "result": "none"
+ },
+ "mental-b1": {
+  "result": "none"
+ },
+ "mention-a2": {
+  "result": "none"
+ },
+ "menu-a1": {
+  "result": "rejected",
+  "file": "Kulmbach Zunftstube Speisekarte Jan 2015.JPG",
+  "detail": "list of food and drinks -> Q658274 menu"
+ },
+ "message-a1": {
+  "result": "rejected",
+  "file": "Mere, The Walnut Tree Inn, Sign of the times - geograph.org.uk - 6638836.jpg",
+  "detail": "discrete unit of communication intended by the source for consumption by some recipient or group of recipients -> Q628523 message"
+ },
+ "meter-a1": {
+  "result": "rejected",
+  "file": "Platinum-Iridium meter bar.jpg",
+  "detail": "SI unit of length -> Q11573 metre"
+ },
+ "method-a2": {
+  "result": "none"
+ },
+ "middle-a2": {
+  "result": "none"
+ },
+ "mild-b1": {
+  "result": "none"
+ },
+ "mile-a1": {
+  "result": "lexeme-item",
+  "file": "Thimphu and Watsa milestone.jpg",
+  "detail": "unit of length -> Q253276 mile"
+ },
+ "mind-a2": {
+  "result": "rejected",
+  "file": "RobertFuddBewusstsein17Jh.png",
+  "detail": "Q450 combination of cognitive faculties that provides consciousness, thinking, reasoning, perception, and judgement in humans and potentially other life forms"
+ },
+ "mine-hole-in-the-ground-b1": {
+  "result": "rejected",
+  "file": "Bingham Canyon April 2005.jpg",
+  "detail": "place for the extraction of minerals -> Q820477 mine"
+ },
+ "minimum-b2": {
+  "result": "none"
+ },
+ "minor-b2": {
+  "result": "none"
+ },
+ "minority-b2": {
+  "result": "none"
+ },
+ "minute1-a1": {
+  "result": "none"
+ },
+ "miss-a1": {
+  "result": "none"
+ },
+ "missing-a2": {
+  "result": "none"
+ },
+ "mission-b2": {
+  "result": "none"
+ },
+ "mixed-b2": {
+  "result": "none"
+ },
+ "mixture-b1": {
+  "result": "none"
+ },
+ "modify-b2": {
+  "result": "none"
+ },
+ "moment-a1": {
+  "result": "none"
+ },
+ "mood-b1": {
+  "result": "none"
+ },
+ "moral-b2": {
+  "result": "none"
+ },
+ "mostly-a2": {
+  "result": "none"
+ },
+ "mount-b2": {
+  "result": "none"
+ },
+ "mouth-a1": {
+  "result": "none"
+ },
+ "move-a1": {
+  "result": "none"
+ },
+ "movement-a2": {
+  "result": "none"
+ },
+ "mud-b1": {
+  "result": "none"
+ },
+ "multiple-b2": {
+  "result": "none"
+ },
+ "multiply-b2": {
+  "result": "none"
+ },
+ "murder-b1": {
+  "result": "rejected",
+  "file": "Jakub Schikaneder - Murder in the House.JPG",
+  "detail": "unlawful killing of a human with malice aforethought -> Q132821 murder"
+ },
+ "muscle-b1": {
+  "result": "rejected",
+  "file": "Skeletal muscle.jpg",
+  "detail": "organ composed of muscle tissue -> Q7365 muscle"
+ },
+ "music-a1": {
+  "result": "rejected",
+  "file": "Op27 1 seg mov.png",
+  "detail": "Q638 art using sound"
+ },
+ "mysterious-b2": {
+  "result": "none"
+ },
+ "mystery-b1": {
+  "result": "none"
+ },
+ "name-a1": {
+  "result": "none"
+ },
+ "narrative-b1": {
+  "result": "rejected",
+  "file": "Reus Contios vertelt langs de waterkant op initiatief van Natuurpunt - 'Oude spoorwegberm Kontich'.jpg",
+  "detail": "account that presents connected events -> Q1318295 narrative"
+ },
+ "national-a2": {
+  "result": "none"
+ },
+ "natural-a1": {
+  "result": "none"
+ },
+ "naturally-b1": {
+  "result": "none"
+ },
+ "nature-a2": {
+  "result": "rejected",
+  "file": "Desert Electric.jpg",
+  "detail": "phenomena of the physical world, and also to life in general -> Q7860 nature"
+ },
+ "nearly-a2": {
+  "result": "none"
+ },
+ "neat-b1": {
+  "result": "none"
+ },
+ "necessarily-b1": {
+  "result": "none"
+ },
+ "necessary-a2": {
+  "result": "none"
+ },
+ "neck-a2": {
+  "result": "rejected",
+  "file": "Structure of Adam's apple.png",
+  "detail": "part of the body, on many terrestrial or secondarily aquatic vertebrates, that distinguishes the head from the torso or trunk"
+ },
+ "need-a1": {
+  "result": "none"
+ },
+ "negative-a1": {
+  "result": "none"
+ },
+ "neighbor-a1": {
+  "result": "rejected",
+  "file": "Worman-neighbors.png",
+  "detail": "geographically-nearby person or other occupant -> Q1986893 neighbor"
+ },
+ "nerve-b2": {
+  "result": "rejected",
+  "file": "Nerves of the left upper extremity.gif",
+  "detail": "enclosed, cable-like bundle of axons in the peripheral nervous system -> Q9620 nerve"
+ },
+ "nervous-a2": {
+  "result": "none"
+ },
+ "never-a1": {
+  "result": "none"
+ },
+ "nevertheless-b2": {
+  "result": "none"
+ },
+ "new-a1": {
+  "result": "none"
+ },
+ "news-a1": {
+  "result": "rejected",
+  "file": "Voorpagina Vlaams dagblad \"Het Algemeen Nieuws\" 11 juli 1942.jpg",
+  "detail": "communication of selected information on current events -> Q38926 news"
+ },
+ "next-a1": {
+  "result": "none"
+ },
+ "nice-a1": {
+  "result": "none"
+ },
+ "nightmare-b2": {
+  "result": "rejected",
+  "file": "Der Albtraum (Anonym 19 Jh).jpg",
+  "detail": "unpleasant dream -> Q192692 nightmare"
+ },
+ "noisy-a2": {
+  "result": "none"
+ },
+ "normal-a2": {
+  "result": "none"
+ },
+ "north-a1": {
+  "result": "rejected",
+  "file": "CompassRose (mul) 16 blue N.svg",
+  "detail": "one of the four cardinal directions -> Q659 north"
+ },
+ "northern-b1": {
+  "result": "none"
+ },
+ "not-a1": {
+  "result": "none"
+ },
+ "notice-a2": {
+  "result": "none"
+ },
+ "notion-b2": {
+  "result": "none"
+ },
+ "november-a1": {
+  "result": "rejected",
+  "file": "Breviarium Grimani - November.jpg",
+  "detail": "Q125 eleventh month in the Julian and Gregorian calendars"
+ },
+ "now-a1": {
+  "result": "none"
+ },
+ "nowhere-a2": {
+  "result": "none"
+ },
+ "numerous-b2": {
+  "result": "none"
+ },
+ "nut-a2": {
+  "result": "lexeme-item",
+  "file": "Fancy raw mixed nuts macro.jpg",
+  "detail": "edible seed (with or without the rest of the fruit) -> Q11009 nut"
+ },
+ "obey-b2": {
+  "result": "none"
+ },
+ "object-a1": {
+  "result": "none"
+ },
+ "objective-b2": {
+  "result": "rejected",
+  "file": "Millennium Development Goals, UN Headquarters, New York City, New York - 20080501.jpg",
+  "detail": "something toward which effort is directed : an aim, goal, or end of action -> Q4503831 goal"
+ },
+ "obligation-b2": {
+  "result": "none"
+ },
+ "observe-b2": {
+  "result": "none"
+ },
+ "obtain-b2": {
+  "result": "none"
+ },
+ "obvious-b1": {
+  "result": "none"
+ },
+ "obviously-b1": {
+  "result": "none"
+ },
+ "occasionally-b2": {
+  "result": "none"
+ },
+ "occur-b1": {
+  "result": "none"
+ },
+ "oclock-a1": {
+  "result": "none"
+ },
+ "odd-b1": {
+  "result": "none"
+ },
+ "off-a1": {
+  "result": "none"
+ },
+ "offend-b2": {
+  "result": "none"
+ },
+ "offensive-b2": {
+  "result": "none"
+ },
+ "offer-a2": {
+  "result": "none"
+ },
+ "official-b1": {
+  "result": "none"
+ },
+ "often-a1": {
+  "result": "none"
+ },
+ "old-fashioned-b1": {
+  "result": "none"
+ },
+ "once-a1": {
+  "result": "none"
+ },
+ "only-a1": {
+  "result": "none"
+ },
+ "opening-b2": {
+  "result": "none"
+ },
+ "opinion-a1": {
+  "result": "none"
+ },
+ "oppose-b2": {
+  "result": "none"
+ },
+ "opposed-b2": {
+  "result": "none"
+ },
+ "opposite-a1": {
+  "result": "none"
+ },
+ "option-a2": {
+  "result": "rejected",
+  "file": "Long call option.svg",
+  "detail": "Q187860 financial derivative conferring the right to to buy or sell a certain thing at a later date at an agreed price"
+ },
+ "order-a1": {
+  "result": "none"
+ },
+ "ordinary-a2": {
+  "result": "none"
+ },
+ "organ-b2": {
+  "result": "none"
+ },
+ "organize-a2": {
+  "result": "none"
+ },
+ "organized-b1": {
+  "result": "none"
+ },
+ "origin-b2": {
+  "result": "none"
+ },
+ "original-a2": {
+  "result": "none"
+ },
+ "originally-b1": {
+  "result": "none"
+ },
+ "other-a1": {
+  "result": "none"
+ },
+ "otherwise-b2": {
+  "result": "none"
+ },
+ "outcome-b2": {
+  "result": "rejected",
+  "file": "Resultat gc.png",
+  "detail": "that which is produced or occurs as a result of an event or process -> Q2995644 result"
+ },
+ "outline-b2": {
+  "result": "none"
+ },
+ "outside-a1": {
+  "result": "none"
+ },
+ "overall-b2": {
+  "result": "none"
+ },
+ "owe-b2": {
+  "result": "none"
+ },
+ "own-a1": {
+  "result": "none"
+ },
+ "owner-a2": {
+  "result": "none"
+ },
+ "pace-b2": {
+  "result": "none"
+ },
+ "page-a1": {
+  "result": "rejected",
+  "file": "Felicien Rops - l'homme et l'artiste 1908 (144064786).jpg",
+  "detail": "one side of a sheet of paper -> Q1069725 page"
+ },
+ "painful-b1": {
+  "result": "none"
+ },
+ "pale-b1": {
+  "result": "none"
+ },
+ "panel-b2": {
+  "result": "none"
+ },
+ "pants-a1": {
+  "result": "none"
+ },
+ "paragraph-a1": {
+  "result": "none"
+ },
+ "part-a1": {
+  "result": "none"
+ },
+ "participant-b2": {
+  "result": "none"
+ },
+ "particular-a2": {
+  "result": "none"
+ },
+ "particularly-b1": {
+  "result": "none"
+ },
+ "partly-b2": {
+  "result": "none"
+ },
+ "partner-a1": {
+  "result": "rejected",
+  "file": "Crofts Partner (GB).jpg",
+  "detail": "Q7140694 British Thoroughbred racehorse"
+ },
+ "pass-a2": {
+  "result": "none"
+ },
+ "passion-b1": {
+  "result": "none"
+ },
+ "past-a1": {
+  "result": "rejected",
+  "file": "Dineobellator Sergey Krasovskiy.png",
+  "detail": "historic time - subdivision of time -> Q192630 past"
+ },
+ "pattern-a2": {
+  "result": "rejected",
+  "file": "Racinet - Polychrome Ornament - Pl. 31 - Byzantine.jpg",
+  "detail": "ornamental design applied to or incorporated in the surface of an object, generally consisting of repeated motifs or elements -> Q55413080 pattern"
+ },
+ "payment-b1": {
+  "result": "rejected",
+  "file": "Airmen at Kirkuk Regional Air Base DVIDS174799.jpg",
+  "detail": "transfer of an item of value from one party (such as a person or company) to another in exchange for the provision of goods, services or both, or to fulfill a legal obligation -> Q1148747 payment"
+ },
+ "perfect-a1": {
+  "result": "none"
+ },
+ "perfectly-b1": {
+  "result": "none"
+ },
+ "perform-a2": {
+  "result": "none"
+ },
+ "performance-b1": {
+  "result": "rejected",
+  "file": "Comic Fiesta Mini Johor 2018.jpg",
+  "detail": "Q35140 public presentation of a performing arts work, a play, concert, or other form of entertainment"
+ },
+ "perhaps-a2": {
+  "result": "none"
+ },
+ "period-a1": {
+  "result": "none"
+ },
+ "permanent-b2": {
+  "result": "none"
+ },
+ "permission-a2": {
+  "result": "none"
+ },
+ "person-a1": {
+  "result": "none"
+ },
+ "personal-a1": {
+  "result": "none"
+ },
+ "personality-a2": {
+  "result": "none"
+ },
+ "personally-b1": {
+  "result": "none"
+ },
+ "perspective-b2": {
+  "result": "rejected",
+  "file": "Desargues theorem alt.svg",
+  "detail": "two figures in a plane are perspective from a point O if the lines joining corresponding points of the figures all meet at O -> Q2252759 perspective"
+ },
+ "persuade-b1": {
+  "result": "none"
+ },
+ "phase-b2": {
+  "result": "rejected",
+  "file": "Water and oil.jpg",
+  "detail": "Q104837 region in a substance throughout which all physical properties are essentially uniform; region of material that is chemically uniform, physically distinct, (often) mechanically separable"
+ },
+ "phenomenon-b2": {
+  "result": "rejected",
+  "file": "Streichholz.jpg",
+  "detail": "Q483247 any object, fact, or occurrence perceived or observed"
+ },
+ "photography-b1": {
+  "result": "lexeme-item",
+  "file": "Winterswijk (NL), Woold, Boven Slinge -- 2014 -- 3170.jpg",
+  "detail": "art, science and practice of creating durable images by recording light or other electromagnetic radiation -> Q11633 photography"
+ },
+ "phrase-a1": {
+  "result": "none"
+ },
+ "physical-a2": {
+  "result": "none"
+ },
+ "physics-a2": {
+  "result": "rejected",
+  "file": "CollageFisica.jpg",
+  "detail": "study of matter, energy and forces -> Q413 physics"
+ },
+ "pick-a2": {
+  "result": "none"
+ },
+ "piece-a1": {
+  "result": "none"
+ },
+ "pile-b2": {
+  "result": "none"
+ },
+ "pink-a1": {
+  "result": "rejected",
+  "file": "Shades of pink.png",
+  "detail": "any of the colors between bluish red (purple) and red, of medium to high brightness and of low to moderate saturation -> Q429220 pink"
+ },
+ "place-a1": {
+  "result": "rejected",
+  "file": "Гелавічы. Радавое пахаванне Дзердзяеўскіх 01.jpg",
+  "detail": "Q98929991 small area known by a geographical name"
+ },
+ "plain-b2": {
+  "result": "none"
+ },
+ "planning-b1": {
+  "result": "none"
+ },
+ "plastic-a2": {
+  "result": "lexeme-item",
+  "file": "Plastic objects.jpg",
+  "detail": "material -> Q11474 plastic"
+ },
+ "pleasant-b1": {
+  "result": "none"
+ },
+ "pleased-a2": {
+  "result": "none"
+ },
+ "pleasure-b1": {
+  "result": "none"
+ },
+ "plot-b1": {
+  "result": "none"
+ },
+ "poet-b1": {
+  "result": "rejected",
+  "file": "Jean-Baptiste-Camille Corot - Orphée (modification).jpg",
+  "detail": "person who writes and publishes poetry -> Q49757 poet"
+ },
+ "point-a1": {
+  "result": "none"
+ },
+ "pointed-b2": {
+  "result": "none"
+ },
+ "policy-b1": {
+  "result": "rejected",
+  "file": "Ilham Aliyev met with President of European Council in Brussels 2.jpg",
+  "detail": "principle or protocol to guide decisions and achieve rational outcomes -> Q1156854 policy"
+ },
+ "polite-a2": {
+  "result": "rejected",
+  "file": "1912-03-11, La Ilustración Artística, Escena callejera parisiense, Sabattier (cropped).jpg",
+  "detail": "taking care not to offend others -> Q281287 politeness"
+ },
+ "political-b1": {
+  "result": "none"
+ },
+ "politician-b1": {
+  "result": "lexeme-item",
+  "file": "Lietuvas parlamenta priekšsēdētāja vizīte Latvijā.jpg",
+  "detail": "person involved in politics, person who holds or seeks positions in government -> Q82955 politician"
+ },
+ "politics-b1": {
+  "result": "lexeme-item",
+  "file": "24.09.2024 - Abertura do Debate Geral da 79ª Sessão da Assembleia Geral das Nações Unidas (54018866744).jpg",
+  "detail": "practice and theory of influencing other people, as in government -> Q7163 politics"
+ },
+ "pop-a2": {
+  "result": "none"
+ },
+ "popular-a1": {
+  "result": "none"
+ },
+ "popularity-b2": {
+  "result": "none"
+ },
+ "portrait-b1": {
+  "result": "none"
+ },
+ "pose-b2": {
+  "result": "none"
+ },
+ "position-a2": {
+  "result": "none"
+ },
+ "positive-a1": {
+  "result": "none"
+ },
+ "possess-b2": {
+  "result": "none"
+ },
+ "possession-a2": {
+  "result": "none"
+ },
+ "possibility-a2": {
+  "result": "none"
+ },
+ "possible-a1": {
+  "result": "none"
+ },
+ "possibly-b1": {
+  "result": "none"
+ },
+ "post-a1": {
+  "result": "none"
+ },
+ "poster-a2": {
+  "result": "rejected",
+  "file": "La Boheme poster by Hohenstein.PNG",
+  "detail": "single-page printed work put up for public consumption -> Q429785 poster"
+ },
+ "potential-b2": {
+  "result": "none"
+ },
+ "pound-a1": {
+  "result": "rejected",
+  "file": "Balance ordinaire.jpg",
+  "detail": "unit of mass in imperial, US customary, and avoirdupois systems of units -> Q100995 pound"
+ },
+ "poverty-b1": {
+  "result": "rejected",
+  "file": "Thomas Benjamin Kennington - Orphans.jpg",
+  "detail": "state of lacking money or resources -> Q10294 poverty"
+ },
+ "powder-b1": {
+  "result": "lexeme-item",
+  "file": "Cocaine3.jpg",
+  "detail": "dry, bulk solid composed of a large number of very fine particles -> Q2908004 powder"
+ },
+ "powerful-b1": {
+  "result": "none"
+ },
+ "practical-b1": {
+  "result": "none"
+ },
+ "practice-a1": {
+  "result": "none"
+ },
+ "predict-a2": {
+  "result": "none"
+ },
+ "prediction-b1": {
+  "result": "none"
+ },
+ "prefer-a1": {
+  "result": "none"
+ },
+ "prepare-a1": {
+  "result": "none"
+ },
+ "prepared-b1": {
+  "result": "none"
+ },
+ "presence-b2": {
+  "result": "none"
+ },
+ "present-a1": {
+  "result": "none"
+ },
+ "preserve-b2": {
+  "result": "none"
+ },
+ "president-a2": {
+  "result": "lexeme-item",
+  "file": "Bundesrat der Schweiz 2015.jpg",
+  "detail": "leader of a country or part of a country, usually in republics -> Q30461 president"
+ },
+ "press-b1": {
+  "result": "none"
+ },
+ "pretend-b1": {
+  "result": "none"
+ },
+ "pretty-a1": {
+  "result": "none"
+ },
+ "prevent-a2": {
+  "result": "none"
+ },
+ "previous-b1": {
+  "result": "none"
+ },
+ "previously-b1": {
+  "result": "none"
+ },
+ "price-a1": {
+  "result": "item",
+  "file": "Wireless in-store price display at a clothing retailer in NJ.jpg",
+  "detail": "Q160151 amount asked, offered or paid in exchange for goods or services, usually expressed in money"
+ },
+ "priest-b1": {
+  "result": "rejected",
+  "file": "Georgischer Priester.jpg",
+  "detail": "religious minister -> Q42603 priest"
+ },
+ "primary-b1": {
+  "result": "none"
+ },
+ "prime-b2": {
+  "result": "none"
+ },
+ "principal-b1": {
+  "result": "lexeme-item",
+  "file": "Headmaster room of Muslim Govt. High School.JPG",
+  "detail": "school administrator -> Q1056391 head teacher"
+ },
+ "principle-b2": {
+  "result": "none"
+ },
+ "print-a2": {
+  "result": "none"
+ },
+ "printing-b1": {
+  "result": "rejected",
+  "file": "Die Buchdruckerei by Daniel Chodowiecki (150289207).jpg",
+  "detail": "process for reproducing text and images using a master form or template -> Q11034 printing"
+ },
+ "priority-b2": {
+  "result": "none"
+ },
+ "privacy-b2": {
+  "result": "none"
+ },
+ "private-b1": {
+  "result": "none"
+ },
+ "probably-a1": {
+  "result": "none"
+ },
+ "problem-a1": {
+  "result": "none"
+ },
+ "procedure-b2": {
+  "result": "none"
+ },
+ "process-a2": {
+  "result": "none"
+ },
+ "producer-b1": {
+  "result": "none"
+ },
+ "production-b1": {
+  "result": "none"
+ },
+ "professional-a2": {
+  "result": "none"
+ },
+ "profile-a2": {
+  "result": "none"
+ },
+ "program-a1": {
+  "result": "none"
+ },
+ "promise-a2": {
+  "result": "none"
+ },
+ "promote-b1": {
+  "result": "none"
+ },
+ "pronounce-a2": {
+  "result": "none"
+ },
+ "proof-b2": {
+  "result": "none"
+ },
+ "proper-b1": {
+  "result": "none"
+ },
+ "properly-b1": {
+  "result": "none"
+ },
+ "proposal-b2": {
+  "result": "none"
+ },
+ "propose-b2": {
+  "result": "none"
+ },
+ "prospect-b2": {
+  "result": "none"
+ },
+ "proud-b1": {
+  "result": "none"
+ },
+ "prove-b1": {
+  "result": "none"
+ },
+ "provide-a2": {
+  "result": "none"
+ },
+ "psychology-b2": {
+  "result": "rejected",
+  "file": "Greek uc psi icon.svg",
+  "detail": "science that studies mental, behavioral and relational processes, both normal and pathological -> Q9418 psychology"
+ },
+ "publish-a2": {
+  "result": "none"
+ },
+ "punish-b1": {
+  "result": "none"
+ },
+ "punishment-b1": {
+  "result": "none"
+ },
+ "purchase-b2": {
+  "result": "none"
+ },
+ "pure-b2": {
+  "result": "none"
+ },
+ "purple-a1": {
+  "result": "rejected",
+  "file": "Color icon purple v2.svg",
+  "detail": "range of colors with the hues between blue and red"
+ },
+ "purpose-a2": {
+  "result": "none"
+ },
+ "pursue-b2": {
+  "result": "none"
+ },
+ "put-a1": {
+  "result": "none"
+ },
+ "qualification-b1": {
+  "result": "none"
+ },
+ "qualified-b1": {
+  "result": "none"
+ },
+ "qualify-b1": {
+  "result": "none"
+ },
+ "quality-a2": {
+  "result": "none"
+ },
+ "quantity-a2": {
+  "result": "none"
+ },
+ "quarter-a1": {
+  "result": "none"
+ },
+ "quick-a1": {
+  "result": "none"
+ },
+ "quickly-a1": {
+  "result": "none"
+ },
+ "quiet-a1": {
+  "result": "none"
+ },
+ "quietly-a2": {
+  "result": "none"
+ },
+ "quit-b1": {
+  "result": "none"
+ },
+ "quite-a1": {
+  "result": "none"
+ },
+ "quotation-b1": {
+  "result": "none"
+ },
+ "quote-b1": {
+  "result": "none"
+ },
+ "race-of-people-b1": {
+  "result": "rejected",
+  "file": "Racially diverse unity.jpg",
+  "detail": "Q3254959 nonscientific human classification system primarily based on physical appearance and genealogy"
+ },
+ "rain-a1": {
+  "result": "rejected",
+  "file": "Purple rain on roof.jpg",
+  "detail": "liquid from the sky"
+ },
+ "range-b1": {
+  "result": "rejected",
+  "file": "Hudobne nastroje.svg",
+  "detail": "pitch range of musical instruments -> Q1042979 range"
+ },
+ "rank-b2": {
+  "result": "rejected",
+  "file": "(Maine) Wade, William - 1st Infantry (3 Months, 1861), Company I - DPLA - 397b18edeb39aa15406ec6eb104a4110.jpg",
+  "detail": "level or position in a hierarchical organization -> Q4189293 rank"
+ },
+ "rapid-b2": {
+  "result": "none"
+ },
+ "rapidly-b2": {
+  "result": "none"
+ },
+ "rare-b1": {
+  "result": "rejected",
+  "file": "Bon theme.svg",
+  "detail": "very unusual -> Q21264361 rarity"
+ },
+ "rarely-b1": {
+  "result": "none"
+ },
+ "rate-a2": {
+  "result": "rejected",
+  "file": "Tarifs des trajets en aluguer sur la ligne Tarrafal - Praia au Cap-Vert.jpg",
+  "detail": "price paid or charged for a service -> Q736288 rate"
+ },
+ "rather-a2": {
+  "result": "none"
+ },
+ "raw-b2": {
+  "result": "none"
+ },
+ "reach-a2": {
+  "result": "none"
+ },
+ "react-a2": {
+  "result": "none"
+ },
+ "reaction-b1": {
+  "result": "none"
+ },
+ "reader-a1": {
+  "result": "none"
+ },
+ "real-a1": {
+  "result": "none"
+ },
+ "realistic-b2": {
+  "result": "none"
+ },
+ "reality-b1": {
+  "result": "none"
+ },
+ "realize-a2": {
+  "result": "none"
+ },
+ "really-a1": {
+  "result": "none"
+ },
+ "reasonable-b2": {
+  "result": "none"
+ },
+ "recall-b2": {
+  "result": "none"
+ },
+ "recent-a2": {
+  "result": "none"
+ },
+ "recently-a2": {
+  "result": "none"
+ },
+ "reception-a2": {
+  "result": "rejected",
+  "file": "Délégation vénitienne à Damas (musée du Louvre) (6358418295).jpg",
+  "detail": "formal party -> Q66317493 reception"
+ },
+ "recognize-a2": {
+  "result": "none"
+ },
+ "recommend-a2": {
+  "result": "none"
+ },
+ "recommendation-b1": {
+  "result": "none"
+ },
+ "recording-a2": {
+  "result": "none"
+ },
+ "reduce-a2": {
+  "result": "none"
+ },
+ "reduction-b2": {
+  "result": "none"
+ },
+ "refer-a2": {
+  "result": "none"
+ },
+ "reference-b1": {
+  "result": "rejected",
+  "file": "Holman Library interior (2).jpg",
+  "detail": "person providing supporting information -> Q630961 library reference service"
+ },
+ "reflect-b1": {
+  "result": "none"
+ },
+ "refuse1-a2": {
+  "result": "none"
+ },
+ "regard-b2": {
+  "result": "none"
+ },
+ "region-a2": {
+  "result": "rejected",
+  "file": "Mediterranian Sea Carthago location.JPG",
+  "detail": "Q82794 2D or 3D defined space on something, mainly in terrestrial and astrophysics sciences"
+ },
+ "regional-b2": {
+  "result": "none"
+ },
+ "regret-b2": {
+  "result": "none"
+ },
+ "regular-a2": {
+  "result": "none"
+ },
+ "regularly-b1": {
+  "result": "none"
+ },
+ "regulation-b2": {
+  "result": "none"
+ },
+ "relate-b1": {
+  "result": "none"
+ },
+ "related-b1": {
+  "result": "none"
+ },
+ "relation-b1": {
+  "result": "none"
+ },
+ "relationship-a2": {
+  "result": "none"
+ },
+ "relative-b1": {
+  "result": "rejected",
+  "file": "Relativität Relativity train ball e=mc2.jpg",
+  "detail": "comparing to another -> Q983751 relativity"
+ },
+ "relatively-b2": {
+  "result": "none"
+ },
+ "relax-a1": {
+  "result": "none"
+ },
+ "relaxing-b1": {
+  "result": "none"
+ },
+ "release-b1": {
+  "result": "none"
+ },
+ "relevant-b2": {
+  "result": "none"
+ },
+ "reliable-b1": {
+  "result": "none"
+ },
+ "relief-b2": {
+  "result": "none"
+ },
+ "religion-b1": {
+  "result": "rejected",
+  "file": "16 religionist symbols.png",
+  "detail": "sacred belief system -> Q9174 religion"
+ },
+ "rely-b2": {
+  "result": "none"
+ },
+ "remain-b1": {
+  "result": "none"
+ },
+ "remark-b2": {
+  "result": "none"
+ },
+ "remember-a1": {
+  "result": "none"
+ },
+ "remind-b1": {
+  "result": "none"
+ },
+ "remote-b1": {
+  "result": "none"
+ },
+ "rent-b1": {
+  "result": "none"
+ },
+ "repeat-a1": {
+  "result": "none"
+ },
+ "repeated-b1": {
+  "result": "none"
+ },
+ "replace-a2": {
+  "result": "none"
+ },
+ "reply-a2": {
+  "result": "none"
+ },
+ "report-a1": {
+  "result": "rejected",
+  "file": "Brundtland en-077.png",
+  "detail": "informational, formal, and detailed text -> Q10870555 report"
+ },
+ "represent-b1": {
+  "result": "none"
+ },
+ "representative-b2": {
+  "result": "none"
+ },
+ "reputation-b2": {
+  "result": "none"
+ },
+ "request-a2": {
+  "result": "none"
+ },
+ "require-b1": {
+  "result": "none"
+ },
+ "requirement-b2": {
+  "result": "none"
+ },
+ "researcher-a2": {
+  "result": "lexeme-item",
+  "file": "Researcher looking through microscope.jpg",
+  "detail": "person who engages in research, professionally or otherwise -> Q1650915 researcher"
+ },
+ "reservation-b1": {
+  "result": "rejected",
+  "file": "使用中 土 soil (26363118832).jpg",
+  "detail": "prearranged attendance, particularly at a restaurant -> Q4096995 booking"
+ },
+ "reserve-b2": {
+  "result": "none"
+ },
+ "resist-b2": {
+  "result": "none"
+ },
+ "resolve-b2": {
+  "result": "none"
+ },
+ "resource-b1": {
+  "result": "none"
+ },
+ "respect-b1": {
+  "result": "none"
+ },
+ "respond-a2": {
+  "result": "none"
+ },
+ "response-a2": {
+  "result": "none"
+ },
+ "responsible-b1": {
+  "result": "none"
+ },
+ "rest-remaining-part-a2": {
+  "result": "none"
+ },
+ "rest-sleep-relax-a2": {
+  "result": "none"
+ },
+ "result-a1": {
+  "result": "rejected",
+  "file": "Resultat gc.png",
+  "detail": "that which results; conclusion or end to which any course or condition of things leads, or which is obtained by any process or operation; consequence or effect -> Q2995644 result"
+ },
+ "retain-b2": {
+  "result": "none"
+ },
+ "retired-b1": {
+  "result": "none"
+ },
+ "return-a1": {
+  "result": "none"
+ },
+ "reveal-b2": {
+  "result": "none"
+ },
+ "revise-b1": {
+  "result": "none"
+ },
+ "revolution-b2": {
+  "result": "rejected",
+  "file": "Roman soldiers fighting against Dacians, battle scene in shallow depth with horses and horn-players (after a bas-relief on the Arch of Constantine, Rome) MET DP827716.jpg",
+  "detail": "fundamental change in power or organizational structures that takes place in a relatively short period of time -> Q10931 revolution"
+ },
+ "rhythm-b2": {
+  "result": "rejected",
+  "file": "8beat example 01.jpg",
+  "detail": "Q170406 generally means a \"movement marked by the regulated succession of strong and weak elements, or of opposite or different conditions\""
+ },
+ "rid-b2": {
+  "result": "none"
+ },
+ "right-a1": {
+  "result": "none"
+ },
+ "ring2-a2": {
+  "result": "none"
+ },
+ "rise-a2": {
+  "result": "none"
+ },
+ "risk-b1": {
+  "result": "rejected",
+  "file": "Walker cartoon about the risks of European nations fighting over Asian territory.jpg",
+  "detail": "potential for uncontrolled loss -> Q104493 risk"
+ },
+ "robot-b1": {
+  "result": "lexeme-item",
+  "file": "Popping.jpg",
+  "detail": "illusionary street dance style that attempts to imitate a dancing robot or mannequin -> Q2725666 robot"
+ },
+ "rock-music-a2": {
+  "result": "rejected",
+  "file": "Wysoka.jpg",
+  "detail": "larger structure made of solid rock -> Q1404150 rock"
+ },
+ "role-a2": {
+  "result": "none"
+ },
+ "romantic-b1": {
+  "result": "rejected",
+  "file": "Love is being stupid together.jpg",
+  "detail": "relating to, or facilitating love -> Q1189047 romantic love"
+ },
+ "roof-a2": {
+  "result": "rejected",
+  "file": "Am Markt, Pirna 120449116.jpg",
+  "detail": "top covering of a building -> Q83180 roof"
+ },
+ "rough-b1": {
+  "result": "none"
+ },
+ "round-a2": {
+  "result": "none"
+ },
+ "route-a2": {
+  "result": "none"
+ },
+ "routine-a1": {
+  "result": "none"
+ },
+ "rub-b2": {
+  "result": "none"
+ },
+ "rubber-b2": {
+  "result": "rejected",
+  "file": "Compounding ingredients for rubber.jpg",
+  "detail": "Q18113858 polymer from artificial or natural sources"
+ },
+ "rude-a2": {
+  "result": "none"
+ },
+ "rule-a1": {
+  "result": "none"
+ },
+ "rush-b2": {
+  "result": "none"
+ },
+ "sadly-a2": {
+  "result": "none"
+ },
+ "safe-a2": {
+  "result": "none"
+ },
+ "safety-b1": {
+  "result": "none"
+ },
+ "sailor-b1": {
+  "result": "rejected",
+  "file": "Bundesarchiv B 145 Bild-F048234-0015, Kiel, Segelschiff \"Gorch Fock\", Matrosen.jpg",
+  "detail": "ship worker -> Q45199 sailor"
+ },
+ "same-a1": {
+  "result": "none"
+ },
+ "sample-b1": {
+  "result": "lexeme-item",
+  "file": "Gamme vin rosé Provence.JPG",
+  "detail": "select a portion of a larger whole -> Q485146 sample"
+ },
+ "satisfied-b2": {
+  "result": "none"
+ },
+ "satisfy-b2": {
+  "result": "none"
+ },
+ "save-a2": {
+  "result": "none"
+ },
+ "saving-b2": {
+  "result": "none"
+ },
+ "scan-b1": {
+  "result": "none"
+ },
+ "scared-a2": {
+  "result": "none"
+ },
+ "scary-a2": {
+  "result": "none"
+ },
+ "scene-a2": {
+  "result": "none"
+ },
+ "school-a1": {
+  "result": "rejected",
+  "file": "Plato's Academy mosaic from Pompeii.jpg",
+  "detail": "Q3914 institution, facility or building for the education of students by teachers"
+ },
+ "scientific-b1": {
+  "result": "none"
+ },
+ "score-a2": {
+  "result": "none"
+ },
+ "season-a2": {
+  "result": "rejected",
+  "file": "Jahreszeiten Jahresringe.jpg",
+  "detail": "Q24384 weather- or climate-based subdivision of the year"
+ },
+ "seat-a2": {
+  "result": "item",
+  "file": "20221219 PKP Intercity TLK 47100 Spodek compartment train.jpg",
+  "detail": "Q2207370 object for sitting on"
+ },
+ "secret-a2": {
+  "result": "rejected",
+  "file": "Wincenty Wodzinowski - Secrets - MNK II-b-276 - National Museum Kraków.jpg",
+  "detail": "kept from public knowledge -> Q113925598 secret"
+ },
+ "section-a1": {
+  "result": "none"
+ },
+ "see-a1": {
+  "result": "none"
+ },
+ "seek-b2": {
+  "result": "none"
+ },
+ "seem-a2": {
+  "result": "none"
+ },
+ "select-b2": {
+  "result": "none"
+ },
+ "selection-b2": {
+  "result": "rejected",
+  "file": "Sorting table 2 - © Leif Carlsson for Monteverro.jpg",
+  "detail": "process or act of selecting -> Q12888920 selection"
+ },
+ "self-b2": {
+  "result": "none"
+ },
+ "sell-a1": {
+  "result": "none"
+ },
+ "senate-b2": {
+  "result": "none"
+ },
+ "senator-b2": {
+  "result": "none"
+ },
+ "senior-b2": {
+  "result": "none"
+ },
+ "sensible-b1": {
+  "result": "none"
+ },
+ "sensitive-b2": {
+  "result": "none"
+ },
+ "sentence-a1": {
+  "result": "none"
+ },
+ "separate-a2": {
+  "result": "none"
+ },
+ "sequence-b2": {
+  "result": "none"
+ },
+ "serious-a2": {
+  "result": "none"
+ },
+ "seriously-b1": {
+  "result": "none"
+ },
+ "serve-a2": {
+  "result": "none"
+ },
+ "service-a2": {
+  "result": "none"
+ },
+ "set-put-b1": {
+  "result": "none"
+ },
+ "set-group-b1": {
+  "result": "rejected",
+  "file": "Example of a set.svg",
+  "detail": "Q36161 well-defined mathematical collection of distinct objects"
+ },
+ "setting-b1": {
+  "result": "none"
+ },
+ "settle-b2": {
+  "result": "none"
+ },
+ "severe-b2": {
+  "result": "none"
+ },
+ "sex-b1": {
+  "result": "none"
+ },
+ "sexual-b1": {
+  "result": "none"
+ },
+ "shade-b2": {
+  "result": "none"
+ },
+ "shadow-b2": {
+  "result": "lexeme-item",
+  "file": "People Shadow.JPG",
+  "detail": "area where direct light from a light source cannot reach due to obstruction by an object -> Q160020 shadow"
+ },
+ "shallow-b2": {
+  "result": "none"
+ },
+ "shame-b2": {
+  "result": "none"
+ },
+ "shape-a2": {
+  "result": "none"
+ },
+ "share-a1": {
+  "result": "none"
+ },
+ "sharp-b1": {
+  "result": "none"
+ },
+ "sheet-a2": {
+  "result": "none"
+ },
+ "shell-b1": {
+  "result": "rejected",
+  "file": "Brockhaus and Efron Encyclopedic Dictionary b60 609-0.jpg",
+  "detail": "Q318028 exploding artillery projectile"
+ },
+ "shelter-b2": {
+  "result": "none"
+ },
+ "shift-b1": {
+  "result": "none"
+ },
+ "shine-b1": {
+  "result": "none"
+ },
+ "shiny-b1": {
+  "result": "none"
+ },
+ "shirt-a1": {
+  "result": "lexeme-item",
+  "file": "Shirt, men's (AM 2015.44.1-1).jpg",
+  "detail": "garment for the upper body -> Q76768 shirt"
+ },
+ "shock-b2": {
+  "result": "rejected",
+  "file": "Face expressing astonishment Wellcome V0009376.jpg",
+  "detail": "surprise, astonishment -> Q104776274 astonishment"
+ },
+ "shoot-b1": {
+  "result": "none"
+ },
+ "shooting-b2": {
+  "result": "rejected",
+  "file": "050607 M 5900L 044.jpg",
+  "detail": "Q2252077 act or process of firing firearms or other projectile weapons"
+ },
+ "short-a1": {
+  "result": "none"
+ },
+ "shot-b2": {
+  "result": "none"
+ },
+ "shoulder-a2": {
+  "result": "rejected",
+  "file": "Photo of male right shoulder, combined with an anatomical drawing from Leonardo da Vinci.jpg",
+  "detail": "part of the body -> Q16363 shoulder"
+ },
+ "show-a1": {
+  "result": "none"
+ },
+ "shower-a1": {
+  "result": "lexeme-item",
+  "file": "Showerhead.JPG",
+  "detail": "place in which a person bathes under a spray of water -> Q7863 shower"
+ },
+ "shut-a2": {
+  "result": "none"
+ },
+ "shy-b1": {
+  "result": "none"
+ },
+ "side-a2": {
+  "result": "none"
+ },
+ "signal-b1": {
+  "result": "none"
+ },
+ "significant-b2": {
+  "result": "none"
+ },
+ "significantly-b2": {
+  "result": "none"
+ },
+ "silent-b1": {
+  "result": "none"
+ },
+ "silver-a2": {
+  "result": "rejected",
+  "file": "Color icon silver.svg",
+  "detail": "metallic color tone resembling gray that is a representation of the color of polished silver -> Q317802 silver"
+ },
+ "similar-a1": {
+  "result": "none"
+ },
+ "similarity-b1": {
+  "result": "none"
+ },
+ "simple-a2": {
+  "result": "none"
+ },
+ "simply-b1": {
+  "result": "none"
+ },
+ "sincere-b2": {
+  "result": "none"
+ },
+ "sing-a1": {
+  "result": "lexeme-sense",
+  "file": "Lina Rafn at Danish DJ Awards anno 2007.jpg",
+  "detail": "to perform vocal music"
+ },
+ "single-a2": {
+  "result": "none"
+ },
+ "sir-a2": {
+  "result": "none"
+ },
+ "situation-a1": {
+  "result": "none"
+ },
+ "size-a2": {
+  "result": "none"
+ },
+ "skill-a1": {
+  "result": "none"
+ },
+ "skirt-a1": {
+  "result": "lexeme-item",
+  "file": "Peasant skirt 1435043608.jpg",
+  "detail": "garment of varying length extending from the waist or hip and covering a part of the lower body. Also, the lower part of a dress, coat, or other garment -> Q2160801 skirt"
+ },
+ "slave-b1": {
+  "result": "rejected",
+  "file": "Roman collared slaves - Ashmolean Museum.jpg",
+  "detail": "enslaved person -> Q12773225 slave"
+ },
+ "sleep-a1": {
+  "result": "rejected",
+  "file": "Flaming June, by Frederic Lord Leighton (1830-1896).jpg",
+  "detail": "to take rest by a suspension of the voluntary exercise of the powers of the body and mind, and an apathy of the organs of sense"
+ },
+ "slice-b1": {
+  "result": "none"
+ },
+ "slight-b2": {
+  "result": "none"
+ },
+ "slightly-b1": {
+  "result": "none"
+ },
+ "slow-a1": {
+  "result": "none"
+ },
+ "slowly-a2": {
+  "result": "none"
+ },
+ "small-a1": {
+  "result": "rejected",
+  "file": "Smallcrane.jpg",
+  "detail": "not large or big -> Q16042592 small"
+ },
+ "smart-a1": {
+  "result": "rejected",
+  "file": "Guilford model.jpg",
+  "detail": "intelligent -> Q83500 intelligence"
+ },
+ "smooth-b1": {
+  "result": "none"
+ },
+ "sneaker-a2": {
+  "result": "item",
+  "file": "Black Converse sneakers.JPG",
+  "detail": "Q1929383 footwear with a flexible rubber or synthetic sole and a fabric, cloth, or leather upper"
+ },
+ "snow-a1": {
+  "result": "none"
+ },
+ "so-a1": {
+  "result": "none"
+ },
+ "soap-a2": {
+  "result": "lexeme-item",
+  "file": "Bars of pure Marseille and Aleppo soap, 2024.jpg",
+  "detail": "sodium salt of fatty acids ( long chain carboxylic acids ), used for washing and cleaning -> Q34396 soap"
+ },
+ "social-a2": {
+  "result": "none"
+ },
+ "society-a2": {
+  "result": "rejected",
+  "file": "Каменный век (1).jpg",
+  "detail": "Q8425 group of individuals involved in persistent social interaction or a large social group sharing the same spatial or social territory, typically subject to the same political authority and dominant cultural expectations"
+ },
+ "soft-a2": {
+  "result": "none"
+ },
+ "soil-b1": {
+  "result": "lexeme-item",
+  "file": "Stagnogley.JPG",
+  "detail": "natural body consisting of layers that are primarily composed of minerals -> Q36133 soil"
+ },
+ "solid-b1": {
+  "result": "none"
+ },
+ "solution-a2": {
+  "result": "none"
+ },
+ "solve-a2": {
+  "result": "none"
+ },
+ "sometimes-a1": {
+  "result": "none"
+ },
+ "somewhat-b2": {
+  "result": "none"
+ },
+ "somewhere-a2": {
+  "result": "none"
+ },
+ "soon-a1": {
+  "result": "none"
+ },
+ "sort-a2": {
+  "result": "rejected",
+  "file": "Garamond type ſi-ligature 2.jpg",
+  "detail": "typesetting block with a character on it -> Q8250483 sort"
+ },
+ "soul-b2": {
+  "result": "rejected",
+  "file": "Meister von Heiligenkreuz 001.jpg",
+  "detail": "essence of an individual -> Q9165 soul"
+ },
+ "sound-a1": {
+  "result": "none"
+ },
+ "source-a2": {
+  "result": "none"
+ },
+ "south-a1": {
+  "result": "rejected",
+  "file": "Compass Rose English South.svg",
+  "detail": "one of the four cardinal directions -> Q667 south"
+ },
+ "southern-b1": {
+  "result": "rejected",
+  "file": "Compass Rose English South.svg",
+  "detail": "from or to the south -> Q667 south"
+ },
+ "speak-a1": {
+  "result": "none"
+ },
+ "speaker-a2": {
+  "result": "none"
+ },
+ "specialist-b2": {
+  "result": "none"
+ },
+ "species-b2": {
+  "result": "none"
+ },
+ "specific-a2": {
+  "result": "none"
+ },
+ "specifically-b1": {
+  "result": "none"
+ },
+ "speech-a2": {
+  "result": "rejected",
+  "file": "Rajagopal speaking to 25,000 people, Janadesh 2007, India.jpg",
+  "detail": "address delivered to an audience"
+ },
+ "spell-a1": {
+  "result": "none"
+ },
+ "spelling-a1": {
+  "result": "none"
+ },
+ "spend-a1": {
+  "result": "none"
+ },
+ "spending-b1": {
+  "result": "none"
+ },
+ "spirit-b1": {
+  "result": "none"
+ },
+ "spiritual-b2": {
+  "result": "none"
+ },
+ "split-b2": {
+  "result": "none"
+ },
+ "spoken-b1": {
+  "result": "none"
+ },
+ "sponsor-b2": {
+  "result": "none"
+ },
+ "spot-b1": {
+  "result": "none"
+ },
+ "spread-b1": {
+  "result": "none"
+ },
+ "stable-b2": {
+  "result": "none"
+ },
+ "stamp-a2": {
+  "result": "rejected",
+  "file": "Salvador 1892 Sc74.jpg",
+  "detail": "small piece of paper that is purchased and displayed on an item of mail as evidence of payment of postage -> Q37930 postage stamp"
+ },
+ "standard-b1": {
+  "result": "none"
+ },
+ "star-a1": {
+  "result": "none"
+ },
+ "stare-b2": {
+  "result": "none"
+ },
+ "state-a2": {
+  "result": "rejected",
+  "file": "Leviathan frontispiece cropped British Library.jpg",
+  "detail": "Q7275 organised community living under a system of government; either a sovereign state, constituent state, or federated state"
+ },
+ "statement-a1": {
+  "result": "none"
+ },
+ "status-b2": {
+  "result": "none"
+ },
+ "stay-a1": {
+  "result": "none"
+ },
+ "steady-b2": {
+  "result": "none"
+ },
+ "steal-a2": {
+  "result": "none"
+ },
+ "steep-b2": {
+  "result": "none"
+ },
+ "stick-push-into-attach-b1": {
+  "result": "none"
+ },
+ "stick-piece-of-wood-b1": {
+  "result": "rejected",
+  "file": "Boy gripping stick.jpg",
+  "detail": "elongated piece of wood or similar material, typically put to some use, for example as a wand or baton -> Q10971443 stick"
+ },
+ "stiff-b2": {
+  "result": "none"
+ },
+ "still-a1": {
+  "result": "none"
+ },
+ "stock-b2": {
+  "result": "none"
+ },
+ "stop-a1": {
+  "result": "none"
+ },
+ "store-a1": {
+  "result": "none"
+ },
+ "storm-a2": {
+  "result": "lexeme-item",
+  "file": "Cloud cumulonimbus at baltic sea(1).jpg",
+  "detail": "disturbed atmospheric state -> Q81054 storm"
+ },
+ "story-a1": {
+  "result": "rejected",
+  "file": "Reus Contios vertelt langs de waterkant op initiatief van Natuurpunt - 'Oude spoorwegberm Kontich'.jpg",
+  "detail": "narrative, account that presents connected events -> Q1318295 narrative"
+ },
+ "strange-a2": {
+  "result": "none"
+ },
+ "stranger-b1": {
+  "result": "rejected",
+  "file": "A stranger in town (6896469857).jpg",
+  "detail": "person who is unknown to another person or group -> Q13197964 stranger"
+ },
+ "strategy-a2": {
+  "result": "none"
+ },
+ "stream-b2": {
+  "result": "lexeme-item",
+  "file": "Sarek Skierffe Rapadelta.jpg",
+  "detail": "small moving body of water -> Q47521 stream"
+ },
+ "strength-b1": {
+  "result": "none"
+ },
+ "stress-a2": {
+  "result": "rejected",
+  "file": "Human stress.jpg",
+  "detail": "state of mental or emotional strain caused by difficult or demanding circumstances -> Q3500368 psychological stress"
+ },
+ "strict-b2": {
+  "result": "none"
+ },
+ "strike-b2": {
+  "result": "none"
+ },
+ "string-b1": {
+  "result": "none"
+ },
+ "strong-a1": {
+  "result": "none"
+ },
+ "strongly-b1": {
+  "result": "none"
+ },
+ "structure-a2": {
+  "result": "none"
+ },
+ "struggle-b2": {
+  "result": "none"
+ },
+ "studio-b1": {
+  "result": "rejected",
+  "file": "619 Western 06.jpg",
+  "detail": "artist’s or photographer’s workshop -> Q746628 studio"
+ },
+ "study-a1": {
+  "result": "rejected",
+  "file": "Studying books.jpg",
+  "detail": "act of examining materials for the purpose of learning -> Q1782301 study"
+ },
+ "stuff-b1": {
+  "result": "none"
+ },
+ "stupid-a2": {
+  "result": "none"
+ },
+ "style-a1": {
+  "result": "none"
+ },
+ "subject-a1": {
+  "result": "rejected",
+  "file": "Субъект.png",
+  "detail": "being who has a unique consciousness and/or unique personal experiences, or an entity that has a relationship with another entity that exists outside of itself -> Q830077 subject"
+ },
+ "submit-b2": {
+  "result": "none"
+ },
+ "substance-b1": {
+  "result": "none"
+ },
+ "succeed-a2": {
+  "result": "none"
+ },
+ "success-a1": {
+  "result": "none"
+ },
+ "successful-a2": {
+  "result": "none"
+ },
+ "successfully-b1": {
+  "result": "none"
+ },
+ "sudden-b1": {
+  "result": "none"
+ },
+ "suddenly-a2": {
+  "result": "none"
+ },
+ "suffer-b1": {
+  "result": "none"
+ },
+ "suggest-a2": {
+  "result": "none"
+ },
+ "suggestion-a2": {
+  "result": "none"
+ },
+ "suitable-b1": {
+  "result": "none"
+ },
+ "sum-b2": {
+  "result": "rejected",
+  "file": "Sigmaschreibweise für Summen.svg",
+  "detail": "addition of a sequence of numbers -> Q218005 sum"
+ },
+ "summarize-b1": {
+  "result": "none"
+ },
+ "summary-b1": {
+  "result": "none"
+ },
+ "supply-b1": {
+  "result": "lexeme-item",
+  "file": "Mega Oferta Linella.jpg",
+  "detail": "quantity of an item available -> Q542869 supply"
+ },
+ "support-a2": {
+  "result": "none"
+ },
+ "supporter-b1": {
+  "result": "none"
+ },
+ "suppose-a2": {
+  "result": "none"
+ },
+ "sure-a1": {
+  "result": "none"
+ },
+ "surely-b1": {
+  "result": "none"
+ },
+ "surprise-a2": {
+  "result": "rejected",
+  "file": "Grandville Cent Proverbes page129.png",
+  "detail": "emotional state experienced as the result of an unexpected event -> Q333173 surprise"
+ },
+ "surprising-a2": {
+  "result": "none"
+ },
+ "surround-b2": {
+  "result": "none"
+ },
+ "surrounding-b2": {
+  "result": "none"
+ },
+ "survey-a2": {
+  "result": "none"
+ },
+ "survive-b1": {
+  "result": "none"
+ },
+ "suspect-b2": {
+  "result": "none"
+ },
+ "swear-b2": {
+  "result": "none"
+ },
+ "switch-b1": {
+  "result": "none"
+ },
+ "symbol-a2": {
+  "result": "rejected",
+  "file": "ReligijneSymbole.svg",
+  "detail": "Q80071 something that represents an idea, a process, or a physical entity due to convention or association"
+ },
+ "sympathy-b2": {
+  "result": "none"
+ },
+ "system-a2": {
+  "result": "rejected",
+  "file": "Primäres System.png",
+  "detail": "set of interacting or interdependent components -> Q58778 system"
+ },
+ "take-a1": {
+  "result": "none"
+ },
+ "tale-b2": {
+  "result": "rejected",
+  "file": "God kväll, farbror! Hälsade pojken.jpg",
+  "detail": "prose fiction that can be either rooted in oral tradition or created by an author -> Q17991521 tale"
+ },
+ "talent-b1": {
+  "result": "none"
+ },
+ "talented-b1": {
+  "result": "none"
+ },
+ "task-a2": {
+  "result": "none"
+ },
+ "taste-a2": {
+  "result": "rejected",
+  "file": "1402 The Tongue.jpg",
+  "detail": "sense that detects types of chemicals that touch the tongue -> Q124794 taste"
+ },
+ "teach-a1": {
+  "result": "none"
+ },
+ "teacher-a1": {
+  "result": "lexeme-sense",
+  "file": "Classroom at a seconday school in Pendembu Sierra Leone.jpg",
+  "detail": "person that helps others acquire skills or knowledge"
+ },
+ "teaching-a2": {
+  "result": "item",
+  "file": "091215-M-6770H-024 (4244334995).jpg",
+  "detail": "Q352842 process or activity of imparting knowledge and skills"
+ },
+ "team-a1": {
+  "result": "rejected",
+  "file": "Team work.jpg",
+  "detail": "group of individuals working together to achieve their goal -> Q327245 team"
+ },
+ "tear1-b2": {
+  "result": "none"
+ },
+ "teenager-a1": {
+  "result": "lexeme-item",
+  "file": "Tuoi teen.jpg",
+  "detail": "young person (between 13 and 19 years old) -> Q1492760 teenager"
+ },
+ "tell-a1": {
+  "result": "none"
+ },
+ "temporary-b2": {
+  "result": "none"
+ },
+ "tend-b1": {
+  "result": "none"
+ },
+ "term-a2": {
+  "result": "none"
+ },
+ "terrible-a1": {
+  "result": "none"
+ },
+ "test-a1": {
+  "result": "lexeme-item",
+  "file": "Test (student assessment).jpeg",
+  "detail": "assessment of ability -> Q27318 test"
+ },
+ "thank-a1": {
+  "result": "none"
+ },
+ "theme-b1": {
+  "result": "none"
+ },
+ "then-a1": {
+  "result": "none"
+ },
+ "theory-b1": {
+  "result": "none"
+ },
+ "therapy-b2": {
+  "result": "rejected",
+  "file": "Polio physical therapy.jpg",
+  "detail": "cure for medical ailment -> Q179661 therapy"
+ },
+ "there-a1": {
+  "result": "none"
+ },
+ "therefore-b1": {
+  "result": "none"
+ },
+ "thin-a2": {
+  "result": "none"
+ },
+ "thing-a1": {
+  "result": "none"
+ },
+ "think-a1": {
+  "result": "none"
+ },
+ "thinking-a2": {
+  "result": "rejected",
+  "file": "Herkulaneischer Meister 002.jpg",
+  "detail": "mental activity involving an individual's subjective consciousness -> Q9420 thought"
+ },
+ "thirsty-a1": {
+  "result": "none"
+ },
+ "threat-b2": {
+  "result": "rejected",
+  "file": "Jusepe Leonardo 001.jpeg",
+  "detail": "one person's statement that they intend to harm another, or another's property -> Q707125 threat"
+ },
+ "threaten-b2": {
+  "result": "none"
+ },
+ "throat-b1": {
+  "result": "rejected",
+  "file": "Medical X-Ray imaging EJE04 nevit.jpg",
+  "detail": "anterior part of the neck, in front of the vertebra -> Q16364 throat"
+ },
+ "thursday-a1": {
+  "result": "none"
+ },
+ "thus-b2": {
+  "result": "none"
+ },
+ "tight-b1": {
+  "result": "none"
+ },
+ "time-a1": {
+  "result": "none"
+ },
+ "tiny-b1": {
+  "result": "none"
+ },
+ "tip-a2": {
+  "result": "none"
+ },
+ "tire-b1": {
+  "result": "lexeme-item",
+  "file": "Gestapelte Autoreifen mit farbigen Markierungen.JPG",
+  "detail": "ring-shaped covering that fits around a wheel's rim -> Q169545 tire"
+ },
+ "title-a1": {
+  "result": "none"
+ },
+ "today-a1": {
+  "result": "none"
+ },
+ "together-a1": {
+  "result": "none"
+ },
+ "toilet-a1": {
+  "result": "lexeme-item",
+  "file": "Wc1.jpg",
+  "detail": "sanitation fixture -> Q7857 toilet"
+ },
+ "tomorrow-a1": {
+  "result": "none"
+ },
+ "ton-b1": {
+  "result": "none"
+ },
+ "tone-b2": {
+  "result": "none"
+ },
+ "tongue-b1": {
+  "result": "rejected",
+  "file": "Tongue.agr.jpg",
+  "detail": "mouth organ that tastes and facilitates speech -> Q9614 tongue"
+ },
+ "tonight-a1": {
+  "result": "none"
+ },
+ "too-a1": {
+  "result": "none"
+ },
+ "top-a2": {
+  "result": "none"
+ },
+ "topic-a1": {
+  "result": "none"
+ },
+ "total-b1": {
+  "result": "none"
+ },
+ "totally-b1": {
+  "result": "none"
+ },
+ "tough-b2": {
+  "result": "none"
+ },
+ "tour-a2": {
+  "result": "rejected",
+  "file": "Wiki Ed Sheeran 2022-tour CPH IMG20220803204722.jpg",
+  "detail": "series of performances of one or several performing artists in various places outside their usual place of activity -> Q1573906 concert tour"
+ },
+ "towel-a2": {
+  "result": "lexeme-item",
+  "file": "Toballola de platja.jpg",
+  "detail": "cloth which is used to dry something -> Q131696 towel"
+ },
+ "town-a1": {
+  "result": "lexeme-item",
+  "file": "Панорама Кременецьких гір в районі Крем'янця.jpg",
+  "detail": "settlement that is bigger than a village but smaller than a city -> Q3957 town"
+ },
+ "trade-b1": {
+  "result": "lexeme-item",
+  "file": "Fredmeyer edit 1.jpg",
+  "detail": "exchange of goods and services -> Q601401 trade"
+ },
+ "tradition-a2": {
+  "result": "rejected",
+  "file": "Dreschen mit Flegel.jpg",
+  "detail": "belief or behavior passed down within a group or society with symbolic meaning or special significance with origins in the past -> Q82821 tradition"
+ },
+ "trainer-b1": {
+  "result": "none"
+ },
+ "transfer-b2": {
+  "result": "none"
+ },
+ "transform-b2": {
+  "result": "none"
+ },
+ "transition-b2": {
+  "result": "none"
+ },
+ "translate-b1": {
+  "result": "none"
+ },
+ "translation-b1": {
+  "result": "rejected",
+  "file": "Rosetta Stone.JPG",
+  "detail": "communication of text in a new language -> Q7553 translation"
+ },
+ "transport-b1": {
+  "result": "none"
+ },
+ "transportation-a2": {
+  "result": "rejected",
+  "file": "PL Mirandola Czem chciał zostać Janek mały 1925 page19.png",
+  "detail": "move from one place to another, moving from one place to another (not means of transportation/vehicle itself) -> Q7590 transport"
+ },
+ "travel-a1": {
+  "result": "none"
+ },
+ "traveler-a2": {
+  "result": "none"
+ },
+ "treat-b1": {
+  "result": "none"
+ },
+ "treatment-b1": {
+  "result": "rejected",
+  "file": "Polio physical therapy.jpg",
+  "detail": "medical treatment -> Q179661 therapy"
+ },
+ "tree-a1": {
+  "result": "lexeme-item",
+  "file": "Alnus glutinosa 011.jpg",
+  "detail": "perennial woody plant -> Q10884 tree"
+ },
+ "trend-b1": {
+  "result": "none"
+ },
+ "trial-b2": {
+  "result": "rejected",
+  "file": "Adolf Eichmann is sentenced to death at the conclusion of the Eichmann Trial USHMM 65289.jpg",
+  "detail": "Q8016240 coming together of parties to a dispute, to present information in a tribunal"
+ },
+ "trick-b1": {
+  "result": "none"
+ },
+ "trip-a1": {
+  "result": "none"
+ },
+ "tropical-b2": {
+  "result": "none"
+ },
+ "trouble-a2": {
+  "result": "none"
+ },
+ "true-a1": {
+  "result": "none"
+ },
+ "truly-b2": {
+  "result": "none"
+ },
+ "trust-b2": {
+  "result": "none"
+ },
+ "truth-b1": {
+  "result": "rejected",
+  "file": "Wikidata-check.svg",
+  "detail": "what is in accord with fact or reality"
+ },
+ "try-a1": {
+  "result": "none"
+ },
+ "tuesday-a1": {
+  "result": "rejected",
+  "file": "Tuesday Abbr GW.png",
+  "detail": "Q127 day of the week"
+ },
+ "tune-b2": {
+  "result": "none"
+ },
+ "tunnel-b2": {
+  "result": "lexeme-item",
+  "file": "SMP May 2008-9a.jpg",
+  "detail": "underground passage -> Q44377 tunnel"
+ },
+ "turn-a1": {
+  "result": "none"
+ },
+ "twice-a1": {
+  "result": "none"
+ },
+ "type-a1": {
+  "result": "none"
+ },
+ "typical-a2": {
+  "result": "none"
+ },
+ "typically-b1": {
+  "result": "none"
+ },
+ "ugly-b1": {
+  "result": "none"
+ },
+ "ultimately-b2": {
+  "result": "none"
+ },
+ "umbrella-a1": {
+  "result": "lexeme-sense",
+  "file": "M0354 000727-005 1.jpg",
+  "detail": "canopy designed to protect against rain"
+ },
+ "unable-b1": {
+  "result": "none"
+ },
+ "uncle-a1": {
+  "result": "none"
+ },
+ "uncomfortable-b1": {
+  "result": "none"
+ },
+ "unconscious-b2": {
+  "result": "none"
+ },
+ "understand-a1": {
+  "result": "none"
+ },
+ "understanding-a2": {
+  "result": "rejected",
+  "file": "Albert Anker - Das Schulexamen.jpg",
+  "detail": "ability to think about and use concepts to deal adequately with an object -> Q46744 understanding"
+ },
+ "underwear-b1": {
+  "result": "none"
+ },
+ "unemployed-b1": {
+  "result": "none"
+ },
+ "unemployment-b1": {
+  "result": "none"
+ },
+ "unexpected-b2": {
+  "result": "none"
+ },
+ "unfair-b1": {
+  "result": "none"
+ },
+ "unfortunately-a2": {
+  "result": "none"
+ },
+ "unhappy-a2": {
+  "result": "none"
+ },
+ "union-b1": {
+  "result": "none"
+ },
+ "unique-b2": {
+  "result": "none"
+ },
+ "unit-a2": {
+  "result": "none"
+ },
+ "united-a2": {
+  "result": "none"
+ },
+ "universe-b2": {
+  "result": "item",
+  "file": "NASA-HS201427a-HubbleUltraDeepField2014-20140603.jpg",
+  "detail": "Q1 totality consisting of space, time, matter and energy"
+ },
+ "unknown-b2": {
+  "result": "none"
+ },
+ "unlikely-b1": {
+  "result": "none"
+ },
+ "unnecessary-b1": {
+  "result": "none"
+ },
+ "unpleasant-b1": {
+  "result": "none"
+ },
+ "unusual-a2": {
+  "result": "none"
+ },
+ "up-a1": {
+  "result": "none"
+ },
+ "upper-b2": {
+  "result": "none"
+ },
+ "upset-b1": {
+  "result": "none"
+ },
+ "upstairs-a1": {
+  "result": "none"
+ },
+ "upward-b2": {
+  "result": "none"
+ },
+ "urge-b2": {
+  "result": "none"
+ },
+ "use-a1": {
+  "result": "none"
+ },
+ "used1-b1": {
+  "result": "none"
+ },
+ "used2-b1": {
+  "result": "none"
+ },
+ "useful-a1": {
+  "result": "none"
+ },
+ "usual-a2": {
+  "result": "none"
+ },
+ "usually-a1": {
+  "result": "none"
+ },
+ "vacation-a1": {
+  "result": "none"
+ },
+ "valuable-b1": {
+  "result": "none"
+ },
+ "value-b1": {
+  "result": "none"
+ },
+ "variety-a2": {
+  "result": "none"
+ },
+ "various-b1": {
+  "result": "none"
+ },
+ "vary-b2": {
+  "result": "none"
+ },
+ "vehicle-a2": {
+  "result": "lexeme-item",
+  "file": "Setra S215 HD in Ukraine.jpg",
+  "detail": "mobile machine that transports people, animals or cargo -> Q42889 vehicle"
+ },
+ "venue-b2": {
+  "result": "none"
+ },
+ "version-b1": {
+  "result": "none"
+ },
+ "very-a1": {
+  "result": "none"
+ },
+ "victim-b1": {
+  "result": "none"
+ },
+ "view-a2": {
+  "result": "none"
+ },
+ "viewer-b1": {
+  "result": "none"
+ },
+ "village-a2": {
+  "result": "lexeme-item",
+  "file": "Betley- The main road, looking north, the postmans bike at rest - geograph.org.uk - 147874.jpg",
+  "detail": "small clustered human settlement smaller than a town -> Q532 village"
+ },
+ "violence-b2": {
+  "result": "rejected",
+  "file": "Grandville Cent Proverbes page69.png",
+  "detail": "use of physical force or power with the intent to inflict harm -> Q124490 violence"
+ },
+ "violent-b1": {
+  "result": "none"
+ },
+ "virus-a2": {
+  "result": "rejected",
+  "file": "Zika-chain-colored.png",
+  "detail": "type of non-cellular infectious agent -> Q808 virus"
+ },
+ "vision-b2": {
+  "result": "none"
+ },
+ "visit-a1": {
+  "result": "none"
+ },
+ "visitor-a1": {
+  "result": "none"
+ },
+ "visual-b2": {
+  "result": "none"
+ },
+ "vital-b2": {
+  "result": "none"
+ },
+ "volume-b2": {
+  "result": "lexeme-item",
+  "file": "Simple Measuring Cup.jpg",
+  "detail": "quantity of three-dimensional space -> Q39297 volume"
+ },
+ "volunteer-b1": {
+  "result": "rejected",
+  "file": "Political volunteers.jpg",
+  "detail": "Q24716636 participant in voluntary work"
+ },
+ "wage-b2": {
+  "result": "rejected",
+  "file": "Government of Iraq follows up initial payments, issues SoI salaries for November DVIDS137445.jpg",
+  "detail": "reimbursement paid by an employer to an employee -> Q6821213 wage"
+ },
+ "wait-a1": {
+  "result": "none"
+ },
+ "waiter-a1": {
+  "result": "lexeme-item",
+  "file": "Waiter in a restaurant, Paris 2011.jpg",
+  "detail": "staff serving in restaurant or private homes -> Q157195 waiter"
+ },
+ "walk-a1": {
+  "result": "none"
+ },
+ "want-a1": {
+  "result": "none"
+ },
+ "warn-b1": {
+  "result": "none"
+ },
+ "wash-a1": {
+  "result": "none"
+ },
+ "waste-b1": {
+  "result": "lexeme-item",
+  "file": "Aterro Sanitario.jpg",
+  "detail": "unwanted or unusable material -> Q45701 waste"
+ },
+ "watch-a1": {
+  "result": "none"
+ },
+ "way-a1": {
+  "result": "lexeme-item",
+  "file": "Suspension Bridge-IMG 1581.jpg",
+  "detail": "method or manner of doing something -> Q12774177 means"
+ },
+ "weak-a2": {
+  "result": "none"
+ },
+ "weakness-b2": {
+  "result": "none"
+ },
+ "wealth-b2": {
+  "result": "rejected",
+  "file": "Massysm Quentin — The Moneylender and his Wife — 1514.jpg",
+  "detail": "abundance of value -> Q200535 wealth"
+ },
+ "wealthy-b2": {
+  "result": "none"
+ },
+ "wear-a1": {
+  "result": "none"
+ },
+ "weather-a1": {
+  "result": "rejected",
+  "file": "Wikinews weather.png",
+  "detail": "state of the atmosphere -> Q11663 weather"
+ },
+ "wednesday-a1": {
+  "result": "none"
+ },
+ "weigh-b1": {
+  "result": "none"
+ },
+ "well-a1": {
+  "result": "none"
+ },
+ "west-a1": {
+  "result": "rejected",
+  "file": "CompassRose (mul) 16 blue W.svg",
+  "detail": "one of the four cardinal directions -> Q679 west"
+ },
+ "western-b1": {
+  "result": "rejected",
+  "file": "CompassRose (mul) 16 blue W.svg",
+  "detail": "to or from the west -> Q679 west"
+ },
+ "when-a1": {
+  "result": "none"
+ },
+ "where-a1": {
+  "result": "none"
+ },
+ "white-a1": {
+  "result": "rejected",
+  "file": "Color icon white.svg",
+  "detail": "color -> Q23444 white"
+ },
+ "whole-a2": {
+  "result": "none"
+ },
+ "why-a1": {
+  "result": "none"
+ },
+ "wide-a2": {
+  "result": "none"
+ },
+ "widely-b2": {
+  "result": "none"
+ },
+ "wife-a1": {
+  "result": "rejected",
+  "file": "William-Adolphe Bouguereau (1825-1905) - The Proposal (1872).jpg",
+  "detail": "female spouse; woman who is married -> Q188830 wife"
+ },
+ "wild-a2": {
+  "result": "none"
+ },
+ "willing-b2": {
+  "result": "none"
+ },
+ "win-a1": {
+  "result": "none"
+ },
+ "wind1-a2": {
+  "result": "rejected",
+  "file": "Bundesarchiv Bild 183-1990-0206-324, Berlin, Passanten im Wind.jpg",
+  "detail": "moving air, particularly outdoors -> Q8094 wind"
+ },
+ "wind2-b2": {
+  "result": "none"
+ },
+ "winter-a1": {
+  "result": "lexeme-item",
+  "file": "Crater Lake winter pano2.jpg",
+  "detail": "one of the Earth's four temperate seasons, occurring between autumn and spring -> Q1311 winter"
+ },
+ "wise-b2": {
+  "result": "none"
+ },
+ "wish-a2": {
+  "result": "none"
+ },
+ "witness-b2": {
+  "result": "none"
+ },
+ "wonder-b1": {
+  "result": "none"
+ },
+ "wonderful-a1": {
+  "result": "none"
+ },
+ "wooden-a2": {
+  "result": "none"
+ },
+ "wool-b1": {
+  "result": "lexeme-item",
+  "file": "Merino shearing.jpg",
+  "detail": "natural fibre from the soft hair of sheep or other mammals -> Q42329 wool"
+ },
+ "word-a1": {
+  "result": "rejected",
+  "file": "Happy Valentines Day.jpg",
+  "detail": "Q8171 smallest linguistic element that will be said in isolation with semantic or pragmatic content"
+ },
+ "work-a1": {
+  "result": "none"
+ },
+ "worker-a1": {
+  "result": "rejected",
+  "file": "WomanFactory1940s.jpg",
+  "detail": "person who works -> Q327055 worker"
+ },
+ "working-a2": {
+  "result": "none"
+ },
+ "worldwide-b1": {
+  "result": "none"
+ },
+ "worried-a2": {
+  "result": "none"
+ },
+ "worse-a2": {
+  "result": "none"
+ },
+ "worst-a2": {
+  "result": "none"
+ },
+ "worth-b1": {
+  "result": "none"
+ },
+ "wound-b2": {
+  "result": "rejected",
+  "file": "Chapter1figure1-Superficial bullet wound.jpg",
+  "detail": "injury where the skin is torn -> Q184753 wound"
+ },
+ "wrap-b2": {
+  "result": "none"
+ },
+ "write-a1": {
+  "result": "none"
+ },
+ "writer-a1": {
+  "result": "rejected",
+  "file": "Leonid Pasternak - The Passion of creation (1).jpg",
+  "detail": "person who uses written words to communicate ideas and to produce works of literature -> Q36180 writer"
+ },
+ "writing-a1": {
+  "result": "rejected",
+  "file": "Frans-Eemil-Sillanpaa-1950s.jpg",
+  "detail": "Q86647781 human action of inscribing text on a writing medium"
+ },
+ "written-b1": {
+  "result": "none"
+ },
+ "wrong-a1": {
+  "result": "none"
+ },
+ "yard-a1": {
+  "result": "lexeme-item",
+  "file": "Typical suburban backyard.jpg",
+  "detail": "area of land immediately adjacent to a building or a group of buildings -> Q1623285 yard"
+ },
+ "year-a1": {
+  "result": "rejected",
+  "file": "Analemma fishburn.tif",
+  "detail": "orbital period of the Earth around the Sun -> Q577 year"
+ },
+ "yellow-a1": {
+  "result": "rejected",
+  "file": "Color icon yellow.svg",
+  "detail": "color"
+ },
+ "yesterday-a1": {
+  "result": "none"
+ },
+ "yet-a2": {
+  "result": "none"
+ },
+ "young-a1": {
+  "result": "none"
+ },
+ "youth-b1": {
+  "result": "rejected",
+  "file": "Teenagers in Moscow.jpg",
+  "detail": "time of life when one is young -> Q190007 youth"
+ },
+ "zone-b2": {
+  "result": "none"
+ },
+ "abolish-c1": {
+  "result": "none"
+ },
+ "abortion-c1": {
+  "result": "rejected",
+  "file": "23 674673M 001-detail.jpg",
+  "detail": "intentionally ending pregnancy -> Q8452 abortion"
+ },
+ "absence-c1": {
+  "result": "none"
+ },
+ "absent-c1": {
+  "result": "none"
+ },
+ "absorb-b2": {
+  "result": "none"
+ },
+ "abuse-c1": {
+  "result": "rejected",
+  "file": "Angry man (without speech balloon).svg",
+  "detail": "Q600571 improper usage or misuse or incivil behavior towards others"
+ },
+ "accelerate-c1": {
+  "result": "none"
+ },
+ "acceptance-c1": {
+  "result": "none"
+ },
+ "accidentally-b2": {
+  "result": "none"
+ },
+ "accommodate-b2": {
+  "result": "none"
+ },
+ "accomplishment-c1": {
+  "result": "rejected",
+  "file": "Polikarpov VIT-2.jpg",
+  "detail": "act of successfully completing a goal -> Q2101326 Polikarpov VIT-1"
+ },
+ "accordingly-c1": {
+  "result": "none"
+ },
+ "accountability-c1": {
+  "result": "none"
+ },
+ "accountable-c1": {
+  "result": "none"
+ },
+ "accumulate-c1": {
+  "result": "none"
+ },
+ "accumulation-c1": {
+  "result": "none"
+ },
+ "accurately-b2": {
+  "result": "none"
+ },
+ "accused-c1": {
+  "result": "none"
+ },
+ "acid-b2": {
+  "result": "none"
+ },
+ "acquisition-c1": {
+  "result": "none"
+ },
+ "activate-b2": {
+  "result": "none"
+ },
+ "activation-c1": {
+  "result": "none"
+ },
+ "acute-c1": {
+  "result": "none"
+ },
+ "additionally-b2": {
+  "result": "none"
+ },
+ "adequate-b2": {
+  "result": "none"
+ },
+ "adequately-b2": {
+  "result": "none"
+ },
+ "adhere-c1": {
+  "result": "none"
+ },
+ "adjacent-c1": {
+  "result": "rejected",
+  "file": "Ciclica-due-punti-impropri.jpg",
+  "detail": "next to, evokes horizontal relationship -> Q5403187 adjacent"
+ },
+ "administer-c1": {
+  "result": "none"
+ },
+ "adverse-c1": {
+  "result": "none"
+ },
+ "aesthetic-c1": {
+  "result": "none"
+ },
+ "aged-b2": {
+  "result": "none"
+ },
+ "aide-c1": {
+  "result": "none"
+ },
+ "aids-b2": {
+  "result": "rejected",
+  "file": "Human Immunodeficency Virus - stylized rendering.jpg",
+  "detail": "acquired immune deficiency syndrome -> Q12199 HIV/AIDS"
+ },
+ "alert-c1": {
+  "result": "none"
+ },
+ "align-c1": {
+  "result": "none"
+ },
+ "alignment-c1": {
+  "result": "rejected",
+  "file": "Alignment.001.png",
+  "detail": "in archaeology, a co-linear arrangement of features or structures with external landmarks -> Q19719822 alignment"
+ },
+ "alike-c1": {
+  "result": "none"
+ },
+ "allegation-c1": {
+  "result": "none"
+ },
+ "allege-c1": {
+  "result": "none"
+ },
+ "allegedly-c1": {
+  "result": "none"
+ },
+ "allocate-c1": {
+  "result": "none"
+ },
+ "allocation-c1": {
+  "result": "none"
+ },
+ "allowance-c1": {
+  "result": "rejected",
+  "file": "Pay Day for Boy Scouts at a fruit-picking camp near Cambridge in 1943. D16223.jpg",
+  "detail": "money allotted at regular intervals -> Q2364815 allowance"
+ },
+ "ally-c1": {
+  "result": "none"
+ },
+ "altogether-b2": {
+  "result": "none"
+ },
+ "amateur-c1": {
+  "result": "none"
+ },
+ "ambassador-c1": {
+  "result": "rejected",
+  "file": "Hans Holbein the Younger - The Ambassadors - Google Art Project.jpg",
+  "detail": "diplomatic envoy -> Q121998 ambassador"
+ },
+ "amend-c1": {
+  "result": "none"
+ },
+ "amusing-b2": {
+  "result": "rejected",
+  "file": "Little girl laughing with excitement in France.jpg",
+  "detail": "causing amusement -> Q2844542 amusement"
+ },
+ "analogy-c1": {
+  "result": "none"
+ },
+ "anchor-c1": {
+  "result": "lexeme-item",
+  "file": "Северодвинск (пр. Ленина-ул.Первомайская).JPG",
+  "detail": "mooring device -> Q168432 anchor"
+ },
+ "annually-b2": {
+  "result": "none"
+ },
+ "anticipate-b2": {
+  "result": "none"
+ },
+ "apparel-c1": {
+  "result": "none"
+ },
+ "appealing-c1": {
+  "result": "none"
+ },
+ "applaud-c1": {
+  "result": "none"
+ },
+ "applicable-c1": {
+  "result": "none"
+ },
+ "appoint-c1": {
+  "result": "none"
+ },
+ "arbitrary-c1": {
+  "result": "none"
+ },
+ "arm-c1": {
+  "result": "none"
+ },
+ "array-c1": {
+  "result": "rejected",
+  "file": "Array1.svg",
+  "detail": "data structure -> Q186152 array data structure"
+ },
+ "articulate-c1": {
+  "result": "none"
+ },
+ "aspire-c1": {
+  "result": "none"
+ },
+ "assassination-c1": {
+  "result": "rejected",
+  "file": "Assassination of President Lincoln, Ford's Theatre, Washington, April 14, 1865 LCCN2003656453.jpg",
+  "detail": "murder of a prominent person, often a political leader or ruler -> Q3882219 assassination"
+ },
+ "assembly-c1": {
+  "result": "none"
+ },
+ "assert-c1": {
+  "result": "none"
+ },
+ "assertion-c1": {
+  "result": "none"
+ },
+ "assign-b2": {
+  "result": "none"
+ },
+ "assumption-b2": {
+  "result": "none"
+ },
+ "assurance-c1": {
+  "result": "none"
+ },
+ "assure-b2": {
+  "result": "none"
+ },
+ "asylum-c1": {
+  "result": "none"
+ },
+ "atrocity-c1": {
+  "result": "none"
+ },
+ "attain-c1": {
+  "result": "none"
+ },
+ "attendance-c1": {
+  "result": "none"
+ },
+ "attribute-c1": {
+  "result": "none"
+ },
+ "authentic-c1": {
+  "result": "none"
+ },
+ "authorize-c1": {
+  "result": "none"
+ },
+ "autonomy-c1": {
+  "result": "none"
+ },
+ "availability-c1": {
+  "result": "none"
+ },
+ "await-c1": {
+  "result": "none"
+ },
+ "awareness-b2": {
+  "result": "none"
+ },
+ "backing-c1": {
+  "result": "rejected",
+  "file": "Uitsnijden van de patroondelen 0.jpg",
+  "detail": "Q55590127 material attached to the back of any object, to cover, protect, neaten, or strengthen the object"
+ },
+ "bail-c1": {
+  "result": "none"
+ },
+ "barely-b2": {
+  "result": "none"
+ },
+ "beam-c1": {
+  "result": "none"
+ },
+ "behalf-c1": {
+  "result": "none"
+ },
+ "beneficial-b2": {
+  "result": "none"
+ },
+ "beneficiary-c1": {
+  "result": "rejected",
+  "file": "IIMGC Providing Food security for Female Headed Househols.jpg",
+  "detail": "person or other legal entity who receives money or other benefits from a benefactor -> Q2596417 beneficiary"
+ },
+ "betray-c1": {
+  "result": "none"
+ },
+ "bid-b2": {
+  "result": "none"
+ },
+ "bind-c1": {
+  "result": "none"
+ },
+ "bishop-c1": {
+  "result": "rejected",
+  "file": "Eveque de Laon, Barthélémy de Jur.jpg",
+  "detail": "ordained or consecrated member of the Christian clergy (for Catholic bishops, use Q611644, for Orthodox bishops, use Q15283040) -> Q29182 bishop"
+ },
+ "bizarre-c1": {
+  "result": "none"
+ },
+ "bleed-c1": {
+  "result": "lexeme-sense",
+  "file": "Bleeding finger.jpg",
+  "detail": "to emit/lose blood"
+ },
+ "boast-c1": {
+  "result": "none"
+ },
+ "bombing-b2": {
+  "result": "none"
+ },
+ "bonus-c1": {
+  "result": "none"
+ },
+ "boom-c1": {
+  "result": "none"
+ },
+ "bound-b2": {
+  "result": "none"
+ },
+ "breach-c1": {
+  "result": "none"
+ },
+ "breed-c1": {
+  "result": "none"
+ },
+ "briefly-b2": {
+  "result": "none"
+ },
+ "broadly-b2": {
+  "result": "none"
+ },
+ "brutal-c1": {
+  "result": "none"
+ },
+ "buddy-c1": {
+  "result": "none"
+ },
+ "buffer-c1": {
+  "result": "none"
+ },
+ "bulk-c1": {
+  "result": "none"
+ },
+ "burst-c1": {
+  "result": "none"
+ },
+ "canvas-c1": {
+  "result": "lexeme-item",
+  "file": "3D Schildersdoek.JPG",
+  "detail": "painting surface -> Q12321255 canvas"
+ },
+ "capability-c1": {
+  "result": "none"
+ },
+ "capitalism-c1": {
+  "result": "rejected",
+  "file": "Microcosm of London Plate 033 - Corn Exchange.jpg",
+  "detail": "economic system based on private ownership of the means of production and the creation of goods or services for profit -> Q6206 capitalism"
+ },
+ "capitalist-c1": {
+  "result": "none"
+ },
+ "carve-c1": {
+  "result": "none"
+ },
+ "casualty-c1": {
+  "result": "rejected",
+  "file": "Dead german member of Waffen-SS.jpg",
+  "detail": "Q1056901 person who is wounded, incapacitated, or killed in an event"
+ },
+ "cautious-c1": {
+  "result": "none"
+ },
+ "cease-c1": {
+  "result": "none"
+ },
+ "certainty-b2": {
+  "result": "none"
+ },
+ "challenging-b2": {
+  "result": "rejected",
+  "file": "Balancing on great white balls.jpg",
+  "detail": "challenge, nom/nomadj-challenging -> Q16511806 challenge"
+ },
+ "chamber-c1": {
+  "result": "rejected",
+  "file": "Japanese youth hostel room.jpg",
+  "detail": "room -> Q180516 room"
+ },
+ "chaos-c1": {
+  "result": "none"
+ },
+ "characterize-c1": {
+  "result": "none"
+ },
+ "charter-c1": {
+  "result": "none"
+ },
+ "chase-b2": {
+  "result": "none"
+ },
+ "chronic-c1": {
+  "result": "none"
+ },
+ "circulate-c1": {
+  "result": "none"
+ },
+ "civic-c1": {
+  "result": "none"
+ },
+ "civilian-c1": {
+  "result": "rejected",
+  "file": "Civilians fleeing Breslau.jpg",
+  "detail": "person who is not a legitimate member of the military -> Q206887 civilian"
+ },
+ "clarify-b2": {
+  "result": "none"
+ },
+ "clarity-c1": {
+  "result": "none"
+ },
+ "clash-c1": {
+  "result": "none"
+ },
+ "classification-c1": {
+  "result": "none"
+ },
+ "classify-b2": {
+  "result": "none"
+ },
+ "closure-c1": {
+  "result": "none"
+ },
+ "cluster-c1": {
+  "result": "rejected",
+  "file": "Dieter Moebius from German krautrock band Cluster performing at Fusion Festival 2010.jpg",
+  "detail": "Q705382 German experimental musical group"
+ },
+ "coalition-c1": {
+  "result": "none"
+ },
+ "cognitive-c1": {
+  "result": "none"
+ },
+ "coincide-c1": {
+  "result": "none"
+ },
+ "coincidence-b2": {
+  "result": "rejected",
+  "file": "Red cars parking.jpg",
+  "detail": "improbable concurrence or near-concurrence of seemingly related events or circumstances that have no causal relation -> Q2308809 coincidence"
+ },
+ "collaborate-c1": {
+  "result": "none"
+ },
+ "collective-c1": {
+  "result": "none"
+ },
+ "collision-c1": {
+  "result": "rejected",
+  "file": "Colliding Cops.svg",
+  "detail": "event in which two or more bodies exert forces on each other for a relatively short time -> Q238053 collision"
+ },
+ "combat-c1": {
+  "result": "rejected",
+  "file": "Thure de Thulstrup - L. Prang and Co. - Battle of Gettysburg - Restoration by Adam Cuerden.jpg",
+  "detail": "purposeful violent conflict, typically refers to armed conflict or melee -> Q650711 combat"
+ },
+ "commence-c1": {
+  "result": "none"
+ },
+ "commentary-c1": {
+  "result": "none"
+ },
+ "commentator-c1": {
+  "result": "none"
+ },
+ "commissioner-c1": {
+  "result": "rejected",
+  "file": "(Venice) Madonna col Bambino e devoto by Marco Basaiti - Correr Museum.jpg",
+  "detail": "person or organization that commissions something -> Q524778 commissioner"
+ },
+ "commodity-c1": {
+  "result": "none"
+ },
+ "communist-c1": {
+  "result": "none"
+ },
+ "comparable-c1": {
+  "result": "none"
+ },
+ "comparative-b2": {
+  "result": "none"
+ },
+ "compassion-c1": {
+  "result": "rejected",
+  "file": "There's no crying in baseball! (4549295140) 2.jpg",
+  "detail": "feeling of kindness and care for another -> Q1412160 compassion"
+ },
+ "compel-c1": {
+  "result": "none"
+ },
+ "compelling-c1": {
+  "result": "none"
+ },
+ "compensate-c1": {
+  "result": "none"
+ },
+ "compensation-c1": {
+  "result": "none"
+ },
+ "competent-c1": {
+  "result": "none"
+ },
+ "compile-c1": {
+  "result": "none"
+ },
+ "complement-c1": {
+  "result": "none"
+ },
+ "completion-b2": {
+  "result": "none"
+ },
+ "compliance-c1": {
+  "result": "none"
+ },
+ "complication-c1": {
+  "result": "none"
+ },
+ "comply-c1": {
+  "result": "none"
+ },
+ "compound-b2": {
+  "result": "none"
+ },
+ "comprehensive-b2": {
+  "result": "none"
+ },
+ "comprise-b2": {
+  "result": "none"
+ },
+ "compromise-c1": {
+  "result": "none"
+ },
+ "compulsory-b2": {
+  "result": "none"
+ },
+ "conceal-c1": {
+  "result": "none"
+ },
+ "concede-c1": {
+  "result": "none"
+ },
+ "conceive-c1": {
+  "result": "none"
+ },
+ "conception-c1": {
+  "result": "none"
+ },
+ "concession-c1": {
+  "result": "none"
+ },
+ "condemn-c1": {
+  "result": "none"
+ },
+ "confer-c1": {
+  "result": "none"
+ },
+ "confess-b2": {
+  "result": "none"
+ },
+ "confession-c1": {
+  "result": "none"
+ },
+ "configuration-c1": {
+  "result": "none"
+ },
+ "confine-c1": {
+  "result": "none"
+ },
+ "congressional-c1": {
+  "result": "none"
+ },
+ "conquer-c1": {
+  "result": "none"
+ },
+ "conscience-c1": {
+  "result": "rejected",
+  "file": "Vincent Willem van Gogh 022.jpg",
+  "detail": "judgment that assists in distinguishing right from wrong -> Q193526 conscience"
+ },
+ "consciousness-c1": {
+  "result": "rejected",
+  "file": "RobertFuddBewusstsein17Jh.png",
+  "detail": "The state of being conscious or aware; awareness -> Q7087 consciousness"
+ },
+ "consecutive-c1": {
+  "result": "none"
+ },
+ "consensus-c1": {
+  "result": "none"
+ },
+ "consequently-b2": {
+  "result": "none"
+ },
+ "considerable-b2": {
+  "result": "none"
+ },
+ "considerably-b2": {
+  "result": "none"
+ },
+ "consistency-c1": {
+  "result": "none"
+ },
+ "consistently-b2": {
+  "result": "none"
+ },
+ "constitute-c1": {
+  "result": "none"
+ },
+ "constitution-c1": {
+  "result": "rejected",
+  "file": "Konstytucja 3 Maja.jpg",
+  "detail": "set of fundamental principles or established precedents according to which a state or other organization is governed -> Q7755 constitution"
+ },
+ "constitutional-c1": {
+  "result": "none"
+ },
+ "consumption-b2": {
+  "result": "rejected",
+  "file": "Julaftonen by Carl Larsson 1904 edit.jpg",
+  "detail": "The act of eating, drinking or using -> Q192270 consumption"
+ },
+ "contempt-c1": {
+  "result": "rejected",
+  "file": "Pavel Fedotov - The fresh cavalier - Google Art Project.jpg",
+  "detail": "advanced emotion -> Q5338825 contempt"
+ },
+ "contend-c1": {
+  "result": "none"
+ },
+ "contender-c1": {
+  "result": "none"
+ },
+ "content2-c1": {
+  "result": "none"
+ },
+ "contention-c1": {
+  "result": "none"
+ },
+ "continually-c1": {
+  "result": "none"
+ },
+ "contradiction-c1": {
+  "result": "none"
+ },
+ "contrary-c1": {
+  "result": "none"
+ },
+ "contributor-c1": {
+  "result": "none"
+ },
+ "controversial-b2": {
+  "result": "rejected",
+  "file": "Meggendorfer Wenn Gelehrte streiten.jpg",
+  "detail": "not agreed, subject to or arousing controversy -> Q1255828 controversy"
+ },
+ "convention-b2": {
+  "result": "lexeme-item",
+  "file": "2013 Coffee Fest-1.jpg",
+  "detail": "meeting of a (usually large) group of individuals and/or companies in a certain field -> Q625994 convention"
+ },
+ "conventional-b2": {
+  "result": "none"
+ },
+ "conversion-c1": {
+  "result": "none"
+ },
+ "convey-b2": {
+  "result": "none"
+ },
+ "conviction-c1": {
+  "result": "none"
+ },
+ "convincing-b2": {
+  "result": "none"
+ },
+ "cooperative-c1": {
+  "result": "lexeme-item",
+  "file": "Abramowski-braterstwo-solidarnosc-wspoldzialanie-okladka.png",
+  "detail": "relating to working together -> Q380962 cooperation"
+ },
+ "coordinate-c1": {
+  "result": "none"
+ },
+ "coordinator-c1": {
+  "result": "none"
+ },
+ "cope-b2": {
+  "result": "none"
+ },
+ "correlate-c1": {
+  "result": "none"
+ },
+ "correlation-c1": {
+  "result": "rejected",
+  "file": "Correlation examples2.svg",
+  "detail": "any statistical relationship, whether causal or not, between two random variables or bivariate data -> Q186290 correlation"
+ },
+ "corresponding-c1": {
+  "result": "none"
+ },
+ "costly-c1": {
+  "result": "none"
+ },
+ "councilor-c1": {
+  "result": "none"
+ },
+ "counter-argue-against-c1": {
+  "result": "none"
+ },
+ "counterpart-c1": {
+  "result": "none"
+ },
+ "countless-c1": {
+  "result": "none"
+ },
+ "coup-c1": {
+  "result": "rejected",
+  "file": "The arrest of Robespierre cropped.jpg",
+  "detail": "sudden change of government, takeover -> Q45382 coup d'état"
+ },
+ "coverage-b2": {
+  "result": "none"
+ },
+ "creator-c1": {
+  "result": "none"
+ },
+ "credibility-c1": {
+  "result": "none"
+ },
+ "credible-c1": {
+  "result": "none"
+ },
+ "critically-b2": {
+  "result": "none"
+ },
+ "critique-c1": {
+  "result": "none"
+ },
+ "cue-b2": {
+  "result": "none"
+ },
+ "cult-c1": {
+  "result": "rejected",
+  "file": "Catalogue of Sects.GIF",
+  "detail": "social group with socially deviant or novel religious, philosophical or spiritual beliefs and practices -> Q11038979 cult"
+ },
+ "cynical-c1": {
+  "result": "none"
+ },
+ "dam-c1": {
+  "result": "lexeme-item",
+  "file": "RappbodeLufts.JPG",
+  "detail": "a structure that impedes the flow of a river and the resulting artificial lake -> Q12323 dam"
+ },
+ "damaging-c1": {
+  "result": "none"
+ },
+ "debris-c1": {
+  "result": "lexeme-item",
+  "file": "Tyle zostało z pkp informatyka.jpg",
+  "detail": "scattered remains of something destroyed or discarded -> Q637703 debris"
+ },
+ "debut-c1": {
+  "result": "none"
+ },
+ "decisive-c1": {
+  "result": "none"
+ },
+ "declaration-c1": {
+  "result": "none"
+ },
+ "dedicated-c1": {
+  "result": "none"
+ },
+ "deed-c1": {
+  "result": "none"
+ },
+ "deem-c1": {
+  "result": "none"
+ },
+ "default-c1": {
+  "result": "none"
+ },
+ "defensive-c1": {
+  "result": "none"
+ },
+ "deficiency-c1": {
+  "result": "lexeme-item",
+  "file": "Dried pasta shelves empty in an Australian supermarket.jpg",
+  "detail": "lack or shortage of an entity; a less than normal or necessary amount -> Q2184645 deficiency"
+ },
+ "deficit-c1": {
+  "result": "lexeme-item",
+  "file": "Dried pasta shelves empty in an Australian supermarket.jpg",
+  "detail": "deficiency in amount, lack -> Q2184645 deficiency"
+ },
+ "defy-c1": {
+  "result": "none"
+ },
+ "delegate-c1": {
+  "result": "none"
+ },
+ "delete-b2": {
+  "result": "none"
+ },
+ "delighted-b2": {
+  "result": "none"
+ },
+ "democratic-b2": {
+  "result": "none"
+ },
+ "denounce-c1": {
+  "result": "none"
+ },
+ "dense-c1": {
+  "result": "none"
+ },
+ "density-c1": {
+  "result": "rejected",
+  "file": "Density column.JPG",
+  "detail": "mass per unit volume -> Q29539 mass density"
+ },
+ "depict-c1": {
+  "result": "none"
+ },
+ "deploy-c1": {
+  "result": "none"
+ },
+ "deployment-c1": {
+  "result": "rejected",
+  "file": "Parachute Deploying (6367738245).jpg",
+  "detail": "act of deploying -> Q110279643 deployment"
+ },
+ "deprive-c1": {
+  "result": "none"
+ },
+ "deputy-c1": {
+  "result": "none"
+ },
+ "derive-b2": {
+  "result": "none"
+ },
+ "desirable-c1": {
+  "result": "none"
+ },
+ "desperately-b2": {
+  "result": "none"
+ },
+ "destructive-c1": {
+  "result": "rejected",
+  "file": "Brooklyn Museum - The Edge of Doom - Samuel Colman.jpg",
+  "detail": "damaging or destroying things -> Q17781833 destruction"
+ },
+ "detain-c1": {
+  "result": "none"
+ },
+ "detection-c1": {
+  "result": "none"
+ },
+ "devastate-c1": {
+  "result": "none"
+ },
+ "devil-c1": {
+  "result": "rejected",
+  "file": "Devil at Basel Fastnacht.jpg",
+  "detail": "supernatural entity that is the personification of evil and the enemy of Angel and humankind -> Q6674 devil"
+ },
+ "devise-c1": {
+  "result": "none"
+ },
+ "devote-b2": {
+  "result": "none"
+ },
+ "dictate-c1": {
+  "result": "none"
+ },
+ "dictator-c1": {
+  "result": "rejected",
+  "file": "Historical totalitarian leaders.jpg",
+  "detail": "in government, an absolutist or autocratic ruler who assumes sole power over the state -> Q183318 dictator"
+ },
+ "differ-b2": {
+  "result": "none"
+ },
+ "differentiate-c1": {
+  "result": "none"
+ },
+ "dignity-c1": {
+  "result": "rejected",
+  "file": "Ripa dignity allegory (7885027).jpg",
+  "detail": "deserving respect -> Q274782 dignity"
+ },
+ "diminish-c1": {
+  "result": "none"
+ },
+ "diplomat-c1": {
+  "result": "rejected",
+  "file": "Viena kongres 1814.jpg",
+  "detail": "inter-state negotiator -> Q193391 diplomat"
+ },
+ "diplomatic-c1": {
+  "result": "none"
+ },
+ "directory-c1": {
+  "result": "lexeme-item",
+  "file": "Breezeicons-places-32-folder.svg",
+  "detail": "in computing, a file system cataloging structure which contains references to other computer files, and possibly other directories -> Q201456 directory"
+ },
+ "disastrous-c1": {
+  "result": "lexeme-item",
+  "file": "1918trainwreck.jpg",
+  "detail": "attended by or causing suffering or disaster : calamitous -> Q3839081 disaster"
+ },
+ "discharge-c1": {
+  "result": "none"
+ },
+ "disclose-c1": {
+  "result": "none"
+ },
+ "discourse-c1": {
+  "result": "rejected",
+  "file": "Francisco Ignacio de Porres (1650) Discursos funerales.png",
+  "detail": "written or spoken conversation -> Q190539 discourse"
+ },
+ "discretion-c1": {
+  "result": "rejected",
+  "file": "46-aspetti di vita quotidiana, discrezione,Taccuino Sanitati.jpg",
+  "detail": "acting on one's own authority and judgement -> Q315515 discretion"
+ },
+ "displace-c1": {
+  "result": "none"
+ },
+ "disposal-c1": {
+  "result": "none"
+ },
+ "disrupt-c1": {
+  "result": "none"
+ },
+ "disruption-c1": {
+  "result": "none"
+ },
+ "dissolve-c1": {
+  "result": "none"
+ },
+ "distinct-b2": {
+  "result": "none"
+ },
+ "distinction-c1": {
+  "result": "none"
+ },
+ "distinctive-c1": {
+  "result": "none"
+ },
+ "distinguish-b2": {
+  "result": "none"
+ },
+ "distract-b2": {
+  "result": "none"
+ },
+ "disturbing-c1": {
+  "result": "none"
+ },
+ "divert-c1": {
+  "result": "none"
+ },
+ "dramatically-b2": {
+  "result": "none"
+ },
+ "drift-c1": {
+  "result": "none"
+ },
+ "driving-c1": {
+  "result": "none"
+ },
+ "dub-c1": {
+  "result": "none"
+ },
+ "dull-b2": {
+  "result": "none"
+ },
+ "dumb-c1": {
+  "result": "none"
+ },
+ "duo-c1": {
+  "result": "rejected",
+  "file": "Laurelyhardy 179.jpg",
+  "detail": "two people that work together -> Q10648343 duo"
+ },
+ "eager-b2": {
+  "result": "none"
+ },
+ "ease-c1": {
+  "result": "none"
+ },
+ "echo-c1": {
+  "result": "none"
+ },
+ "ecological-c1": {
+  "result": "none"
+ },
+ "economist-b2": {
+  "result": "rejected",
+  "file": "Kevin Dowd.jpg",
+  "detail": "professional in the social science discipline of economics -> Q188094 economist"
+ },
+ "editorial-b2": {
+  "result": "none"
+ },
+ "ego-c1": {
+  "result": "rejected",
+  "file": "Ego, 2014.jpg",
+  "detail": "Q12765182 Slovak rapper"
+ },
+ "elaborate-c1": {
+  "result": "none"
+ },
+ "electoral-c1": {
+  "result": "none"
+ },
+ "elevate-c1": {
+  "result": "none"
+ },
+ "eligible-c1": {
+  "result": "none"
+ },
+ "eliminate-b2": {
+  "result": "none"
+ },
+ "elite-c1": {
+  "result": "rejected",
+  "file": "The Royal Feast of Belshazzar Blaine and the Money Kings (1884).jpg",
+  "detail": "group or class of persons enjoying superior intellectual, social or economic status -> Q192797 elite"
+ },
+ "embassy-c1": {
+  "result": "rejected",
+  "file": "Berlin, Tiergarten, Otto-von-Bismarck-Allee, Botschaft Schweiz.jpg",
+  "detail": "organization representing a nation in another -> Q3917681 embassy"
+ },
+ "embed-c1": {
+  "result": "none"
+ },
+ "embody-c1": {
+  "result": "none"
+ },
+ "emergence-c1": {
+  "result": "none"
+ },
+ "emotionally-b2": {
+  "result": "none"
+ },
+ "empire-b2": {
+  "result": "lexeme-item",
+  "file": "Roman Empire Trajan 117AD.png",
+  "detail": "monarchy whose head is an emperor, higher than kingdom -> Q48349 empire"
+ },
+ "enact-c1": {
+  "result": "none"
+ },
+ "encompass-c1": {
+  "result": "none"
+ },
+ "encouraging-c1": {
+  "result": "rejected",
+  "file": "Raevsky saltanovka.jpg",
+  "detail": "impelled action, giving courage to do something -> Q208160 courage"
+ },
+ "endeavor-c1": {
+  "result": "none"
+ },
+ "endorse-c1": {
+  "result": "none"
+ },
+ "endorsement-c1": {
+  "result": "none"
+ },
+ "endure-c1": {
+  "result": "none"
+ },
+ "engaging-c1": {
+  "result": "none"
+ },
+ "enjoyable-b2": {
+  "result": "none"
+ },
+ "enrich-c1": {
+  "result": "none"
+ },
+ "enroll-c1": {
+  "result": "none"
+ },
+ "ensue-c1": {
+  "result": "none"
+ },
+ "enterprise-c1": {
+  "result": "rejected",
+  "file": "Wolfsburg VW-Werk.jpg",
+  "detail": "for-profit organizational unit producing goods or services, which benefits from a certain degree of autonomy in decision-making, especially for the allocation of its current resources -> Q6881511 enterprise"
+ },
+ "entertaining-b2": {
+  "result": "none"
+ },
+ "enthusiast-c1": {
+  "result": "rejected",
+  "file": "Portugiesische Fans bei der Euro 2004.jpg",
+  "detail": "person who is enthusiastically devoted to something or someone -> Q193432 fan"
+ },
+ "entitle-c1": {
+  "result": "none"
+ },
+ "entity-c1": {
+  "result": "none"
+ },
+ "equality-c1": {
+  "result": "none"
+ },
+ "equip-b2": {
+  "result": "none"
+ },
+ "equivalent-b2": {
+  "result": "none"
+ },
+ "era-b2": {
+  "result": "none"
+ },
+ "erect-c1": {
+  "result": "none"
+ },
+ "escalate-c1": {
+  "result": "none"
+ },
+ "essence-c1": {
+  "result": "none"
+ },
+ "essentially-b2": {
+  "result": "none"
+ },
+ "establishment-c1": {
+  "result": "none"
+ },
+ "evacuate-c1": {
+  "result": "none"
+ },
+ "evident-b2": {
+  "result": "none"
+ },
+ "evoke-c1": {
+  "result": "none"
+ },
+ "evolutionary-c1": {
+  "result": "none"
+ },
+ "evolve-b2": {
+  "result": "none"
+ },
+ "exaggerate-c1": {
+  "result": "none"
+ },
+ "exceed-b2": {
+  "result": "none"
+ },
+ "excellence-c1": {
+  "result": "none"
+ },
+ "exception-b2": {
+  "result": "none"
+ },
+ "exceptional-c1": {
+  "result": "none"
+ },
+ "excess-c1": {
+  "result": "none"
+ },
+ "excessive-b2": {
+  "result": "none"
+ },
+ "exclude-b2": {
+  "result": "none"
+ },
+ "exclusion-c1": {
+  "result": "none"
+ },
+ "exclusive-c1": {
+  "result": "none"
+ },
+ "exclusively-c1": {
+  "result": "none"
+ },
+ "execute-c1": {
+  "result": "none"
+ },
+ "execution-c1": {
+  "result": "rejected",
+  "file": "Rudolf Hoess Trial Sentence.jpg",
+  "detail": "killing as punishment -> Q3966286 execution"
+ },
+ "exert-c1": {
+  "result": "none"
+ },
+ "exile-c1": {
+  "result": "none"
+ },
+ "expansion-b2": {
+  "result": "none"
+ },
+ "expenditure-c1": {
+  "result": "none"
+ },
+ "expire-c1": {
+  "result": "none"
+ },
+ "explicit-c1": {
+  "result": "none"
+ },
+ "explicitly-c1": {
+  "result": "none"
+ },
+ "exploit-b2": {
+  "result": "none"
+ },
+ "exploitation-c1": {
+  "result": "none"
+ },
+ "exposure-b2": {
+  "result": "none"
+ },
+ "extension-b2": {
+  "result": "none"
+ },
+ "extensive-b2": {
+  "result": "none"
+ },
+ "extensively-b2": {
+  "result": "none"
+ },
+ "extremist-c1": {
+  "result": "none"
+ },
+ "fabulous-b2": {
+  "result": "none"
+ },
+ "facilitate-c1": {
+  "result": "none"
+ },
+ "faction-c1": {
+  "result": "none"
+ },
+ "fade-c1": {
+  "result": "none"
+ },
+ "failed-b2": {
+  "result": "none"
+ },
+ "fame-b2": {
+  "result": "none"
+ },
+ "fare-b2": {
+  "result": "none"
+ },
+ "fatal-c1": {
+  "result": "none"
+ },
+ "favorable-c1": {
+  "result": "none"
+ },
+ "feat-c1": {
+  "result": "none"
+ },
+ "felony-c1": {
+  "result": "none"
+ },
+ "fine-c1": {
+  "result": "rejected",
+  "file": "The penalty for smoking. Czech Republic.JPG",
+  "detail": "Q1243001 financial penalty"
+ },
+ "firm-b2-2": {
+  "result": "none"
+ },
+ "firmly-b2": {
+  "result": "none"
+ },
+ "fiscal-c1": {
+  "result": "none"
+ },
+ "fit-c1": {
+  "result": "none"
+ },
+ "flaw-c1": {
+  "result": "none"
+ },
+ "flawed-c1": {
+  "result": "none"
+ },
+ "flee-c1": {
+  "result": "none"
+ },
+ "fleet-c1": {
+  "result": "none"
+ },
+ "flesh-c1": {
+  "result": "none"
+ },
+ "flourish-c1": {
+  "result": "none"
+ },
+ "fond-b2": {
+  "result": "lexeme-item",
+  "file": "Love in every lick 01.jpg",
+  "detail": "having an affection or liking for something -> Q1124198 affection"
+ },
+ "forbid-b2": {
+  "result": "none"
+ },
+ "foreigner-c1": {
+  "result": "none"
+ },
+ "format-b2": {
+  "result": "rejected",
+  "file": "Completeness Table for Data Editing.png",
+  "detail": "Q2085518 arrangement of data for presentation"
+ },
+ "formerly-b2": {
+  "result": "none"
+ },
+ "formulate-c1": {
+  "result": "none"
+ },
+ "forth-c1": {
+  "result": "none"
+ },
+ "forthcoming-c1": {
+  "result": "none"
+ },
+ "fortunate-b2": {
+  "result": "none"
+ },
+ "foster-c1": {
+  "result": "none"
+ },
+ "framework-b2": {
+  "result": "rejected",
+  "file": "Framework-II-floppy-disk-for-IBM-PC.jpg",
+  "detail": "Q489330 office suite"
+ },
+ "franchise-c1": {
+  "result": "rejected",
+  "file": "If 195508.jpg",
+  "detail": "Q2079836 science fiction short story by Isaac Asimov"
+ },
+ "frankly-c1": {
+  "result": "none"
+ },
+ "freely-b2": {
+  "result": "none"
+ },
+ "frequent-b2": {
+  "result": "none"
+ },
+ "freshman-c1": {
+  "result": "rejected",
+  "file": "1920 Locust yearbook p. 095 (Freshman).jpg",
+  "detail": "person in their first year at an educational institution -> Q60825090 freshman"
+ },
+ "frustrating-c1": {
+  "result": "lexeme-item",
+  "file": "9 of 365 Frustration.jpg",
+  "detail": "cause angst, experiencing angst -> Q192242 frustration"
+ },
+ "full-time-b2": {
+  "result": "none"
+ },
+ "functional-c1": {
+  "result": "none"
+ },
+ "fundamentally-b2": {
+  "result": "none"
+ },
+ "gathering-c1": {
+  "result": "rejected",
+  "file": "Gathering wood for the home fire.jpg",
+  "detail": "gathering or collecting found objects such as dry wood for a campfire or stove -> Q2915026 firewood gathering"
+ },
+ "generic-c1": {
+  "result": "none"
+ },
+ "genuinely-b2": {
+  "result": "none"
+ },
+ "glance-c1": {
+  "result": "none"
+ },
+ "glimpse-c1": {
+  "result": "none"
+ },
+ "globe-b2": {
+  "result": "lexeme-item",
+  "file": "Globe terrestre - Dressé par J. Forest, Géographe - btv1b10061789v (01 of 14).jpg",
+  "detail": "scale model of a celestial body -> Q133792 globe"
+ },
+ "glorious-c1": {
+  "result": "none"
+ },
+ "glory-c1": {
+  "result": "rejected",
+  "file": "Solar glory from Crib Goch 1.jpg",
+  "detail": "optical phenomenon that resembles an iconic saint's halo about the shadow of the observer's head -> Q1339916 glory"
+ },
+ "goodness-b2": {
+  "result": "none"
+ },
+ "gorgeous-b2": {
+  "result": "none"
+ },
+ "governance-c1": {
+  "result": "none"
+ },
+ "grace-c1": {
+  "result": "none"
+ },
+ "graphic-b2": {
+  "result": "none"
+ },
+ "graphics-b2": {
+  "result": "rejected",
+  "file": "Royal Carillon School Jef Denyn logo.png",
+  "detail": "visual presentation on some surface -> Q1027879 graphics"
+ },
+ "grave-serious-c1": {
+  "result": "none"
+ },
+ "greatly-b2": {
+  "result": "none"
+ },
+ "grid-c1": {
+  "result": "none"
+ },
+ "grief-c1": {
+  "result": "rejected",
+  "file": "Evstafiev-bosnia-sarajevo-funeral-reaction.jpg",
+  "detail": "reaction to loss of someone or something close or important -> Q1026040 grief"
+ },
+ "grin-c1": {
+  "result": "none"
+ },
+ "gross-c1": {
+  "result": "none"
+ },
+ "guerrilla-c1": {
+  "result": "rejected",
+  "file": "Zdzisław de Ville.jpg",
+  "detail": "member of unofficial military -> Q212948 partisan"
+ },
+ "guidance-c1": {
+  "result": "none"
+ },
+ "guilt-c1": {
+  "result": "rejected",
+  "file": "Singer Sargent, John - Orestes Pursued by the Furies - 1921.jpg",
+  "detail": "state of being legally responsible for the commission of an offense -> Q705178 guilty"
+ },
+ "halfway-c1": {
+  "result": "none"
+ },
+ "handling-c1": {
+  "result": "none"
+ },
+ "handy-c1": {
+  "result": "none"
+ },
+ "harsh-c1": {
+  "result": "none"
+ },
+ "hatred-c1": {
+  "result": "rejected",
+  "file": "A man glowering, expressing hatred or jealousy. Engraving by Wellcome V0009360.jpg",
+  "detail": "deep and emotional extreme dislike -> Q160232 hatred"
+ },
+ "haunt-c1": {
+  "result": "none"
+ },
+ "hazard-c1": {
+  "result": "none"
+ },
+ "heighten-c1": {
+  "result": "none"
+ },
+ "hence-b2": {
+  "result": "none"
+ },
+ "herb-b2": {
+  "result": "lexeme-item",
+  "file": "Küchenkräuter-1.jpg",
+  "detail": "plant used for flavoring, food, medicine, or perfume -> Q207123 herb"
+ },
+ "hidden-b2": {
+  "result": "none"
+ },
+ "high-profile-c1": {
+  "result": "none"
+ },
+ "hip-b2": {
+  "result": "rejected",
+  "file": "Hip bone animation3.gif",
+  "detail": "anatomical region -> Q193818 hip"
+ },
+ "homeland-c1": {
+  "result": "none"
+ },
+ "honesty-b2": {
+  "result": "none"
+ },
+ "hook-b2": {
+  "result": "lexeme-item",
+  "file": "Gesmede ijzeren last- of schenkelhaak - O36ZFL - 60015878 - RCE.jpg",
+  "detail": "object for hanging, fishing etc. -> Q4243098 hook"
+ },
+ "hopeful-c1": {
+  "result": "none"
+ },
+ "hopefully-b2": {
+  "result": "none"
+ },
+ "hostile-c1": {
+  "result": "none"
+ },
+ "hostility-c1": {
+  "result": "rejected",
+  "file": "Anger during a protest by David Shankbone.jpg",
+  "detail": "form of emotionally charged angry behavior -> Q2729863 hostility"
+ },
+ "humanity-c1": {
+  "result": "none"
+ },
+ "humble-c1": {
+  "result": "rejected",
+  "file": "Humilitas baptistery Florence.jpg",
+  "detail": "not proud or arrogant -> Q1186677 humility"
+ },
+ "hypothesis-b2": {
+  "result": "none"
+ },
+ "ideological-c1": {
+  "result": "none"
+ },
+ "ideology-c1": {
+  "result": "rejected",
+  "file": "War2.png",
+  "detail": "set of ideas that form one's aims, expectations and actions -> Q7257 ideology"
+ },
+ "idiot-c1": {
+  "result": "rejected",
+  "file": "Larock-The Idiot.jpg",
+  "detail": "person of low intelligence -> Q193607 idiot"
+ },
+ "imagery-c1": {
+  "result": "none"
+ },
+ "immense-c1": {
+  "result": "none"
+ },
+ "imminent-c1": {
+  "result": "none"
+ },
+ "immune-b2": {
+  "result": "none"
+ },
+ "implement-b2": {
+  "result": "none"
+ },
+ "implementation-c1": {
+  "result": "none"
+ },
+ "implication-b2": {
+  "result": "none"
+ },
+ "inability-c1": {
+  "result": "none"
+ },
+ "inadequate-c1": {
+  "result": "none"
+ },
+ "inappropriate-c1": {
+  "result": "none"
+ },
+ "incarcerate-c1": {
+  "result": "none"
+ },
+ "incentive-b2": {
+  "result": "none"
+ },
+ "incidence-c1": {
+  "result": "none"
+ },
+ "inclined-c1": {
+  "result": "none"
+ },
+ "inclusion-c1": {
+  "result": "none"
+ },
+ "incorporate-b2": {
+  "result": "none"
+ },
+ "incorrect-b2": {
+  "result": "none"
+ },
+ "incur-c1": {
+  "result": "none"
+ },
+ "independence-b2": {
+  "result": "rejected",
+  "file": "Declaration of Independence (1819), by John Trumbull.jpg",
+  "detail": "condition of a nation, country, or state  which exercises self-government, and usually sovereignty, over the territory -> Q37055 independence"
+ },
+ "index-b2": {
+  "result": "rejected",
+  "file": "Novus Atlas Sinensis - First page of the index.jpg",
+  "detail": "list of words or phrases -> Q873506 index"
+ },
+ "indication-b2": {
+  "result": "none"
+ },
+ "indicator-c1": {
+  "result": "none"
+ },
+ "indictment-c1": {
+  "result": "none"
+ },
+ "induce-c1": {
+  "result": "none"
+ },
+ "indulge-c1": {
+  "result": "none"
+ },
+ "inequality-c1": {
+  "result": "none"
+ },
+ "inevitable-b2": {
+  "result": "none"
+ },
+ "inevitably-b2": {
+  "result": "none"
+ },
+ "infamous-c1": {
+  "result": "none"
+ },
+ "infect-c1": {
+  "result": "none"
+ },
+ "infer-b2": {
+  "result": "none"
+ },
+ "inflict-c1": {
+  "result": "none"
+ },
+ "influential-c1": {
+  "result": "none"
+ },
+ "info-b2": {
+  "result": "rejected",
+  "file": "GNU Info 7.0.3 screenshot.webp",
+  "detail": "documentation viewer -> Q709353 GNU Info"
+ },
+ "infrastructure-b2": {
+  "result": "lexeme-item",
+  "file": "RENFE Class 730 Viaducto Martin Gil.jpg",
+  "detail": "basic facilities and systems -> Q121359 infrastructure"
+ },
+ "inherent-c1": {
+  "result": "none"
+ },
+ "inherit-b2": {
+  "result": "none"
+ },
+ "initiate-c1": {
+  "result": "none"
+ },
+ "injustice-c1": {
+  "result": "rejected",
+  "file": "Degradation alfred dreyfus.jpg",
+  "detail": "quality relating to unfairness or undeserved outcomes -> Q770480 injustice"
+ },
+ "innovative-b2": {
+  "result": "none"
+ },
+ "input-b2": {
+  "result": "none"
+ },
+ "inquire-c1": {
+  "result": "none"
+ },
+ "insert-b2": {
+  "result": "none"
+ },
+ "insertion-c1": {
+  "result": "rejected",
+  "file": "Insertion MET DP3918.jpg",
+  "detail": "band or other shape of lace or embroidery with plain edges allowing it to be inserted between two pieces of fabric -> Q64481919 insertion"
+ },
+ "inspect-c1": {
+  "result": "none"
+ },
+ "inspector-b2": {
+  "result": "none"
+ },
+ "installation-b2": {
+  "result": "none"
+ },
+ "instant-b2": {
+  "result": "none"
+ },
+ "instantly-b2": {
+  "result": "none"
+ },
+ "instinct-c1": {
+  "result": "rejected",
+  "file": "Tigre d'Asie à robe blanche.jpg",
+  "detail": "inherent inclination of a living organism -> Q18237 instinct"
+ },
+ "institutional-c1": {
+  "result": "none"
+ },
+ "instruct-c1": {
+  "result": "none"
+ },
+ "instrumental-c1": {
+  "result": "none"
+ },
+ "insufficient-c1": {
+  "result": "none"
+ },
+ "insult-c1": {
+  "result": "rejected",
+  "file": "Newton Bull farts G3.jpg",
+  "detail": "expression, statement (or sometimes behavior) which is disrespectful or scornful -> Q571571 insult"
+ },
+ "intact-c1": {
+  "result": "none"
+ },
+ "intake-c1": {
+  "result": "none"
+ },
+ "integral-c1": {
+  "result": "none"
+ },
+ "integrate-b2": {
+  "result": "none"
+ },
+ "integrated-c1": {
+  "result": "none"
+ },
+ "integration-c1": {
+  "result": "none"
+ },
+ "integrity-c1": {
+  "result": "rejected",
+  "file": "INTEGRITY - CULTURE OF INTEGRITY FOR NATION'S PROSPERITY.jpg",
+  "detail": "consistency or wholeness -> Q1329012 integrity"
+ },
+ "intellectual-b2": {
+  "result": "rejected",
+  "file": "Goethe (Stieler 1828).jpg",
+  "detail": "people who primarily use intelligence in either a professional or an individual capacity -> Q58968 intellectual"
+ },
+ "intensify-c1": {
+  "result": "none"
+ },
+ "intensity-c1": {
+  "result": "none"
+ }
+}

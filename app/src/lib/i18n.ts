@@ -4,9 +4,45 @@
  */
 export const t = {
   appName: 'Oxford Söz Ehtiyatı',
-  demoDataBadge: 'demo',
-  demoDataNotice: 'Bu, hələ təsdiqlənməmiş nümunə (demo) mətndir, rəsmi Oxford tərcüməsi/tərifi deyil.',
-  notProvided: 'mənbədə yoxdur',
+  missingContent: 'Bu məlumat hələ əlavə edilməyib',
+
+  modes: {
+    label: 'Rejim',
+    OXFORD_3000: 'Oxford 3000',
+    OXFORD_5000: 'Oxford 5000',
+    PICTURES: 'Şəkilli sözlər',
+    REVIEW_DUE: 'Təkrar',
+    DIFFICULT: 'Bilinməyən sözlər',
+    oxford3000Desc: 'Əsas 3000 söz (A1–B2)',
+    oxford5000Desc: 'Tam 5000 söz (əsas + genişləndirilmiş)',
+    reviewDueDesc: 'Vaxtı çatan sözləri təkrarla',
+    difficultDesc: '“Bilmirdim” seçdiyiniz sözlər',
+    picturesDesc: 'Yalnız şəkli olan sözlər — görüntü ilə daha asan yadda qalır',
+    activeModeLabel: 'Aktiv rejim',
+    foundation: 'Əsas (Oxford 3000)',
+    additional: 'Əlavə sözlər',
+    complete: 'Tam siyahı',
+    startFromAll: 'Bütün 5000 sözdən',
+    startFromAdditionalOnly: 'Yalnız əlavə sözlərdən',
+    chooseLessonScope: 'Dərs üçün söz mənbəyini seçin',
+  },
+
+  reviewStrategyLabel: {
+    MIXED: 'Qarışıq sıra',
+    REVIEW_FIRST: 'Əvvəlcə təkrar',
+    NEW_FIRST: 'Əvvəlcə yeni sözlər',
+    DIFFICULT_FIRST: 'Əvvəlcə bilinməyən sözlər',
+    ALPHABETICAL: 'Əlifba sırası',
+  },
+
+  contentStatus: {
+    label: 'Məzmun statusu',
+    VERIFIED: 'Təsdiqlənmiş',
+    LICENSED: 'Lisenziyalı',
+    OWN_CONTENT: 'Öz məzmunu',
+    AI_DRAFT: 'AI qaralaması',
+    MISSING: 'Əlavə edilməyib',
+  },
 
   nav: {
     home: 'Əsas',
@@ -14,6 +50,19 @@ export const t = {
     words: 'Sözlər',
     progress: 'İrəliləyiş',
     settings: 'Ayarlar',
+  },
+
+  welcome: {
+    appTitle: 'Oxford Söz Ehtiyatı',
+    subtitle: 'Oxford söz siyahıları ilə ingilis dilini öyrənin',
+    chooseMode: 'Rejim seçin',
+    translationLabel: 'Azərbaycan dilində tərcüməni göstər',
+    showTranslation: 'Tərcüməni göstər',
+    hideTranslation: 'Tərcüməni gizlət',
+    translationHelper:
+      'Tərcüməni gizlətmək sözün mənasını ingilis dilində anlamağı məşq etməyə kömək edir.',
+    dailyTarget: 'Gündəlik söz hədəfi',
+    startLesson: 'Dərsə başla',
   },
 
   home: {
@@ -27,9 +76,12 @@ export const t = {
     cefrProgress: 'CEFR səviyyəsi üzrə irəliləyiş',
     startLesson: 'Bugünkü dərsə başla',
     reviewDue: 'Vaxtı çatan sözləri təkrarla',
-    difficultWords: 'Çətin sözlər',
+    difficultWords: 'Bilinməyən sözlər',
     noWordsDue: 'Hazırda təkrar üçün söz yoxdur',
     allCaughtUp: 'Əla! Bugünkü işiniz tamamlanıb.',
+    dueWords: 'Təkrarı vaxtı çatan sözlər',
+    oxford3000Dashboard: 'Oxford 3000 statistikası',
+    oxford5000Dashboard: 'Oxford 5000 statistikası',
   },
 
   study: {
@@ -39,15 +91,17 @@ export const t = {
     translation: 'Azərbaycanca tərcümə',
     example: 'Nümunə cümlə',
     pronounce: 'Tələffüz et',
+    pronounceExample: 'Nümunə cümləni səsləndir',
     know: 'Bilirəm',
-    difficult: 'Çətindir',
-    reviewLater: 'Sonra təkrarla',
+    dontKnow: 'Bilmirdim',
     progressOf: (current: number, total: number) => `${current} / ${total}`,
     sessionDone: 'Sessiya tamamlandı',
-    sessionSummary: (known: number, difficult: number, later: number) =>
-      `Bilinən: ${known} · Çətin: ${difficult} · Təkrar üçün: ${later}`,
+    sessionSummary: (known: number, unknown: number) => `Bilinən: ${known} · Bilinməyən: ${unknown}`,
     backToHome: 'Əsas səhifəyə qayıt',
     noWords: 'Bu meyarlara uyğun söz tapılmadı',
+    startNewSession: 'Yeni sessiya başlat',
+    reviewUnknownNow: (n: number) => `Bilmədiyim ${n} sözü indi təkrarla`,
+    continuingSession: 'Yarımçıq dərs davam etdirilir',
   },
 
   flashcard: {
@@ -82,13 +136,34 @@ export const t = {
     finished: 'Məşq tamamlandı',
     score: (correct: number, total: number) => `Nəticə: ${correct} / ${total}`,
     backToHub: 'Məşq siyahısına qayıt',
-    notEnoughWords: 'Bu rejim üçün kifayət qədər söz yoxdur (ən azı 4 söz lazımdır).',
+    notEnoughWords:
+      'Bu rejim üçün kifayət qədər söz yoxdur: ən azı 4 sözün tərcüməsi, tərifi və nümunə cümləsi olmalıdır. Məzmun hələ əlavə edilməyib.',
+  },
+
+  pictures: {
+    title: 'Şəkilli sözlər',
+    subtitle: (n: number) => `${n} söz şəkillə`,
+    dashboard: 'Şəkilli sözlər kolleksiyası',
+    startLesson: 'Şəkilli sözlərlə dərsə başla',
+    openGallery: 'Kolleksiyaya bax',
+    allLevels: 'Hamısı',
+    empty: 'Bu səviyyədə şəkilli söz yoxdur',
+    loadMore: 'Daha çox göstər',
+  },
+
+  studyHub: {
+    newWaiting: (n: number, list: string) => `${list}: ${n} yeni söz gözləyir`,
+    difficultWaiting: (n: number) => `İndi təkrar yoxdur · ${n} bilinməyən sözü məşq edə bilərsiniz`,
+    nothingDue: 'Hazırda təkrar üçün söz yoxdur',
   },
 
   review: {
     title: 'Təkrar növbəsi',
     dueCount: (n: number) => `${n} söz təkrar üçün hazırdır`,
-    empty: 'Təkrar üçün söz yoxdur. Əla iş!',
+    empty: 'Hazırda təkrar vaxtı çatmış söz yoxdur.',
+    nextDue: (when: string) => `Növbəti təkrar: ${when}`,
+    practiceDifficultNow: (n: number) => `Bilinməyən sözləri indi təkrarla (${n})`,
+    difficultTitle: 'Bilinməyən sözlər',
   },
 
   words: {
@@ -103,7 +178,7 @@ export const t = {
     all: 'Hamısı',
     noResults: 'Uyğun söz tapılmadı',
     markKnown: 'Bilinən kimi qeyd et',
-    markDifficult: 'Çətin kimi qeyd et',
+    markDifficult: 'Bilinməyənlərə əlavə et',
     resultsCount: (n: number) => `${n} söz`,
     loadMore: 'Daha çox göstər',
   },
@@ -112,7 +187,7 @@ export const t = {
     NEW: 'Yeni',
     LEARNING: 'Öyrənilir',
     KNOWN: 'Bilinir',
-    DIFFICULT: 'Çətin',
+    DIFFICULT: 'Bilinmir',
   },
 
   wordDetail: {
@@ -135,11 +210,16 @@ export const t = {
     totalWords: 'Ümumi söz sayı',
     wordsStudied: 'Öyrənilməyə başlanan sözlər',
     wordsKnown: 'Bilinən sözlər',
-    difficultWords: 'Çətin sözlər',
-    reviewCompletion: 'Təkrar tamamlanma faizi',
+    difficultWords: 'Bilinməyən sözlər',
+    dueNow: 'Təkrar gözləyən sözlər',
+    review: 'Təkrarla',
     correctRate: 'Doğru cavab faizi',
     cefrProgress: 'CEFR səviyyəsi üzrə irəliləyiş',
     weeklyChart: 'Son 7 günün fəaliyyəti',
+    weeklyChartHint: 'Hər gün cavablandırdığınız sözlər (dərs, fləşkart və məşq)',
+    weeklyTotal: (n: number) => `Bu həftə cəmi: ${n}`,
+    today: 'Bu gün',
+    weekdaysShort: ['B.', 'B.e.', 'Ç.a.', 'Ç.', 'C.a.', 'C.', 'Ş.'],
     currentStreak: 'Cari seriya',
     bestStreak: 'Ən yaxşı seriya',
   },
@@ -173,10 +253,47 @@ export const t = {
     importError: 'Fayl oxuna bilmədi. Zəhmət olmasa düzgün JSON faylı seçin.',
     algorithmNote:
       'Təkrar araları sadə tətbiq qaydasıdır (Yenidən → bu gün, Çətin → sabah, Yaxşı → 3 gün, Asan → 7 gün) — elmi/tibbi baxımdan optimallaşdırılmış alqoritm olduğu iddia edilmir.',
+    lessonOrder: 'Dərs sırası',
+    orderMixed: 'Qarışıq sıra (defolt)',
+    orderReviewFirst: 'Əvvəlcə təkrar',
+    orderNewFirst: 'Əvvəlcə yeni sözlər',
+    orderDifficultFirst: 'Əvvəlcə bilinməyən sözlər',
+    orderAlphabetical: 'Əlifba sırası',
+    orderExplanation:
+      'Qarışıq sıra sözləri müxtəlif mövzu, səviyyə və nitq hissələri üzrə təqdim edir. Təkrar tələb edən sözlərə üstünlük verilir.',
+    sessionSize: 'Sessiya ölçüsü',
+    shuffleNow: 'İndi qarışdır',
+    shuffleNowSuccess: 'Növbəti dərs yeni sırayla yaradılacaq.',
+    translationVisibility: 'Tərcümə görünürlüyü',
+  },
+
+  admin: {
+    title: 'Söz siyahısını idxal et (admin)',
+    subtitle: 'CSV və ya JSON faylından yeni söz məzmunu idxal edin. Mövcud irəliləyiş dəyişməz qalır.',
+    chooseFile: 'Fayl seç (CSV/JSON)',
+    validating: 'Yoxlanılır…',
+    reportTitle: 'Yoxlama hesabatı',
+    rowsTotal: (n: number) => `Ümumi sətir: ${n}`,
+    rowsValid: (n: number) => `Doğru sətir: ${n}`,
+    rowsInvalid: (n: number) => `Xətalı sətir: ${n}`,
+    duplicateWords: (n: number) => `Təkrarlanan söz: ${n}`,
+    duplicateWordPos: (n: number) => `Təkrarlanan söz+nitq hissəsi: ${n}`,
+    missingWord: (n: number) => `Söz sahəsi boş: ${n}`,
+    invalidCefr: (n: number) => `Yanlış CEFR dəyəri: ${n}`,
+    invalidPos: (n: number) => `Yanlış nitq hissəsi: ${n}`,
+    emptyTranslation: (n: number) => `Boş tərcümə: ${n}`,
+    emptyDefinition: (n: number) => `Boş tərif: ${n}`,
+    emptyExample: (n: number) => `Boş nümunə cümlə: ${n}`,
+    confirmImport: 'Doğru sətirləri idxal et',
+    importSuccess: (n: number) => `${n} söz uğurla yeniləndi.`,
+    noValidRows: 'İdxal üçün doğru sətir yoxdur.',
+    matchedExisting: (n: number) => `Mövcud sözlə uyğunlaşdı: ${n}`,
+    notMatched: (n: number) => `Mövcud lüğətdə tapılmadı (keçiləcək): ${n}`,
   },
 
   common: {
     close: 'Bağla',
+    back: 'Geri',
     cancel: 'İmtina',
     save: 'Yadda saxla',
     loading: 'Yüklənir…',

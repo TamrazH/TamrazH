@@ -1,10 +1,12 @@
 import { create } from 'zustand';
-import { loadState, saveState, clearState } from '../lib/storage';
+import { loadState, saveState, clearState, backupState, recordMigrationStatus } from '../lib/storage';
 import { todayKey, daysBetween } from '../lib/date';
-import type { AppSettings, PersistedState, ProgressState, ReviewGrade, VocabWord } from '../types';
-import { applyReview, markDifficult as srsMarkDifficult, markKnown as srsMarkKnown, markReviewLater as srsMarkReviewLater } from '../lib/srs';
+import type { AppMode, AppSettings, Oxford5000Scope, PersistedState, ProgressState, ReviewGrade, StudySession, VocabWord } from '../types';
+import { applyReview, markDifficult as srsMarkDifficult, markKnown as srsMarkKnown } from '../lib/srs';
+import { applyImportRows, type ValidatedRow } from '../lib/importValidation';
+import { getStudyQueue } from '../lib/studyQueue';
 
-const STATE_VERSION = 1;
+export const STATE_VERSION = 2;
 
 export const DEFAULT_SETTINGS: AppSettings = {
   dailyWordTarget: 20,
@@ -13,6 +15,11 @@ export const DEFAULT_SETTINGS: AppSettings = {
   pronunciationAccent: 'american',
   interfaceLanguage: 'az',
   theme: 'system',
+  activeMode: 'OXFORD_3000',
+  reviewStrategy: 'MIXED',
+  sessionSize: 10,
+  showTranslation: true,
+  hasCompletedOnboarding: false,
 };
 
 const DEFAULT_PROGRESS: ProgressState = {
@@ -31,7 +38,7 @@ let cachedVocabulary: VocabWord[] | null = null;
 
 async function fetchVocabulary(): Promise<VocabWord[]> {
   if (cachedVocabulary) return cachedVocabulary;
-  const res = await fetch(`${import.meta.env.BASE_URL}data/vocabulary.json`);
+  const res = await fetch(`${import.meta.env.BASE_URL}data/vocabulary.json?v=${__VOCABULARY_VERSION__}`);
   const data = (await res.json()) as VocabWord[];
   cachedVocabulary = data;
   return data;
@@ -41,6 +48,36 @@ function wordsById(list: VocabWord[]): Record<string, VocabWord> {
   const map: Record<string, VocabWord> = {};
   for (const w of list) map[w.id] = w;
   return map;
+}
+
+/**
+ * Only these fields are per-user learning progress and should survive a dataset update.
+ * Everything else (word, translationAz, englishDefinition, exampleSentence, contentStatus,
+ * contentSource, etc.) must always come from the freshly-shipped dataset — otherwise a
+ * user's old cached save (from before content was enriched) would keep overwriting new
+ * content with its stale MISSING/null values forever.
+ */
+const PROGRESS_FIELDS = [
+  'status',
+  'repetitions',
+  'correctAnswers',
+  'incorrectAnswers',
+  'difficulty',
+  'confidenceScore',
+  'lastReviewedAt',
+  'nextReviewAt',
+] as const satisfies readonly (keyof VocabWord)[];
+
+function mergeProgressOnto(freshWord: VocabWord, persistedWord: VocabWord): VocabWord {
+  const merged = { ...freshWord };
+  for (const key of PROGRESS_FIELDS) {
+    const value = persistedWord[key];
+    // Skip fields absent on an older/partial persisted record instead of stomping
+    // the fresh default with `undefined` — this is what makes loading a record
+    // saved under a different schema version safe rather than destructive.
+    if (value !== undefined) (merged as Record<string, unknown>)[key] = value;
+  }
+  return merged;
 }
 
 /** Only safe to call once `fetchVocabulary` has resolved at least once (i.e. after hydrate()). */
@@ -61,16 +98,24 @@ interface AppState {
   words: Record<string, VocabWord>;
   settings: AppSettings;
   progress: ProgressState;
+  studySession: StudySession | null;
 
   hydrate: () => Promise<void>;
   applyGrade: (id: string, grade: ReviewGrade) => void;
   markKnown: (id: string) => void;
   markDifficult: (id: string) => void;
-  markReviewLater: (id: string) => void;
   recordWordsStudied: (count: number) => void;
   updateSettings: (partial: Partial<AppSettings>) => void;
   resetProgress: () => Promise<void>;
   importState: (imported: PersistedState) => void;
+  applyContentImport: (validatedRows: ValidatedRow[]) => void;
+  /** Resumes today's unfinished session for this mode/scope if one matches, else starts a fresh one. */
+  ensureStudySession: (mode: AppMode, oxford5000Scope: Oxford5000Scope) => void;
+  /** Always generates a fresh session, discarding any unfinished one — "Start new session". */
+  startNewStudySession: (mode: AppMode, oxford5000Scope: Oxford5000Scope) => void;
+  advanceStudySession: () => void;
+  /** "Random shuffle now" from Settings: clears the saved session so the next lesson regenerates. */
+  clearStudySession: () => void;
 }
 
 function persistedSnapshot(state: AppState): PersistedState {
@@ -79,6 +124,34 @@ function persistedSnapshot(state: AppState): PersistedState {
     words: state.words,
     settings: state.settings,
     progress: state.progress,
+    studySession: state.studySession,
+  };
+}
+
+function buildStudySession(
+  words: Record<string, VocabWord>,
+  settings: AppSettings,
+  mode: AppMode,
+  oxford5000Scope: Oxford5000Scope,
+): StudySession {
+  const today = todayKey();
+  const wordIds = getStudyQueue({
+    mode,
+    oxford5000Scope,
+    sessionSize: settings.sessionSize,
+    reviewStrategy: settings.reviewStrategy,
+    date: new Date(),
+    words,
+  });
+  return {
+    sessionId: `${today}-${mode}-${oxford5000Scope}-${Math.random().toString(36).slice(2, 8)}`,
+    mode,
+    oxford5000Scope,
+    reviewStrategy: settings.reviewStrategy,
+    sessionSize: settings.sessionSize,
+    wordIds,
+    currentIndex: 0,
+    createdDateKey: today,
   };
 }
 
@@ -124,24 +197,39 @@ export const useAppStore = create<AppState>((set) => ({
   words: {},
   settings: DEFAULT_SETTINGS,
   progress: DEFAULT_PROGRESS,
+  studySession: null,
 
   hydrate: async () => {
     const vocabulary = await fetchVocabulary();
     const defaults = wordsById(vocabulary);
     const persisted = await loadState();
-    if (persisted && persisted.version === STATE_VERSION) {
-      // merge persisted word progress onto the canonical (static) word list so that
-      // any dataset corrections/additions on our side don't get shadowed by stale saves.
+
+    // Any persisted record with a recognizable shape is loaded and merged — never
+    // discarded just because its `version` doesn't match the current schema. A
+    // version mismatch is treated as a migration (backed up first), not a wipe.
+    if (persisted && persisted.words && typeof persisted.words === 'object') {
+      const fromVersion = typeof persisted.version === 'number' ? persisted.version : 1;
+      const isMigration = fromVersion !== STATE_VERSION;
+      if (isMigration) {
+        await backupState(persisted, fromVersion);
+      }
+
+      // carry over only progress fields onto the canonical (static) word list so that
+      // dataset content updates (new translations/definitions/examples) on our side
+      // are never shadowed by a stale saved copy of the old content.
       const merged: Record<string, VocabWord> = { ...defaults };
       for (const id of Object.keys(persisted.words)) {
-        if (merged[id]) merged[id] = { ...merged[id], ...persisted.words[id] };
+        if (merged[id]) merged[id] = mergeProgressOnto(merged[id], persisted.words[id]);
       }
-      set({
-        words: merged,
-        settings: { ...DEFAULT_SETTINGS, ...persisted.settings },
-        progress: { ...DEFAULT_PROGRESS, ...persisted.progress },
-        hydrated: true,
-      });
+      const settings = { ...DEFAULT_SETTINGS, ...persisted.settings };
+      const progress = { ...DEFAULT_PROGRESS, ...persisted.progress };
+      const studySession = persisted.studySession ?? null;
+      set({ words: merged, settings, progress, studySession, hydrated: true });
+
+      if (isMigration) {
+        await recordMigrationStatus({ fromVersion, toVersion: STATE_VERSION, migratedAt: new Date().toISOString() });
+        await saveState({ version: STATE_VERSION, words: merged, settings, progress, studySession });
+      }
     } else {
       set({ words: defaults, hydrated: true });
     }
@@ -188,17 +276,6 @@ export const useAppStore = create<AppState>((set) => ({
     });
   },
 
-  markReviewLater: (id) => {
-    set((state) => {
-      const word = state.words[id];
-      if (!word) return state;
-      const updated = srsMarkReviewLater(word);
-      const next = { ...state, words: { ...state.words, [id]: updated } };
-      schedulePersist(persistedSnapshot(next));
-      return next;
-    });
-  },
-
   recordWordsStudied: (count) => {
     set((state) => {
       const progress = touchDailyLog(state.progress, { wordsStudied: count });
@@ -218,10 +295,11 @@ export const useAppStore = create<AppState>((set) => ({
 
   resetProgress: async () => {
     await clearState();
-    const next: Pick<AppState, 'words' | 'settings' | 'progress'> = {
+    const next: Pick<AppState, 'words' | 'settings' | 'progress' | 'studySession'> = {
       words: buildDefaultWords(),
       settings: DEFAULT_SETTINGS,
       progress: DEFAULT_PROGRESS,
+      studySession: null,
     };
     set(next);
     await saveState({ version: STATE_VERSION, ...next });
@@ -231,14 +309,71 @@ export const useAppStore = create<AppState>((set) => ({
     const defaults = buildDefaultWords();
     const merged: Record<string, VocabWord> = { ...defaults };
     for (const id of Object.keys(imported.words || {})) {
-      if (merged[id]) merged[id] = { ...merged[id], ...imported.words[id] };
+      if (merged[id]) merged[id] = mergeProgressOnto(merged[id], imported.words[id]);
     }
     const next = {
       words: merged,
       settings: { ...DEFAULT_SETTINGS, ...imported.settings },
       progress: { ...DEFAULT_PROGRESS, ...imported.progress },
+      studySession: imported.studySession ?? null,
     };
     set(next);
     schedulePersist({ version: STATE_VERSION, ...next });
+  },
+
+  applyContentImport: (validatedRows) => {
+    set((state) => {
+      const words = applyImportRows(state.words, validatedRows);
+      const next = { ...state, words };
+      schedulePersist(persistedSnapshot(next));
+      return next;
+    });
+  },
+
+  ensureStudySession: (mode, oxford5000Scope) => {
+    set((state) => {
+      const today = todayKey();
+      const s = state.studySession;
+      const matches =
+        s &&
+        s.mode === mode &&
+        s.oxford5000Scope === oxford5000Scope &&
+        s.reviewStrategy === state.settings.reviewStrategy &&
+        s.sessionSize === state.settings.sessionSize &&
+        s.createdDateKey === today;
+      if (matches) return state;
+
+      const studySession = buildStudySession(state.words, state.settings, mode, oxford5000Scope);
+      const next = { ...state, studySession };
+      schedulePersist(persistedSnapshot(next));
+      return next;
+    });
+  },
+
+  startNewStudySession: (mode, oxford5000Scope) => {
+    set((state) => {
+      const studySession = buildStudySession(state.words, state.settings, mode, oxford5000Scope);
+      const next = { ...state, studySession };
+      schedulePersist(persistedSnapshot(next));
+      return next;
+    });
+  },
+
+  advanceStudySession: () => {
+    set((state) => {
+      if (!state.studySession) return state;
+      const studySession = { ...state.studySession, currentIndex: state.studySession.currentIndex + 1 };
+      const next = { ...state, studySession };
+      schedulePersist(persistedSnapshot(next));
+      return next;
+    });
+  },
+
+  clearStudySession: () => {
+    set((state) => {
+      const next = { ...state, studySession: null };
+      schedulePersist(persistedSnapshot(next));
+      return next;
+    });
   },
 }));

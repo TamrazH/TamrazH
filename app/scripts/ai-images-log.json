@@ -251,9 +251,17 @@
   "source": "chatgpt-batch-005.webp",
   "cell": 13
  },
+ "best-a1": {
+  "source": "chatgpt-batch-038.webp",
+  "cell": 1
+ },
  "betray-c1": {
   "source": "chatgpt-batch-005.webp",
   "cell": 14
+ },
+ "better-a1": {
+  "source": "chatgpt-batch-038.webp",
+  "cell": 2
  },
  "big-a1": {
   "source": "chatgpt-batch-002.webp",
@@ -311,9 +319,17 @@
   "source": "chatgpt-batch-006.webp",
   "cell": 1
  },
+ "cannot-a1": {
+  "source": "chatgpt-batch-038.webp",
+  "cell": 3
+ },
  "capability-c1": {
   "source": "chatgpt-batch-006.webp",
   "cell": 2
+ },
+ "capital-a1": {
+  "source": "chatgpt-batch-038.webp",
+  "cell": 4
  },
  "capitalist-c1": {
   "source": "chatgpt-batch-006.webp",
@@ -331,9 +347,17 @@
   "source": "chatgpt-batch-006.webp",
   "cell": 7
  },
+ "center-a1": {
+  "source": "chatgpt-batch-038.webp",
+  "cell": 5
+ },
  "chamber-c1": {
   "source": "chatgpt-batch-006.webp",
   "cell": 8
+ },
+ "change-a1": {
+  "source": "chatgpt-batch-038.webp",
+  "cell": 6
  },
  "chaos-c1": {
   "source": "chatgpt-batch-006.webp",
@@ -430,6 +454,10 @@
  "commodity-c1": {
   "source": "chatgpt-batch-007.webp",
   "cell": 6
+ },
+ "common-a1": {
+  "source": "chatgpt-batch-038.webp",
+  "cell": 7
  },
  "communist-c1": {
   "source": "chatgpt-batch-007.webp",
@@ -607,6 +635,10 @@
   "source": "chatgpt-batch-009.webp",
   "cell": 2
  },
+ "cool-a1": {
+  "source": "chatgpt-batch-038.webp",
+  "cell": 8
+ },
  "coordinate-c1": {
   "source": "chatgpt-batch-009.webp",
   "cell": 3
@@ -651,6 +683,10 @@
   "source": "chatgpt-batch-009.webp",
   "cell": 13
  },
+ "course-a1": {
+  "source": "chatgpt-batch-038.webp",
+  "cell": 10
+ },
  "creator-c1": {
   "source": "chatgpt-batch-009.webp",
   "cell": 14
@@ -686,6 +722,14 @@
  "damaging-c1": {
   "source": "chatgpt-batch-009.webp",
   "cell": 22
+ },
+ "day-a1": {
+  "source": "chatgpt-batch-038.webp",
+  "cell": 11
+ },
+ "dear-a1": {
+  "source": "chatgpt-batch-038.webp",
+  "cell": 12
  },
  "debut-c1": {
   "source": "chatgpt-batch-009.webp",
@@ -763,6 +807,10 @@
   "source": "chatgpt-batch-010.webp",
   "cell": 15
  },
+ "describe-a1": {
+  "source": "chatgpt-batch-038.webp",
+  "cell": 13
+ },
  "designate-c1": {
   "source": "chatgpt-batch-010.webp",
   "cell": 16
@@ -791,6 +839,10 @@
   "source": "chatgpt-batch-010.webp",
   "cell": 22
  },
+ "dialogue-a1": {
+  "source": "chatgpt-batch-038.webp",
+  "cell": 15
+ },
  "dictate-c1": {
   "source": "chatgpt-batch-010.webp",
   "cell": 23
@@ -798,6 +850,14 @@
  "dictator-c1": {
   "source": "chatgpt-batch-010.webp",
   "cell": 24
+ },
+ "die-a1": {
+  "source": "chatgpt-batch-038.webp",
+  "cell": 16
+ },
+ "difference-a1": {
+  "source": "chatgpt-batch-038.webp",
+  "cell": 17
  },
  "differentiate-c1": {
   "source": "chatgpt-batch-010.webp",
@@ -870,6 +930,10 @@
  "divert-c1": {
   "source": "chatgpt-batch-011.webp",
   "cell": 16
+ },
+ "do1-a1": {
+  "source": "chatgpt-batch-038.webp",
+  "cell": 18
  },
  "drift-c1": {
   "source": "chatgpt-batch-011.webp",
@@ -1031,6 +1095,10 @@
   "source": "chatgpt-batch-013.webp",
   "cell": 9
  },
+ "example-a1": {
+  "source": "chatgpt-batch-038.webp",
+  "cell": 19
+ },
  "excellence-c1": {
   "source": "chatgpt-batch-013.webp",
   "cell": 10
@@ -1075,6 +1143,10 @@
   "source": "chatgpt-batch-013.webp",
   "cell": 20
  },
+ "extra-a1": {
+  "source": "chatgpt-batch-038.webp",
+  "cell": 20
+ },
  "facilitate-c1": {
   "source": "chatgpt-batch-013.webp",
   "cell": 22
@@ -1091,9 +1163,17 @@
   "source": "chatgpt-batch-001.webp",
   "cell": 7
  },
+ "fantastic-a1": {
+  "source": "chatgpt-batch-038.webp",
+  "cell": 22
+ },
  "far-a1": {
   "source": "chatgpt-batch-002.webp",
   "cell": 10
+ },
+ "fat-a1": {
+  "source": "chatgpt-batch-038.webp",
+  "cell": 23
  },
  "fatal-c1": {
   "source": "chatgpt-batch-013.webp",
@@ -1171,9 +1251,17 @@
   "source": "chatgpt-batch-002.webp",
   "cell": 11
  },
+ "front-a1": {
+  "source": "chatgpt-batch-038.webp",
+  "cell": 24
+ },
  "functional-c1": {
   "source": "chatgpt-batch-014.webp",
   "cell": 18
+ },
+ "future-a1": {
+  "source": "chatgpt-batch-038.webp",
+  "cell": 25
  },
  "gathering-c1": {
   "source": "chatgpt-batch-014.webp",

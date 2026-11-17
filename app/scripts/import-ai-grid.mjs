@@ -65,26 +65,26 @@ const isWhite = (x, y) => {
 };
 
 /**
- * Finds the boundary between cell k-1 and k along one axis. A white gutter (a run of
- * lines that are almost entirely white across the band) gives exact edges; otherwise the
- * strongest background colour jump near the expected position is used.
+ * Finds the boundary between cell k-1 and k along one axis: the white gutter near the
+ * expected position when there is one, otherwise the strongest background colour jump.
  * Returns [end of previous cell, start of next cell].
  */
 function boundary(len, expected, window, whiteFraction, jumpScore) {
   const lo = Math.max(4, expected - window);
   const hi = Math.min(len - 4, expected + window);
-  let runStart = -1;
-  let best = null;
-  for (let p = lo; p <= hi; p++) {
-    const white = p < hi && whiteFraction(p) > 0.92;
-    if (white && runStart < 0) runStart = p;
-    if (!white && runStart >= 0) {
-      const mid = (runStart + p) / 2;
-      if (!best || Math.abs(mid - expected) < Math.abs((best[0] + best[1]) / 2 - expected)) best = [runStart, p];
-      runStart = -1;
-    }
+  // The gutter is the whitest line near the expected spot. Gutters can be slightly tilted,
+  // so no single line need be fully white; accept a clear peak and take the span around it.
+  let peak = lo;
+  for (let p = lo; p <= hi; p++) if (whiteFraction(p) > whiteFraction(peak)) peak = p;
+  const peakValue = whiteFraction(peak);
+  if (peakValue >= 0.5) {
+    const edge = peakValue / 2;
+    let a = peak;
+    let b = peak;
+    while (a > lo && whiteFraction(a - 1) >= edge) a--;
+    while (b < hi && whiteFraction(b + 1) >= edge) b++;
+    return [a, b + 1];
   }
-  if (best) return best;
   const p = strongestNear(jumpScore, len, expected, window);
   return [p, p];
 }

@@ -29,7 +29,7 @@ const SKIP = new Set(
 // Violent, sexual or otherwise sensitive words: an image generator may refuse the whole
 // grid because of one of them, and a cartoon would not suit them anyway.
 const SENSITIVE = new Set(
-  'abortion abuse assassination casualty execute execution lesbian massacre rape sexuality slavery suicide torture kill killing murder sex sexual slave victim violent bombing breast naked racist sexy terror terrorism terrorist violence'.split(' '),
+  'abortion abuse assassination casualty execute execution lesbian massacre rape sexuality slavery suicide torture kill killing murder sex sexual slave victim violent bombing breast naked racist sexy terror terrorism terrorist violence atrocity brutal kidnap militant cruel invade invasion shoot shooting die starve intimate'.split(' '),
 );
 
 const vocab = JSON.parse(fs.readFileSync(path.join(APP, 'public/data/vocabulary.json'), 'utf8'));
